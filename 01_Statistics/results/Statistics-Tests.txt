@@ -1,0 +1,3447 @@
+[1] "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+[1] " BINOMIAL TESTS "
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F0-EXE "
+           Success Fails
+2001            NA    NA
+2019            34    19
+Allopatric      26     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.0179
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.03599011 0.82730130
+sample estimates:
+odds ratio 
+ 0.2100337 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2019            34    19
+Allopatric      26     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.0179
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.03599011 0.82730130
+sample estimates:
+odds ratio 
+ 0.2100337 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F0-GXG"
+           Success Fails
+2001            NA    NA
+2019            10     0
+Allopatric       4     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.3333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.05128188        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2019            10     0
+Allopatric       4     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.3333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.05128188        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F0-EXE "
+           Success Fails
+2001            NA    NA
+2019            19    15
+Allopatric      23     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.009725
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.02749349 0.72895908
+sample estimates:
+odds ratio 
+ 0.1701457 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2019            19    15
+Allopatric      23     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.009725
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.02749349 0.72895908
+sample estimates:
+odds ratio 
+ 0.1701457 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F0-GXG"
+           Success Fails
+2001            NA    NA
+2019            10     0
+Allopatric       1     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.01099
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.497832      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2019            10     0
+Allopatric       1     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.01099
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.497832      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F0-EXE "
+           Success Fails
+2001             8     2
+2019            18     3
+Allopatric      33     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.1224
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       8     2
+2019      18     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.06338617 9.57598289
+sample estimates:
+odds ratio 
+ 0.6758562 
+
+           Success Fails
+2001             8     2
+Allopatric      33     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.1246
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.002004019 2.767581894
+sample estimates:
+odds ratio 
+ 0.1294647 
+
+           Success Fails
+2019            18     3
+Allopatric      33     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.1501
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.003370169 2.531559193
+sample estimates:
+odds ratio 
+ 0.1876986 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F0-GXG"
+           Success Fails
+2001             4     0
+2019            12     0
+Allopatric      14     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       4     0
+2019      12     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             4     0
+Allopatric      14     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.006853125         Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2019            12     0
+Allopatric      14     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.02052812        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F0-EXG"
+           Success Fails
+2001            23     0
+2019            54    38
+Allopatric      49    22
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.0001027
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      23     0
+2019      54    38
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 3.503e-05
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 3.702104      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2001            23     0
+Allopatric      49    22
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.001242
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 2.279437      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2019            54    38
+Allopatric      49    22
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.1932
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.3140304 1.2839617
+sample estimates:
+odds ratio 
+ 0.6397929 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F0-GXE"
+           Success Fails
+2001             5    39
+2019             1    21
+Allopatric       9     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1.608e-06
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       5    39
+2019       1    21
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.6549
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.2710531 133.2227393
+sample estimates:
+odds ratio 
+  2.658556 
+
+           Success Fails
+2001             5    39
+Allopatric       9     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1.407e-05
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.002662823 0.208959402
+sample estimates:
+odds ratio 
+0.03196949 
+
+           Success Fails
+2019             1    21
+Allopatric       9     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1.319e-05
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0002404254 0.1671658440
+sample estimates:
+odds ratio 
+0.01417306 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F1-HXH"
+           Success Fails
+2001             7    39
+2019             7     1
+Allopatric      19     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 9.068e-12
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       7    39
+2019       7     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.0001348
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0005623544 0.2704383203
+sample estimates:
+odds ratio 
+0.02844453 
+
+           Success Fails
+2001             7    39
+Allopatric      19     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 6.528e-10
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0002291388 0.0844359693
+sample estimates:
+odds ratio 
+0.01055946 
+
+           Success Fails
+2019             7     1
+Allopatric      19     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.4974
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00447247 33.01630326
+sample estimates:
+odds ratio 
+ 0.3838855 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F1-HXG"
+           Success Fails
+2001             5     3
+2019             4     0
+Allopatric      12     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.5289
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       5     3
+2019       4     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.4909
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 4.913934
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             5     3
+Allopatric      12     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.08820486 6.32733353
+sample estimates:
+odds ratio 
+ 0.7048938 
+
+           Success Fails
+2019             4     0
+Allopatric      12     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.5322
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.1949559       Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F1-GXH"
+           Success Fails
+2001             1     9
+2019            NA    NA
+Allopatric       2     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.1084
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0008625627 2.6298033311
+sample estimates:
+odds ratio 
+ 0.0804864 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2001             1     9
+Allopatric       2     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.1084
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0008625627 2.6298033311
+sample estimates:
+odds ratio 
+ 0.0804864 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F1-HXE"
+           Success Fails
+2001             2    12
+2019             1     0
+Allopatric      11     4
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.001533
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       2    12
+2019       1     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.2
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 9.750007
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             2    12
+Allopatric      11     4
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.002509
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.005225864 0.501160021
+sample estimates:
+odds ratio 
+0.06877592 
+
+           Success Fails
+2019             1     0
+Allopatric      11     4
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0085625       Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F1-EXH"
+           Success Fails
+2001             9     0
+2019             5     6
+Allopatric       7     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.003287
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       9     0
+2019       5     6
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.01409
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.338381      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2001             9     0
+Allopatric       7     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2019             5     6
+Allopatric       7     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.03771
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0000000 0.9980574
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F2-HXH"
+           Success Fails
+2001             9     1
+2019             9     2
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.08594805 130.77484889
+sample estimates:
+odds ratio 
+   1.93674 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       9     1
+2019       9     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.08594805 130.77484889
+sample estimates:
+odds ratio 
+   1.93674 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F2-HXG"
+           Success Fails
+2001            19     2
+2019             1     1
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.249
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.08086954 776.57843723
+sample estimates:
+odds ratio 
+  7.957667 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      19     2
+2019       1     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.249
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.08086954 776.57843723
+sample estimates:
+odds ratio 
+  7.957667 
+
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F2-GXH"
+           Success Fails
+2001            NA    NA
+2019             1     2
+Allopatric      NA    NA
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F2-HXE"
+           Success Fails
+2001            NA    NA
+2019             2    20
+Allopatric      NA    NA
+[1] "######################################################################"
+[1] "Mechanical"
+[1] "F2-EXH"
+           Success Fails
+2001            14     0
+2019             6     2
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.1212
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.344454      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      14     0
+2019       6     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.1212
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.344454      Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F0-EXG"
+           Success Fails
+2001            20     3
+2019            36    18
+Allopatric      39    10
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.1327
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      20     3
+2019      36    18
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.09419
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.8097907 19.5318515
+sample estimates:
+odds ratio 
+  3.287625 
+
+           Success Fails
+2001            20     3
+Allopatric      39    10
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.5294
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.3777157 10.6743498
+sample estimates:
+odds ratio 
+  1.697543 
+
+           Success Fails
+2019            36    18
+Allopatric      39    10
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.1843
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.1863173 1.3633727
+sample estimates:
+odds ratio 
+ 0.5161452 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F0-GXE"
+           Success Fails
+2001             3     2
+2019             0     1
+Allopatric       8     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.2044
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       3     2
+2019       0     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.02564066        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2001             3     2
+Allopatric       8     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.5055
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.002841706 5.544577404
+sample estimates:
+odds ratio 
+ 0.2151058 
+
+           Success Fails
+2019             0     1
+Allopatric       8     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.2
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 9.750007
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F1-HXH"
+           Success Fails
+2001             3     4
+2019             7     0
+Allopatric      18     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.007845
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       3     4
+2019       7     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.06993
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 1.176627
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             3     4
+Allopatric      18     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.01043
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0008120729 0.7090982988
+sample estimates:
+odds ratio 
+0.05044968 
+
+           Success Fails
+2019             7     0
+Allopatric      18     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.009462171         Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F1-HXG"
+           Success Fails
+2001             3     2
+2019             3     1
+Allopatric      12     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.06316
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       3     2
+2019       3     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.006388843 16.499190325
+sample estimates:
+odds ratio 
+ 0.5398122 
+
+           Success Fails
+2001             3     2
+Allopatric      12     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.07353
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 2.018458
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2019             3     1
+Allopatric      12     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.25
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 13.00002
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F1-GXH"
+           Success Fails
+2001             0     1
+2019            NA    NA
+Allopatric       2     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.3333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 19.50007
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2001             0     1
+Allopatric       2     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.3333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 19.50007
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F1-HXE"
+           Success Fails
+2001             2     0
+2019             0     1
+Allopatric      11     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.07143
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       2     0
+2019       0     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.3333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.05128188        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2001             2     0
+Allopatric      11     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2019             0     1
+Allopatric      11     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.08333
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 3.545455
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F1-EXH"
+           Success Fails
+2001             9     0
+2019             5     0
+Allopatric       6     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.5714
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       9     0
+2019       5     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             9     0
+Allopatric       6     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.4375
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.03296676        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2019             5     0
+Allopatric       6     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.01833036        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F2-HXH"
+           Success Fails
+2001             8     1
+2019             9     0
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 39.00055
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       8     1
+2019       9     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 39.00055
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F2-HXG"
+           Success Fails
+2001            13     6
+2019             1     0
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 90.87221
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      13     6
+2019       1     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.00000 90.87221
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F2-GXH"
+           Success Fails
+2001            NA    NA
+2019             1     0
+Allopatric      NA    NA
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F2-HXE"
+           Success Fails
+2001            NA    NA
+2019             2     0
+Allopatric      NA    NA
+[1] "######################################################################"
+[1] "Tactile"
+[1] "F2-EXH"
+           Success Fails
+2001            12     2
+2019             5     1
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.01698979 28.18051404
+sample estimates:
+odds ratio 
+  1.188802 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      12     2
+2019       5     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+  0.01698979 28.18051404
+sample estimates:
+odds ratio 
+  1.188802 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F0-EXG"
+           Success Fails
+2001            12     6
+2019            24     1
+Allopatric       8     8
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.001095
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      12     6
+2019      24     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.01539
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.00174725 0.85163156
+sample estimates:
+odds ratio 
+0.08833201 
+
+           Success Fails
+2001            12     6
+Allopatric       8     8
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.4867
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.4089163 9.9936409
+sample estimates:
+odds ratio 
+  1.958781 
+
+           Success Fails
+2019            24     1
+Allopatric       8     8
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.000951
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+    2.371634 1099.817373
+sample estimates:
+odds ratio 
+  21.91888 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F0-GXE"
+           Success Fails
+2001             3     0
+2019            NA    NA
+Allopatric       5     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2001             3     0
+Allopatric       5     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F1-HXH"
+           Success Fails
+2001             1     2
+2019            11     1
+Allopatric      25     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.07387
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       1     2
+2019      11     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.08132
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.0007206207 2.1321660037
+sample estimates:
+odds ratio 
+0.06634428 
+
+           Success Fails
+2001             1     2
+Allopatric      25     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 0.1065
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.001640681 2.493886339
+sample estimates:
+odds ratio 
+ 0.1107973 
+
+           Success Fails
+2019            11     1
+Allopatric      25     5
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 0.6552
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.2046228 113.3090668
+sample estimates:
+odds ratio 
+  2.164379 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F1-HXG"
+           Success Fails
+2001             2     0
+2019             3     0
+Allopatric       6     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       2     0
+2019       3     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             2     0
+Allopatric       6     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.03845334        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2019             3     0
+Allopatric       6     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.06454222        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F1-GXH"
+           Success Fails
+2001            NA    NA
+2019            NA    NA
+Allopatric       1     0
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F1-HXE"
+           Success Fails
+2001             0     2
+2019            NA    NA
+Allopatric       5     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.4444
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 5.118377
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+           Success Fails
+2001             0     2
+Allopatric       5     3
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.4444
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.000000 5.118377
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F1-EXH"
+           Success Fails
+2001             2     0
+2019             6     0
+Allopatric      10     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: two.sided
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       2     0
+2019       6     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+           Success Fails
+2001             2     0
+Allopatric      10     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[c(1, 3), ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.004677557         Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+           Success Fails
+2019             6     0
+Allopatric      10     1
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[2:3, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.01400142        Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F2-HXH"
+           Success Fails
+2001             9     0
+2019             6     2
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.2059
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.2175037       Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       9     0
+2019       6     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.2059
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.2175037       Inf
+sample estimates:
+odds ratio 
+       Inf 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F2-HXG"
+           Success Fails
+2001             1     0
+2019             1     0
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       1     0
+2019       1     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F2-GXH"
+           Success Fails
+2001            NA    NA
+2019             1     0
+Allopatric      NA    NA
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F2-HXE"
+           Success Fails
+2001             8     0
+2019             2     0
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001       8     0
+2019       2     0
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 1
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0 Inf
+sample estimates:
+odds ratio 
+         0 
+
+[1] "######################################################################"
+[1] "Oviposition"
+[1] "F2-EXH"
+           Success Fails
+2001            11     1
+2019             3     2
+Allopatric      NA    NA
+
+	Fisher's Exact Test for Count Data
+
+data:  mat
+p-value = 0.1912
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.2518663 468.7960007
+sample estimates:
+odds ratio 
+  6.321431 
+
+[1] "# POST-HOC Pariwise Fisher's exact tests: "
+     Success Fails
+2001      11     1
+2019       3     2
+
+	Fisher's Exact Test for Count Data
+
+data:  mat[1:2, ]
+p-value = 0.1912
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.2518663 468.7960007
+sample estimates:
+odds ratio 
+  6.321431 
+
+[1] "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+[1] " Kruskal / Wilcoxon TESTS "
+[1] ""
+[1] "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+[1] "FECUNDITY"
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F0-EXE"
+      2001      2019 Allopatric
+1  100.000 121.66667    181.667
+2  104.500 193.00000    319.000
+3  245.667 105.00000    214.000
+4  226.000  90.66667    272.667
+5  290.000 111.50000    406.667
+6  415.333  42.66667    205.000
+7       NA 151.66667    370.000
+8       NA        NA    344.500
+9       NA        NA         NA
+10      NA        NA         NA
+11      NA        NA         NA
+12      NA        NA         NA
+13      NA        NA         NA
+14      NA        NA         NA
+15      NA        NA         NA
+16      NA        NA         NA
+17      NA        NA         NA
+18      NA        NA         NA
+19      NA        NA         NA
+20      NA        NA         NA
+21      NA        NA         NA
+22      NA        NA         NA
+23      NA        NA         NA
+24      NA        NA         NA
+25      NA        NA         NA
+26      NA        NA         NA
+27      NA        NA         NA
+28      NA        NA         NA
+29      NA        NA         NA
+30      NA        NA         NA
+31      NA        NA         NA
+32      NA        NA         NA
+33      NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 9.002, df = 2, p-value = 0.0111
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001    2019   
+2019       0.13753 -      
+Allopatric 0.49084 0.00062
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-EXE"
+      2001      2019 Allopatric
+1  170.667  44.33333    201.333
+2   52.667 147.00000    205.333
+3       NA  61.66667    116.667
+4       NA  82.33333    111.667
+5       NA 125.66667     55.667
+6       NA 110.66667     53.667
+7       NA   5.00000    150.667
+8       NA   0.50000    114.333
+9       NA        NA     83.333
+10      NA        NA     73.667
+11      NA        NA    135.667
+12      NA        NA     72.000
+13      NA        NA    170.333
+14      NA        NA    147.333
+15      NA        NA     84.333
+16      NA        NA     59.667
+17      NA        NA     82.333
+18      NA        NA    181.333
+19      NA        NA    258.333
+20      NA        NA    243.333
+21      NA        NA     90.000
+22      NA        NA    109.667
+23      NA        NA    126.667
+24      NA        NA     79.333
+25      NA        NA     58.333
+26      NA        NA         NA
+27      NA        NA         NA
+28      NA        NA         NA
+29      NA        NA         NA
+30      NA        NA         NA
+31      NA        NA         NA
+32      NA        NA         NA
+33      NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 3.5635, df = 2, p-value = 0.1683
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001  2019 
+2019       0.533 -    
+Allopatric 0.689 0.067
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-EXE"
+   2001      2019 Allopatric
+1    NA 113.33333         NA
+2    NA  97.33333         NA
+3    NA 182.66667         NA
+4    NA        NA         NA
+5    NA        NA         NA
+6    NA        NA         NA
+7    NA        NA         NA
+8    NA        NA         NA
+9    NA        NA         NA
+10   NA        NA         NA
+11   NA        NA         NA
+12   NA        NA         NA
+13   NA        NA         NA
+14   NA        NA         NA
+15   NA        NA         NA
+16   NA        NA         NA
+17   NA        NA         NA
+18   NA        NA         NA
+19   NA        NA         NA
+20   NA        NA         NA
+21   NA        NA         NA
+22   NA        NA         NA
+23   NA        NA         NA
+24   NA        NA         NA
+25   NA        NA         NA
+26   NA        NA         NA
+27   NA        NA         NA
+28   NA        NA         NA
+29   NA        NA         NA
+30   NA        NA         NA
+31   NA        NA         NA
+32   NA        NA         NA
+33   NA        NA         NA
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F0-GXG"
+      2001       2019 Allopatric
+1    9.667  11.000000    191.667
+2  127.333  33.333333    167.000
+3  265.333   9.333333    219.000
+4  102.667 146.666667    305.667
+5       NA         NA    157.000
+6       NA         NA    249.667
+7       NA         NA    353.667
+8       NA         NA    225.667
+9       NA         NA    217.000
+10      NA         NA    317.667
+11      NA         NA    165.667
+12      NA         NA    214.333
+13      NA         NA    131.000
+14      NA         NA         NA
+15      NA         NA         NA
+16      NA         NA         NA
+17      NA         NA         NA
+18      NA         NA         NA
+19      NA         NA         NA
+20      NA         NA         NA
+21      NA         NA         NA
+22      NA         NA         NA
+23      NA         NA         NA
+24      NA         NA         NA
+25      NA         NA         NA
+26      NA         NA         NA
+27      NA         NA         NA
+28      NA         NA         NA
+29      NA         NA         NA
+30      NA         NA         NA
+31      NA         NA         NA
+32      NA         NA         NA
+33      NA         NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 9.547, df = 2, p-value = 0.008451
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001   2019  
+2019       0.4857 -     
+Allopatric 0.0790 0.0017
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-GXG"
+   2001      2019 Allopatric
+1    NA  88.66667     76.333
+2    NA  54.50000         NA
+3    NA  49.33333         NA
+4    NA 180.33333         NA
+5    NA 153.66667         NA
+6    NA  33.66667         NA
+7    NA 198.66667         NA
+8    NA 143.33333         NA
+9    NA        NA         NA
+10   NA        NA         NA
+11   NA        NA         NA
+12   NA        NA         NA
+13   NA        NA         NA
+14   NA        NA         NA
+15   NA        NA         NA
+16   NA        NA         NA
+17   NA        NA         NA
+18   NA        NA         NA
+19   NA        NA         NA
+20   NA        NA         NA
+21   NA        NA         NA
+22   NA        NA         NA
+23   NA        NA         NA
+24   NA        NA         NA
+25   NA        NA         NA
+26   NA        NA         NA
+27   NA        NA         NA
+28   NA        NA         NA
+29   NA        NA         NA
+30   NA        NA         NA
+31   NA        NA         NA
+32   NA        NA         NA
+33   NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 0.15, df = 1, p-value = 0.6985
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2019
+Allopatric 0.89
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F0-EXG"
+      2001       2019 Allopatric
+1   95.000 215.333333     27.667
+2  211.000 179.333333     13.333
+3   78.333  16.666667     15.500
+4   72.667 220.666667     21.000
+5  213.667 108.000000     40.000
+6   19.000   6.333333      8.000
+7  246.333   1.000000     23.333
+8  100.667  15.666667     16.000
+9   29.000  15.666667         NA
+10 112.333   3.333333         NA
+11   1.333 160.000000         NA
+12 167.333 183.333333         NA
+13      NA 174.333333         NA
+14      NA  27.666667         NA
+15      NA 182.666667         NA
+16      NA 248.333333         NA
+17      NA 179.000000         NA
+18      NA 137.000000         NA
+19      NA 160.666667         NA
+20      NA 105.333333         NA
+21      NA 172.666667         NA
+22      NA 195.666667         NA
+23      NA   3.333333         NA
+24      NA 221.333333         NA
+25      NA         NA         NA
+26      NA         NA         NA
+27      NA         NA         NA
+28      NA         NA         NA
+29      NA         NA         NA
+30      NA         NA         NA
+31      NA         NA         NA
+32      NA         NA         NA
+33      NA         NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 6.385, df = 2, p-value = 0.04107
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001   2019  
+2019       0.7498 -     
+Allopatric 0.0055 0.0387
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F0-GXE"
+      2001 2019 Allopatric
+1  132.333   NA    243.667
+2  132.667   NA    217.000
+3  137.000   NA    325.500
+4       NA   NA    222.000
+5       NA   NA    241.000
+6       NA   NA         NA
+7       NA   NA         NA
+8       NA   NA         NA
+9       NA   NA         NA
+10      NA   NA         NA
+11      NA   NA         NA
+12      NA   NA         NA
+13      NA   NA         NA
+14      NA   NA         NA
+15      NA   NA         NA
+16      NA   NA         NA
+17      NA   NA         NA
+18      NA   NA         NA
+19      NA   NA         NA
+20      NA   NA         NA
+21      NA   NA         NA
+22      NA   NA         NA
+23      NA   NA         NA
+24      NA   NA         NA
+25      NA   NA         NA
+26      NA   NA         NA
+27      NA   NA         NA
+28      NA   NA         NA
+29      NA   NA         NA
+30      NA   NA         NA
+31      NA   NA         NA
+32      NA   NA         NA
+33      NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 5, df = 1, p-value = 0.02535
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001 
+Allopatric 0.036
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-HXH"
+   2001       2019 Allopatric
+1   127 124.666667      4.333
+2    NA  18.666667      1.667
+3    NA 323.666667      7.667
+4    NA 162.333333      1.333
+5    NA   9.666667      1.333
+6    NA  13.000000      4.333
+7    NA   1.666667      4.333
+8    NA  35.666667      4.000
+9    NA  38.333333      4.667
+10   NA 101.333333      4.667
+11   NA  38.666667      7.000
+12   NA         NA      2.000
+13   NA         NA      1.333
+14   NA         NA     33.000
+15   NA         NA     10.667
+16   NA         NA     14.000
+17   NA         NA      1.000
+18   NA         NA      5.333
+19   NA         NA     29.000
+20   NA         NA      1.333
+21   NA         NA      7.000
+22   NA         NA     96.000
+23   NA         NA      1.000
+24   NA         NA     14.667
+25   NA         NA      0.667
+26   NA         NA         NA
+27   NA         NA         NA
+28   NA         NA         NA
+29   NA         NA         NA
+30   NA         NA         NA
+31   NA         NA         NA
+32   NA         NA         NA
+33   NA         NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 14.333, df = 2, p-value = 0.0007719
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001    2019   
+2019       0.50000 -      
+Allopatric 0.10857 0.00045
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-HXG"
+   2001     2019 Allopatric
+1   304 100.6667      3.333
+2    77 148.6667      0.667
+3    NA 109.0000      1.333
+4    NA       NA      2.667
+5    NA       NA      0.667
+6    NA       NA      7.667
+7    NA       NA         NA
+8    NA       NA         NA
+9    NA       NA         NA
+10   NA       NA         NA
+11   NA       NA         NA
+12   NA       NA         NA
+13   NA       NA         NA
+14   NA       NA         NA
+15   NA       NA         NA
+16   NA       NA         NA
+17   NA       NA         NA
+18   NA       NA         NA
+19   NA       NA         NA
+20   NA       NA         NA
+21   NA       NA         NA
+22   NA       NA         NA
+23   NA       NA         NA
+24   NA       NA         NA
+25   NA       NA         NA
+26   NA       NA         NA
+27   NA       NA         NA
+28   NA       NA         NA
+29   NA       NA         NA
+30   NA       NA         NA
+31   NA       NA         NA
+32   NA       NA         NA
+33   NA       NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 7.5342, df = 2, p-value = 0.02312
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001  2019 
+2019       1.000 -    
+Allopatric 0.065 0.028
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-GXH"
+   2001 2019 Allopatric
+1    NA   NA   175.3333
+2    NA   NA         NA
+3    NA   NA         NA
+4    NA   NA         NA
+5    NA   NA         NA
+6    NA   NA         NA
+7    NA   NA         NA
+8    NA   NA         NA
+9    NA   NA         NA
+10   NA   NA         NA
+11   NA   NA         NA
+12   NA   NA         NA
+13   NA   NA         NA
+14   NA   NA         NA
+15   NA   NA         NA
+16   NA   NA         NA
+17   NA   NA         NA
+18   NA   NA         NA
+19   NA   NA         NA
+20   NA   NA         NA
+21   NA   NA         NA
+22   NA   NA         NA
+23   NA   NA         NA
+24   NA   NA         NA
+25   NA   NA         NA
+26   NA   NA         NA
+27   NA   NA         NA
+28   NA   NA         NA
+29   NA   NA         NA
+30   NA   NA         NA
+31   NA   NA         NA
+32   NA   NA         NA
+33   NA   NA         NA
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-HXE"
+   2001 2019 Allopatric
+1    NA   NA     24.667
+2    NA   NA     34.333
+3    NA   NA      4.500
+4    NA   NA     28.000
+5    NA   NA      2.333
+6    NA   NA         NA
+7    NA   NA         NA
+8    NA   NA         NA
+9    NA   NA         NA
+10   NA   NA         NA
+11   NA   NA         NA
+12   NA   NA         NA
+13   NA   NA         NA
+14   NA   NA         NA
+15   NA   NA         NA
+16   NA   NA         NA
+17   NA   NA         NA
+18   NA   NA         NA
+19   NA   NA         NA
+20   NA   NA         NA
+21   NA   NA         NA
+22   NA   NA         NA
+23   NA   NA         NA
+24   NA   NA         NA
+25   NA   NA         NA
+26   NA   NA         NA
+27   NA   NA         NA
+28   NA   NA         NA
+29   NA   NA         NA
+30   NA   NA         NA
+31   NA   NA         NA
+32   NA   NA         NA
+33   NA   NA         NA
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F1-EXH"
+      2001     2019 Allopatric
+1  162.667 369.0000     58.000
+2   12.500 108.6667      0.333
+3  263.500 244.3333     47.667
+4  204.000 136.0000      9.000
+5       NA   2.0000     37.000
+6       NA 190.3333    133.667
+7       NA       NA     51.000
+8       NA       NA    136.667
+9       NA       NA     79.333
+10      NA       NA    146.667
+11      NA       NA         NA
+12      NA       NA         NA
+13      NA       NA         NA
+14      NA       NA         NA
+15      NA       NA         NA
+16      NA       NA         NA
+17      NA       NA         NA
+18      NA       NA         NA
+19      NA       NA         NA
+20      NA       NA         NA
+21      NA       NA         NA
+22      NA       NA         NA
+23      NA       NA         NA
+24      NA       NA         NA
+25      NA       NA         NA
+26      NA       NA         NA
+27      NA       NA         NA
+28      NA       NA         NA
+29      NA       NA         NA
+30      NA       NA         NA
+31      NA       NA         NA
+32      NA       NA         NA
+33      NA       NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 4.5186, df = 2, p-value = 0.1044
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001  2019 
+2019       0.914 -    
+Allopatric 0.106 0.093
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-HXH"
+      2001     2019 Allopatric
+1  244.000 54.00000         NA
+2  170.333 88.33333         NA
+3   77.333 64.00000         NA
+4  104.333 28.66667         NA
+5  139.000 60.66667         NA
+6  206.667 15.33333         NA
+7  133.000       NA         NA
+8  247.333       NA         NA
+9  150.333       NA         NA
+10      NA       NA         NA
+11      NA       NA         NA
+12      NA       NA         NA
+13      NA       NA         NA
+14      NA       NA         NA
+15      NA       NA         NA
+16      NA       NA         NA
+17      NA       NA         NA
+18      NA       NA         NA
+19      NA       NA         NA
+20      NA       NA         NA
+21      NA       NA         NA
+22      NA       NA         NA
+23      NA       NA         NA
+24      NA       NA         NA
+25      NA       NA         NA
+26      NA       NA         NA
+27      NA       NA         NA
+28      NA       NA         NA
+29      NA       NA         NA
+30      NA       NA         NA
+31      NA       NA         NA
+32      NA       NA         NA
+33      NA       NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 9.3889, df = 1, p-value = 0.002183
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001 
+2019 8e-04
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-HXG"
+     2001     2019 Allopatric
+1  23.667 83.33333         NA
+2      NA       NA         NA
+3      NA       NA         NA
+4      NA       NA         NA
+5      NA       NA         NA
+6      NA       NA         NA
+7      NA       NA         NA
+8      NA       NA         NA
+9      NA       NA         NA
+10     NA       NA         NA
+11     NA       NA         NA
+12     NA       NA         NA
+13     NA       NA         NA
+14     NA       NA         NA
+15     NA       NA         NA
+16     NA       NA         NA
+17     NA       NA         NA
+18     NA       NA         NA
+19     NA       NA         NA
+20     NA       NA         NA
+21     NA       NA         NA
+22     NA       NA         NA
+23     NA       NA         NA
+24     NA       NA         NA
+25     NA       NA         NA
+26     NA       NA         NA
+27     NA       NA         NA
+28     NA       NA         NA
+29     NA       NA         NA
+30     NA       NA         NA
+31     NA       NA         NA
+32     NA       NA         NA
+33     NA       NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 1, df = 1, p-value = 0.3173
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001
+2019 1   
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-GXH"
+   2001     2019 Allopatric
+1    NA 38.66667         NA
+2    NA       NA         NA
+3    NA       NA         NA
+4    NA       NA         NA
+5    NA       NA         NA
+6    NA       NA         NA
+7    NA       NA         NA
+8    NA       NA         NA
+9    NA       NA         NA
+10   NA       NA         NA
+11   NA       NA         NA
+12   NA       NA         NA
+13   NA       NA         NA
+14   NA       NA         NA
+15   NA       NA         NA
+16   NA       NA         NA
+17   NA       NA         NA
+18   NA       NA         NA
+19   NA       NA         NA
+20   NA       NA         NA
+21   NA       NA         NA
+22   NA       NA         NA
+23   NA       NA         NA
+24   NA       NA         NA
+25   NA       NA         NA
+26   NA       NA         NA
+27   NA       NA         NA
+28   NA       NA         NA
+29   NA       NA         NA
+30   NA       NA         NA
+31   NA       NA         NA
+32   NA       NA         NA
+33   NA       NA         NA
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-HXE"
+      2001       2019 Allopatric
+1   38.333 141.000000         NA
+2  201.000   1.333333         NA
+3  177.000         NA         NA
+4    5.000         NA         NA
+5  180.667         NA         NA
+6  328.667         NA         NA
+7    2.000         NA         NA
+8   33.500         NA         NA
+9       NA         NA         NA
+10      NA         NA         NA
+11      NA         NA         NA
+12      NA         NA         NA
+13      NA         NA         NA
+14      NA         NA         NA
+15      NA         NA         NA
+16      NA         NA         NA
+17      NA         NA         NA
+18      NA         NA         NA
+19      NA         NA         NA
+20      NA         NA         NA
+21      NA         NA         NA
+22      NA         NA         NA
+23      NA         NA         NA
+24      NA         NA         NA
+25      NA         NA         NA
+26      NA         NA         NA
+27      NA         NA         NA
+28      NA         NA         NA
+29      NA         NA         NA
+30      NA         NA         NA
+31      NA         NA         NA
+32      NA         NA         NA
+33      NA         NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 1.0909, df = 1, p-value = 0.2963
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001
+2019 0.4 
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fecundity"
+[1] "F2-EXH"
+      2001     2019 Allopatric
+1  211.000  1.00000         NA
+2   38.667 16.66667         NA
+3  250.667 51.00000         NA
+4  178.333       NA         NA
+5    8.333       NA         NA
+6  207.667       NA         NA
+7  205.667       NA         NA
+8  281.333       NA         NA
+9  107.333       NA         NA
+10 106.000       NA         NA
+11 201.000       NA         NA
+12      NA       NA         NA
+13      NA       NA         NA
+14      NA       NA         NA
+15      NA       NA         NA
+16      NA       NA         NA
+17      NA       NA         NA
+18      NA       NA         NA
+19      NA       NA         NA
+20      NA       NA         NA
+21      NA       NA         NA
+22      NA       NA         NA
+23      NA       NA         NA
+24      NA       NA         NA
+25      NA       NA         NA
+26      NA       NA         NA
+27      NA       NA         NA
+28      NA       NA         NA
+29      NA       NA         NA
+30      NA       NA         NA
+31      NA       NA         NA
+32      NA       NA         NA
+33      NA       NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 4.4182, df = 1, p-value = 0.03556
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001 
+2019 0.038
+
+P value adjustment method: none 
+[1] ""
+[1] "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+[1] "FECUNDITY SUMMARIES"
+$`2001`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  1.333  77.833 137.000 147.101 209.333 415.333 
+
+$`2019`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.5    31.0   100.7   100.5   156.8   369.0 
+
+$Allopatric
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.333   7.667  72.000 103.094 178.333 406.667 
+
+[1] "sd:"
+      2001       2019 Allopatric 
+  93.07297   79.98661  106.25326 
+[1] "SE:"
+      2001       2019 Allopatric 
+ 11.726091   8.575465  10.271891 
+[1] ""
+[1] "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+[1] "FERTILITY"
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F0-EXE"
+    2001      2019 Allopatric
+1  0.613 0.9863014       0.90
+2  0.737 0.3575130       0.95
+3  0.934 0.9650794       0.84
+4  0.925 0.9705882       0.95
+5  0.921 0.9686099       0.94
+6  0.954 0.9843750       0.88
+7     NA 0.9934066       0.93
+8     NA        NA       0.96
+9     NA        NA         NA
+10    NA        NA         NA
+11    NA        NA         NA
+12    NA        NA         NA
+13    NA        NA         NA
+14    NA        NA         NA
+15    NA        NA         NA
+16    NA        NA         NA
+17    NA        NA         NA
+18    NA        NA         NA
+19    NA        NA         NA
+20    NA        NA         NA
+21    NA        NA         NA
+22    NA        NA         NA
+23    NA        NA         NA
+24    NA        NA         NA
+25    NA        NA         NA
+26    NA        NA         NA
+27    NA        NA         NA
+28    NA        NA         NA
+29    NA        NA         NA
+30    NA        NA         NA
+31    NA        NA         NA
+32    NA        NA         NA
+33    NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 7.1941, df = 2, p-value = 0.0274
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+           2001  2019 
+2019       0.035 -    
+Allopatric 0.401 0.024
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-EXE"
+    2001 2019 Allopatric
+1  0.783   NA       0.90
+2  0.759   NA       0.94
+3     NA   NA       0.78
+4     NA   NA       0.12
+5     NA   NA       0.00
+6     NA   NA       0.00
+7     NA   NA       0.05
+8     NA   NA       0.23
+9     NA   NA       0.05
+10    NA   NA       0.86
+11    NA   NA       0.64
+12    NA   NA       0.51
+13    NA   NA       0.92
+14    NA   NA       0.96
+15    NA   NA       0.72
+16    NA   NA       0.63
+17    NA   NA       0.02
+18    NA   NA       0.58
+19    NA   NA       0.42
+20    NA   NA       0.52
+21    NA   NA       0.33
+22    NA   NA       0.00
+23    NA   NA       0.23
+24    NA   NA       0.66
+25    NA   NA       0.91
+26    NA   NA         NA
+27    NA   NA         NA
+28    NA   NA         NA
+29    NA   NA         NA
+30    NA   NA         NA
+31    NA   NA         NA
+32    NA   NA         NA
+33    NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 1.2366, df = 1, p-value = 0.2661
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001
+Allopatric 0.29
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-EXE"
+   2001      2019 Allopatric
+1    NA 0.9911765         NA
+2    NA 0.9863014         NA
+3    NA 0.9726277         NA
+4    NA        NA         NA
+5    NA        NA         NA
+6    NA        NA         NA
+7    NA        NA         NA
+8    NA        NA         NA
+9    NA        NA         NA
+10   NA        NA         NA
+11   NA        NA         NA
+12   NA        NA         NA
+13   NA        NA         NA
+14   NA        NA         NA
+15   NA        NA         NA
+16   NA        NA         NA
+17   NA        NA         NA
+18   NA        NA         NA
+19   NA        NA         NA
+20   NA        NA         NA
+21   NA        NA         NA
+22   NA        NA         NA
+23   NA        NA         NA
+24   NA        NA         NA
+25   NA        NA         NA
+26   NA        NA         NA
+27   NA        NA         NA
+28   NA        NA         NA
+29   NA        NA         NA
+30   NA        NA         NA
+31   NA        NA         NA
+32   NA        NA         NA
+33   NA        NA         NA
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F0-GXG"
+    2001      2019 Allopatric
+1  0.897 0.0000000       0.99
+2  0.974 0.9700000       0.99
+3  0.896 0.0000000       0.96
+4  0.951 0.9818182       0.99
+5     NA        NA       0.98
+6     NA        NA       0.98
+7     NA        NA       0.98
+8     NA        NA       0.98
+9     NA        NA       0.97
+10    NA        NA       1.00
+11    NA        NA       0.99
+12    NA        NA       0.98
+13    NA        NA       0.96
+14    NA        NA         NA
+15    NA        NA         NA
+16    NA        NA         NA
+17    NA        NA         NA
+18    NA        NA         NA
+19    NA        NA         NA
+20    NA        NA         NA
+21    NA        NA         NA
+22    NA        NA         NA
+23    NA        NA         NA
+24    NA        NA         NA
+25    NA        NA         NA
+26    NA        NA         NA
+27    NA        NA         NA
+28    NA        NA         NA
+29    NA        NA         NA
+30    NA        NA         NA
+31    NA        NA         NA
+32    NA        NA         NA
+33    NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 8.0446, df = 2, p-value = 0.01791
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001   2019  
+2019       0.8845 -     
+Allopatric 0.0094 0.0829
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-GXG"
+   2001 2019 Allopatric
+1    NA   NA       0.84
+2    NA   NA         NA
+3    NA   NA         NA
+4    NA   NA         NA
+5    NA   NA         NA
+6    NA   NA         NA
+7    NA   NA         NA
+8    NA   NA         NA
+9    NA   NA         NA
+10   NA   NA         NA
+11   NA   NA         NA
+12   NA   NA         NA
+13   NA   NA         NA
+14   NA   NA         NA
+15   NA   NA         NA
+16   NA   NA         NA
+17   NA   NA         NA
+18   NA   NA         NA
+19   NA   NA         NA
+20   NA   NA         NA
+21   NA   NA         NA
+22   NA   NA         NA
+23   NA   NA         NA
+24   NA   NA         NA
+25   NA   NA         NA
+26   NA   NA         NA
+27   NA   NA         NA
+28   NA   NA         NA
+29   NA   NA         NA
+30   NA   NA         NA
+31   NA   NA         NA
+32   NA   NA         NA
+33   NA   NA         NA
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F0-EXG"
+    2001      2019 Allopatric
+1  0.214 0.9736842          0
+2  0.910 0.9944238          0
+3  0.885 0.0000000          0
+4  0.752 0.8247734          0
+5  0.660 0.9043210          0
+6  1.000 0.0000000          0
+7  0.869 0.6666667          0
+8  0.934 0.1063830          0
+9  0.575 0.1063830         NA
+10 0.703 0.1000000         NA
+11 0.000 0.9312500         NA
+12 0.807 0.9854545         NA
+13    NA 0.8298279         NA
+14    NA 0.9759036         NA
+15    NA 0.1277372         NA
+16    NA 0.9583893         NA
+17    NA 0.8342644         NA
+18    NA 0.8807786         NA
+19    NA 1.0000000         NA
+20    NA 0.8449367         NA
+21    NA 0.8552124         NA
+22    NA 0.9574106         NA
+23    NA 0.1000000         NA
+24    NA        NA         NA
+25    NA        NA         NA
+26    NA        NA         NA
+27    NA        NA         NA
+28    NA        NA         NA
+29    NA        NA         NA
+30    NA        NA         NA
+31    NA        NA         NA
+32    NA        NA         NA
+33    NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 16.338, df = 2, p-value = 0.0002833
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001    2019   
+2019       0.70212 -      
+Allopatric 0.00043 0.00013
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F0-GXE"
+    2001 2019 Allopatric
+1  0.620   NA       0.97
+2  0.834   NA       0.86
+3  0.786   NA       0.81
+4     NA   NA       0.48
+5     NA   NA       0.97
+6     NA   NA         NA
+7     NA   NA         NA
+8     NA   NA         NA
+9     NA   NA         NA
+10    NA   NA         NA
+11    NA   NA         NA
+12    NA   NA         NA
+13    NA   NA         NA
+14    NA   NA         NA
+15    NA   NA         NA
+16    NA   NA         NA
+17    NA   NA         NA
+18    NA   NA         NA
+19    NA   NA         NA
+20    NA   NA         NA
+21    NA   NA         NA
+22    NA   NA         NA
+23    NA   NA         NA
+24    NA   NA         NA
+25    NA   NA         NA
+26    NA   NA         NA
+27    NA   NA         NA
+28    NA   NA         NA
+29    NA   NA         NA
+30    NA   NA         NA
+31    NA   NA         NA
+32    NA   NA         NA
+33    NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 1.102, df = 1, p-value = 0.2938
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001
+Allopatric 0.37
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-HXH"
+    2001 2019 Allopatric
+1  0.852   NA          0
+2     NA   NA          0
+3     NA   NA          0
+4     NA   NA          0
+5     NA   NA          0
+6     NA   NA          0
+7     NA   NA          0
+8     NA   NA          0
+9     NA   NA          0
+10    NA   NA          0
+11    NA   NA          0
+12    NA   NA          0
+13    NA   NA          0
+14    NA   NA          0
+15    NA   NA          0
+16    NA   NA          0
+17    NA   NA          0
+18    NA   NA          0
+19    NA   NA          0
+20    NA   NA          0
+21    NA   NA          0
+22    NA   NA          0
+23    NA   NA          0
+24    NA   NA          0
+25    NA   NA          0
+26    NA   NA         NA
+27    NA   NA         NA
+28    NA   NA         NA
+29    NA   NA         NA
+30    NA   NA         NA
+31    NA   NA         NA
+32    NA   NA         NA
+33    NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 25, df = 1, p-value = 5.733e-07
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001   
+Allopatric 1.6e-06
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-HXG"
+    2001 2019 Allopatric
+1  0.749   NA          0
+2  0.565   NA          0
+3     NA   NA          0
+4     NA   NA          0
+5     NA   NA          0
+6     NA   NA          0
+7     NA   NA         NA
+8     NA   NA         NA
+9     NA   NA         NA
+10    NA   NA         NA
+11    NA   NA         NA
+12    NA   NA         NA
+13    NA   NA         NA
+14    NA   NA         NA
+15    NA   NA         NA
+16    NA   NA         NA
+17    NA   NA         NA
+18    NA   NA         NA
+19    NA   NA         NA
+20    NA   NA         NA
+21    NA   NA         NA
+22    NA   NA         NA
+23    NA   NA         NA
+24    NA   NA         NA
+25    NA   NA         NA
+26    NA   NA         NA
+27    NA   NA         NA
+28    NA   NA         NA
+29    NA   NA         NA
+30    NA   NA         NA
+31    NA   NA         NA
+32    NA   NA         NA
+33    NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 6.8571, df = 1, p-value = 0.008829
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001 
+Allopatric 0.016
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-GXH"
+   2001 2019 Allopatric
+1    NA   NA  0.8688213
+2    NA   NA         NA
+3    NA   NA         NA
+4    NA   NA         NA
+5    NA   NA         NA
+6    NA   NA         NA
+7    NA   NA         NA
+8    NA   NA         NA
+9    NA   NA         NA
+10   NA   NA         NA
+11   NA   NA         NA
+12   NA   NA         NA
+13   NA   NA         NA
+14   NA   NA         NA
+15   NA   NA         NA
+16   NA   NA         NA
+17   NA   NA         NA
+18   NA   NA         NA
+19   NA   NA         NA
+20   NA   NA         NA
+21   NA   NA         NA
+22   NA   NA         NA
+23   NA   NA         NA
+24   NA   NA         NA
+25   NA   NA         NA
+26   NA   NA         NA
+27   NA   NA         NA
+28   NA   NA         NA
+29   NA   NA         NA
+30   NA   NA         NA
+31   NA   NA         NA
+32   NA   NA         NA
+33   NA   NA         NA
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-HXE"
+   2001 2019 Allopatric
+1    NA   NA          0
+2    NA   NA          0
+3    NA   NA          0
+4    NA   NA          0
+5    NA   NA          0
+6    NA   NA         NA
+7    NA   NA         NA
+8    NA   NA         NA
+9    NA   NA         NA
+10   NA   NA         NA
+11   NA   NA         NA
+12   NA   NA         NA
+13   NA   NA         NA
+14   NA   NA         NA
+15   NA   NA         NA
+16   NA   NA         NA
+17   NA   NA         NA
+18   NA   NA         NA
+19   NA   NA         NA
+20   NA   NA         NA
+21   NA   NA         NA
+22   NA   NA         NA
+23   NA   NA         NA
+24   NA   NA         NA
+25   NA   NA         NA
+26   NA   NA         NA
+27   NA   NA         NA
+28   NA   NA         NA
+29   NA   NA         NA
+30   NA   NA         NA
+31   NA   NA         NA
+32   NA   NA         NA
+33   NA   NA         NA
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F1-EXH"
+    2001 2019 Allopatric
+1  0.273   NA       0.00
+2  0.480   NA       0.00
+3  0.634   NA       0.00
+4  0.673   NA       0.00
+5     NA   NA       0.00
+6     NA   NA       0.00
+7     NA   NA       0.00
+8     NA   NA       0.42
+9     NA   NA       0.00
+10    NA   NA       0.00
+11    NA   NA         NA
+12    NA   NA         NA
+13    NA   NA         NA
+14    NA   NA         NA
+15    NA   NA         NA
+16    NA   NA         NA
+17    NA   NA         NA
+18    NA   NA         NA
+19    NA   NA         NA
+20    NA   NA         NA
+21    NA   NA         NA
+22    NA   NA         NA
+23    NA   NA         NA
+24    NA   NA         NA
+25    NA   NA         NA
+26    NA   NA         NA
+27    NA   NA         NA
+28    NA   NA         NA
+29    NA   NA         NA
+30    NA   NA         NA
+31    NA   NA         NA
+32    NA   NA         NA
+33    NA   NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 9.8063, df = 1, p-value = 0.001739
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+           2001  
+Allopatric 0.0023
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-HXH"
+    2001       2019 Allopatric
+1  0.764 0.39506173         NA
+2  0.618 0.03773585         NA
+3  0.759 0.02604167         NA
+4  0.534 0.43023256         NA
+5  0.432 0.30219780         NA
+6  0.639 0.00000000         NA
+7  0.654         NA         NA
+8  0.756         NA         NA
+9  0.865         NA         NA
+10    NA         NA         NA
+11    NA         NA         NA
+12    NA         NA         NA
+13    NA         NA         NA
+14    NA         NA         NA
+15    NA         NA         NA
+16    NA         NA         NA
+17    NA         NA         NA
+18    NA         NA         NA
+19    NA         NA         NA
+20    NA         NA         NA
+21    NA         NA         NA
+22    NA         NA         NA
+23    NA         NA         NA
+24    NA         NA         NA
+25    NA         NA         NA
+26    NA         NA         NA
+27    NA         NA         NA
+28    NA         NA         NA
+29    NA         NA         NA
+30    NA         NA         NA
+31    NA         NA         NA
+32    NA         NA         NA
+33    NA         NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 10.125, df = 1, p-value = 0.001463
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001 
+2019 4e-04
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-HXG"
+    2001  2019 Allopatric
+1  0.268 0.072         NA
+2     NA    NA         NA
+3     NA    NA         NA
+4     NA    NA         NA
+5     NA    NA         NA
+6     NA    NA         NA
+7     NA    NA         NA
+8     NA    NA         NA
+9     NA    NA         NA
+10    NA    NA         NA
+11    NA    NA         NA
+12    NA    NA         NA
+13    NA    NA         NA
+14    NA    NA         NA
+15    NA    NA         NA
+16    NA    NA         NA
+17    NA    NA         NA
+18    NA    NA         NA
+19    NA    NA         NA
+20    NA    NA         NA
+21    NA    NA         NA
+22    NA    NA         NA
+23    NA    NA         NA
+24    NA    NA         NA
+25    NA    NA         NA
+26    NA    NA         NA
+27    NA    NA         NA
+28    NA    NA         NA
+29    NA    NA         NA
+30    NA    NA         NA
+31    NA    NA         NA
+32    NA    NA         NA
+33    NA    NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 1, df = 1, p-value = 0.3173
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001
+2019 1   
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-GXH"
+   2001     2019 Allopatric
+1    NA 0.137931         NA
+2    NA       NA         NA
+3    NA       NA         NA
+4    NA       NA         NA
+5    NA       NA         NA
+6    NA       NA         NA
+7    NA       NA         NA
+8    NA       NA         NA
+9    NA       NA         NA
+10   NA       NA         NA
+11   NA       NA         NA
+12   NA       NA         NA
+13   NA       NA         NA
+14   NA       NA         NA
+15   NA       NA         NA
+16   NA       NA         NA
+17   NA       NA         NA
+18   NA       NA         NA
+19   NA       NA         NA
+20   NA       NA         NA
+21   NA       NA         NA
+22   NA       NA         NA
+23   NA       NA         NA
+24   NA       NA         NA
+25   NA       NA         NA
+26   NA       NA         NA
+27   NA       NA         NA
+28   NA       NA         NA
+29   NA       NA         NA
+30   NA       NA         NA
+31   NA       NA         NA
+32   NA       NA         NA
+33   NA       NA         NA
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-HXE"
+    2001      2019 Allopatric
+1  0.000 0.9834515         NA
+2  0.900 0.0000000         NA
+3  0.320        NA         NA
+4  0.000        NA         NA
+5  0.924        NA         NA
+6  0.839        NA         NA
+7  0.000        NA         NA
+8  0.000        NA         NA
+9     NA        NA         NA
+10    NA        NA         NA
+11    NA        NA         NA
+12    NA        NA         NA
+13    NA        NA         NA
+14    NA        NA         NA
+15    NA        NA         NA
+16    NA        NA         NA
+17    NA        NA         NA
+18    NA        NA         NA
+19    NA        NA         NA
+20    NA        NA         NA
+21    NA        NA         NA
+22    NA        NA         NA
+23    NA        NA         NA
+24    NA        NA         NA
+25    NA        NA         NA
+26    NA        NA         NA
+27    NA        NA         NA
+28    NA        NA         NA
+29    NA        NA         NA
+30    NA        NA         NA
+31    NA        NA         NA
+32    NA        NA         NA
+33    NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 0.31034, df = 1, p-value = 0.5775
+
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  cross$Value and cross$Year 
+
+     2001
+2019 0.68
+
+P value adjustment method: none 
+[1] "######################################################################"
+[1] "Fertility"
+[1] "F2-EXH"
+    2001      2019 Allopatric
+1  0.853 1.0000000         NA
+2  0.879 0.2600000         NA
+3  0.801 0.6862745         NA
+4  0.725        NA         NA
+5  0.680        NA         NA
+6  0.610        NA         NA
+7  0.605        NA         NA
+8  0.660        NA         NA
+9  0.904        NA         NA
+10 0.686        NA         NA
+11 0.915        NA         NA
+12    NA        NA         NA
+13    NA        NA         NA
+14    NA        NA         NA
+15    NA        NA         NA
+16    NA        NA         NA
+17    NA        NA         NA
+18    NA        NA         NA
+19    NA        NA         NA
+20    NA        NA         NA
+21    NA        NA         NA
+22    NA        NA         NA
+23    NA        NA         NA
+24    NA        NA         NA
+25    NA        NA         NA
+26    NA        NA         NA
+27    NA        NA         NA
+28    NA        NA         NA
+29    NA        NA         NA
+30    NA        NA         NA
+31    NA        NA         NA
+32    NA        NA         NA
+33    NA        NA         NA
+
+	Kruskal-Wallis rank sum test
+
+data:  cross
+Kruskal-Wallis chi-squared = 0.0060606, df = 1, p-value = 0.9379
+
+
+	Pairwise comparisons using Wilcoxon rank sum exact test 
+
+data:  cross$Value and cross$Year 
+
+     2001
+2019 1   
+
+P value adjustment method: none 
+[1] ""
+[1] "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+[1] "FECUNDITY SUMMARIES"
+$`2001`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.6115  0.7520  0.6779  0.8820  1.0000 
+
+$`2019`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.1117  0.8396  0.6083  0.9734  1.0000 
+
+$Allopatric
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.0000  0.0000  0.0000  0.3579  0.8744  1.0000 
+
+[1] "sd:"
+      2001       2019 Allopatric 
+ 0.2684181  0.4117009  0.4276300 
+[1] "SE:"
+      2001       2019 Allopatric 
+0.03381751 0.05822331 0.04134055 

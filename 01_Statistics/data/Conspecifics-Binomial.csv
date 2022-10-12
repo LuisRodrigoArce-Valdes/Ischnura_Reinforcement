@@ -1,0 +1,7 @@
+Barrier,Generation,Cross,Type,Success-2001,Fails-2001,Success-2019,Fails-2019,Succes-Allopatric,Fails-Allopatric
+Mechanical,F0,EXE ,F0-EXE ,NA,NA,34,19,26,3
+Mechanical,F0,GXG,F0-GXG,NA,NA,10,0,4,1
+Tactile,F0,EXE ,F0-EXE ,NA,NA,19,15,23,3
+Tactile,F0,GXG,F0-GXG,NA,NA,10,0,1,3
+Oviposition,F0,EXE ,F0-EXE ,8,2,18,3,33,1
+Oviposition,F0,GXG,F0-GXG,4,0,12,0,14,1
