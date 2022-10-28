@@ -14,8 +14,8 @@ Barriers_Calculation.xlsx: We used this excel file to estimate barriers starting
 - data: Contains an excel copy-pasted and formated from the Barriers_Calculation.xlsx file ready to be used in R, and .csv files from each excel page.
 - results: Contains the manuscript figures as well as a power point file used for the final editions.
 	
-02_Conspecific_fecundities directory contains all files related with the conspecific fecundity figure of the supplementary data.
+03_Asymetries directory contains all files related with the asimmetries figure and statistical tests.
 
-- bin: Contains the R script.
-- data: Contains conspecific fecundity data in csv and excel format.
-- results: Contains the output figure.
+- bin
+- data
+- results
