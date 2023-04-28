@@ -1,0 +1,144 @@
+WITHIN 2019 STATISTICAL TESTS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+First we will test if there are differences between (LaxeXCachadas) and (LaxeXMontalvo), which are the two interspecific population crosses:
+### Mechanical:
+
+Call:
+glm(formula = Mechanical.Sucess ~ Population, family = "binomial", 
+    data = ForGLMs, weights = Mechanical.N)
+
+Deviance Residuals: 
+   Min      1Q  Median      3Q     Max  
+-2.688  -1.098   1.020   1.067   1.848  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)               0.3830     0.3348   1.144    0.253
+PopulationLaxeXMontalvo  -0.1173     0.4347  -0.270    0.787
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 88.803  on 58  degrees of freedom
+Residual deviance: 88.731  on 57  degrees of freedom
+AIC: 106.99
+
+Number of Fisher Scoring iterations: 4
+
+### Mechanical-Tactile:
+
+Call:
+glm(formula = Mechanical.Tactile.Success ~ Population, family = "binomial", 
+    data = ForGLMs, weights = Mechanical_Tactile.N)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.5674  -1.2331   0.7181   0.9005   1.5597  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)  
+(Intercept)               1.2238     0.5087   2.405   0.0162 *
+PopulationLaxeXMontalvo  -0.5306     0.6394  -0.830   0.4066  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 59.707  on 45  degrees of freedom
+Residual deviance: 59.000  on 44  degrees of freedom
+  (13 observations deleted due to missingness)
+AIC: 64.387
+
+Number of Fisher Scoring iterations: 4
+
+### Oviposition:
+
+Call:
+glm(formula = ClutchesWEggs ~ Population, family = "binomial", 
+    data = ForGLMs)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-2.22931   0.00005   0.00005   0.41716   0.41716  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)  
+(Intercept)                2.398      1.044   2.296   0.0217 *
+PopulationLaxeXMontalvo   18.168   4917.520   0.004   0.9971  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8.3972  on 24  degrees of freedom
+Residual deviance: 6.8841  on 23  degrees of freedom
+  (34 observations deleted due to missingness)
+AIC: 10.884
+
+Number of Fisher Scoring iterations: 19
+
+### Fecundity:
+Testing for normality:
+
+	Shapiro-Wilk normality test
+
+data:  ForGLMs[ForGLMs$Population == "LaxeXMontalvo", "EggsPerClutch"]
+W = 0.80336, p-value = 0.007474
+
+
+	Shapiro-Wilk normality test
+
+data:  ForGLMs[ForGLMs$Population == "LaxeXCachadas", "EggsPerClutch"]
+W = 0.88866, p-value = 0.1338
+
+Only one group distributes normally, I will use the Poisson family:
+
+Call:
+glm(formula = ClutchesWEggs ~ Population, family = "poisson", 
+    data = ForGLMs)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.35401   0.00000   0.00000   0.08577   0.08577  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)             -0.08701    0.30151  -0.289    0.773
+PopulationLaxeXMontalvo  0.08701    0.40967   0.212    0.832
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 1.9595  on 24  degrees of freedom
+Residual deviance: 1.9143  on 23  degrees of freedom
+  (34 observations deleted due to missingness)
+AIC: 53.914
+
+Number of Fisher Scoring iterations: 4
+
+### Fertility:
+
+Call:
+glm(formula = Fertility ~ Population, family = "binomial", data = ForGLMs, 
+    weights = Fertility_N)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-34.742   -5.393    1.355    6.334   14.179  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              1.46152    0.03708  39.416   <2e-16 ***
+PopulationLaxeXMontalvo  0.63031    0.06636   9.499   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 2757.2  on 22  degrees of freedom
+Residual deviance: 2661.9  on 21  degrees of freedom
+  (36 observations deleted due to missingness)
+AIC: 2754.7
+
+Number of Fisher Scoring iterations: 4
+
+STATISTICALLY SIGNIFICANT DIFFERENCES!
