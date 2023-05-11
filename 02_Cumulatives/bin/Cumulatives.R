@@ -12,10 +12,10 @@ Palette2019 <- colorRampPalette(c("skyblue1","navyblue"))
 PaletteAllopatric <- colorRampPalette(c("lightpink1","red3"))
 
 # Text size in points
-s <- 8
+s <- 12
 
 # Reading data ####
-cumulative <- read.csv("../data/Relatives.csv", header = T, encoding = "UTF-8")
+cumulative <- read.csv("../data/Cumulatives.csv", header = T, encoding = "UTF-8")
 colnames(cumulative)[1] <- "Ecology"
 colnames(cumulative)[9] <- "Mechanical-Tactile"
 
@@ -52,10 +52,11 @@ rm(Colors)
 # Filtering
 Prezygotics %>%
   ggplot() +
-  facet_wrap(. ~ Cross, ncol = 2) +
+  facet_wrap(Database ~ Cross, ncol = 2, scales = "free") +
   geom_line(aes(x=Barrier, y=Isolation, color=Population, group=Population)) +
   geom_point(aes(x=Barrier, y=Isolation, color=Population, shape=Database)) +
   scale_color_manual(values = colors) +
+  scale_y_continuous(n.breaks = 5, limits = c(0,1)) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
@@ -63,13 +64,15 @@ Prezygotics %>%
         strip.text = element_text(hjust = 0),
         text = element_text(family = "serif", size = s),
         axis.text.x = element_text(hjust = 1, angle = 15),
+        legend.text = element_text(size = s/2),
+        legend.title = element_text(size = s/1.5),
         legend.position = "bottom") -> p
 
 # Converting to dml
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../data/PNAS_Large_Image.pptx") %>%
+officer::read_pptx("../data/Base_PPTX/PNAS_Tall_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
@@ -115,7 +118,7 @@ postzygotics %>%
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../data/PNAS_Large_Image.pptx") %>%
+officer::read_pptx("../data/Base_PPTX/PNAS_Large_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
