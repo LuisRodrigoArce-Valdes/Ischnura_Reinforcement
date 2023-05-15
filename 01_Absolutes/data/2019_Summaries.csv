@@ -1,0 +1,11 @@
+﻿Group,Include,Mechanical-N,Mechanical-Success,Mechanical-Isolation,Mechanical-Tactile-N,Mechanical-Tactile-Success,Mechanical-Tactile-Isolation,Oviposition-N,Oviposition-Success,Oviposition-Isolation,Fecundity-N,Fecundity-Success,Fecundity-Isolation,Fertility-N,Fertility-Success,Fertility-Isolation
+Conspecifics-elegansXelegans-LaxeXLaxe,Y,31,24.00,0.226,24,18.00,0.250,18,15,0.167,15,103.2,0.586,15,0.900,0.100
+Conspecifics-graellsiiXgraellsii-MontalvoXMontalvo,Y,10,10.00,0.000,10,10.00,0.000,12,12,0.000,12,91.9,0.632,12,0.488,0.512
+Heterospecifics-elegansXgraellsii-LaxeXCachadas,Y,25,21.00,0.160,21,16.00,0.238,12,11,0.083,11,144.2,0.422,11,0.760,0.240
+Heterospecifics-elegansXgraellsii-LaxeXMontalvo,Y,34,25.00,0.265,25,18.00,0.280,13,13,0.000,13,103.6,0.585,13,0.549,0.451
+Heterospecifics-graellsiiXelegans-CachadasXLaxe,Y,18,1.00,0.944,1,0.00,1.000,0,0,NA,0,NA,NA,0,NA,NA
+Postzygotics-elegansXhybrid-SymEleX(H:LaxeXMontalvo),Y,15,11.00,0.267,11,10.00,0.091,11,9,0.182,9,124.3,0.502,9,0.649,0.351
+Postzygotics-graellsiiXhybrid-SymGraX(H:LaxeXMontalvo),Y,1,1.00,0.000,1,1.00,0.000,1,1,0.000,1,38.7,0.845,1,0.138,0.862
+Postzygotics-hybridXelegans-(H:LaxeXMontalvo)XSymEle,Y,8,3.00,0.625,3,2.00,0.333,2,2,0.000,2,71.2,0.715,2,0.492,0.508
+Postzygotics-hybridXgraellsii-(H:LaxeXMontalvo)XSymGra,Y,5,5.00,0.000,5,4.00,0.200,4,4,0.000,4,110.4,0.557,4,0.072,0.928
+Postzygotics-hybridXhybrid-(H:LaxeXMontalvo)X(H:LaxeXMontalvo),Y,18,16.00,0.111,16,16.00,0.000,20,17,0.150,17,69.3,0.722,17,0.199,0.801

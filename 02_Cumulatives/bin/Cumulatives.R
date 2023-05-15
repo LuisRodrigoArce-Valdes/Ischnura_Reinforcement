@@ -14,11 +14,8 @@ PaletteAllopatric <- colorRampPalette(c("lightpink1","red3"))
 # Text size in points
 s <- 12
 
-# Do you want to use "Scaled" or "Ceiling" data?
-math <- "Ceiling"
-
 # Tidying data ####
-cumulative <- read.csv(paste0("../data/Cumulatives_",math,".csv"), header = T, encoding = "UTF-8")
+cumulative <- read.csv(paste0("../data/Cumulatives",".csv"), header = T, encoding = "UTF-8")
 colnames(cumulative)[1] <- "Ecology"
 colnames(cumulative)[7] <- "Mechanical-Tactile"
 
@@ -82,7 +79,7 @@ officer::read_pptx("../../00_BasePPTX/PNAS_Tall_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
-  print(target = paste0("../figures/01_Conspecifics_",math,".pptx"))
+  print(target = paste0("../figures/01_Conspecifics",".pptx"))
 
 # Heterospecific crosses ####
 rm(Conspecifics)
@@ -135,7 +132,7 @@ officer::read_pptx("../../00_BasePPTX/PNAS_Tall_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
-  print(target = paste0("../figures/02_Heterospecifics_",math,".pptx"))
+  print(target = paste0("../figures/02_Heterospecifics",".pptx"))
 
 # Postzygotics barriers ####
 rm(Heterospecifics)
@@ -172,4 +169,4 @@ officer::read_pptx("../../00_BasePPTX/PNAS_Big_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
-  print(target = paste0("../figures/03_Postzygotics_",math,".pptx"))
+  print(target = paste0("../figures/03_Postzygotics",".pptx"))
