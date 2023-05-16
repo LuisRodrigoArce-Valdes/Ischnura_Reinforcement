@@ -1,0 +1,385 @@
+[1] ""
+[1] "######################"
+[1] "mechanicals"
+Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+     (Intrc) Cross Eclgy Ppltn df   logLik   AICc   delta weight
+5  1.957e+01                 + 21  -51.392  151.0    0.00  0.486
+7  1.957e+01           +     + 21  -51.392  151.0    0.00  0.486
+6 -8.909e+13     +           + 23  -51.612  156.8    5.76  0.027
+4  3.991e+00     +     +        6  -84.545  181.6   30.58  0.000
+3  2.262e+00           +        2  -96.419  196.9   45.88  0.000
+2  2.015e+00     +              5  -96.243  202.9   51.83  0.000
+1  7.376e-01                    1 -107.015  216.1   65.03  0.000
+8  9.007e+15     +     +     + 21 -937.135 1922.5 1771.49  0.000
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+3 20.5700           +  6 -15.276 44.1  0.00    0.5
+4 20.5700     +     +  6 -15.276 44.1  0.00    0.5
+2 18.5700     +        2 -31.092 66.4 22.33    0.0
+1  0.4855              1 -41.865 85.8 41.74    0.0
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "elegansXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+1   2.015              1 -12.315 26.8  0.00  0.260
+3  20.570           +  4  -8.699 26.8  0.02  0.257
+4  20.570     +     +  4  -8.699 26.8  0.02  0.257
+2  18.570     +        2 -11.326 27.0  0.28  0.226
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXgraellsii"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+3   1.792           +  4  -5.742 21.1  0.00  0.464
+4   1.792     +     +  4  -5.742 21.1  0.00  0.464
+1   1.833              1 -11.635 25.4  4.27  0.055
+2   1.792     +        2 -11.632 27.7  6.58  0.017
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXelegans"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+   (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+3  1.09900           +  4 -18.972 47.3  0.00  0.329
+4  1.09900     +     +  4 -18.972 47.3  0.00  0.329
+2  1.09900     +        2 -21.608 47.6  0.31  0.281
+1 -0.05716              1 -24.246 50.6  3.34  0.062
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "graellsiiXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+2 18.5700     +        2 -4.188 14.4  0.00  0.391
+1 -0.2231              1 -6.183 14.9  0.56  0.296
+3 19.5700           +  3 -2.703 16.2  1.83  0.157
+4 19.5700     +     +  3 -2.703 16.2  1.83  0.157
+Models ranked by AICc(x) 
+[1] ""
+[1] "######################"
+[1] "mechanical.tactile"
+Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+    (Intrc) Cross Eclgy Ppltn df  logLik  AICc delta weight
+3 3.135e+00           +        2 -43.943  92.0  0.00  0.557
+4 4.161e+00     +     +        6 -40.180  93.1  1.14  0.314
+5 2.833e+00                 + 17 -28.416  97.1  5.15  0.042
+6 1.946e+00     +           + 17 -28.416  97.1  5.15  0.042
+1 1.752e+00                    1 -48.176  98.4  6.39  0.023
+8 1.152e+14     +     +     + 18 -28.432 100.0  8.00  0.010
+7 2.737e+00           +     + 18 -28.745 100.6  8.62  0.007
+2 2.197e+00     +              5 -45.630 101.8  9.82  0.004
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+3   2.833           +  4  -6.111 21.4  0.00  0.394
+4   2.833     +     +  4  -6.111 21.4  0.00  0.394
+1   2.485              1 -10.576 23.3  1.86  0.155
+2   2.833     +        2 -10.466 25.3  3.87  0.057
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "elegansXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+1   2.197              1 -9.752 21.6  0.00  0.701
+2   1.792     +        2 -9.666 23.8  2.13  0.242
+3   1.792           +  4 -9.236 28.1  6.42  0.028
+4   1.792     +     +  4 -9.236 28.1  6.42  0.028
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXgraellsii"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+2  19.570     +        2  -8.972 22.5  0.00  0.357
+3  19.570           +  3  -7.795 22.7  0.24  0.317
+4  19.570     +     +  3  -7.795 22.7  0.24  0.317
+1   1.153              1 -13.777 29.7  7.24  0.010
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXelegans"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+2  19.570     +        2 -5.545 15.9  0.00  0.597
+3  19.570           +  3 -5.275 18.4  2.45  0.175
+4  19.570     +     +  3 -5.275 18.4  2.45  0.175
+1   1.179              1 -9.275 20.8  4.87  0.052
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "graellsiiXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+1   1.099              1 -2.249  8.5  0.00  0.994
+2  19.570     +        2 -1.386 18.8 10.27  0.006
+3  23.570           +  3  0.000  Inf   Inf  0.000
+4  23.570     +     +  3  0.000  Inf   Inf  0.000
+Models ranked by AICc(x) 
+[1] ""
+[1] "######################"
+[1] "oviposition"
+Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+    (Intrc) Cross Eclgy Ppltn df  logLik  AICc delta weight
+3 1.431e+00           +        2 -48.435 101.0  0.00  0.611
+1 1.867e+00                    1 -49.994 102.0  1.05  0.361
+4 1.605e+00     +     +        6 -47.796 108.3  7.32  0.016
+2 2.169e+00     +              5 -49.078 108.7  7.69  0.013
+5 1.569e+00                 + 17 -43.585 126.8 25.82  0.000
+7 1.600e+00           +     + 18 -43.808 129.9 28.98  0.000
+8 6.118e+14     +     +     + 19 -45.160 135.4 34.46  0.000
+6 1.610e+00     +           + 19 -52.405 149.9 48.95  0.000
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "elegansXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+1   2.169              1 -12.897 27.9  0.00  0.730
+2   2.303     +        2 -12.885 30.1  2.20  0.243
+3   2.303           +  5 -12.009 35.8  7.93  0.014
+4   2.303     +     +  5 -12.009 35.8  7.93  0.014
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
+1   1.833              1 -23.269 48.6  0.00  0.408
+3   1.569           +  3 -21.785 50.0  1.41  0.202
+4   1.569     +     +  3 -21.785 50.0  1.41  0.202
+2   1.569     +        2 -22.976 50.2  1.56  0.187
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXgraellsii"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+2   1.099     +        2 -4.499 14.0  0.00  0.496
+1   1.872              1 -5.890 14.1  0.09  0.474
+3   1.099           +  4 -4.499 21.0  7.00  0.015
+4   1.099     +     +  4 -4.499 21.0  7.00  0.015
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXelegans"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+2  0.5108     +        2 -5.293 15.8  0.00  0.480
+1  1.2040              1 -7.023 16.4  0.62  0.351
+3  0.5108           +  3 -5.293 19.3  3.47  0.085
+4  0.5108     +     +  3 -5.293 19.3  3.47  0.085
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "graellsiiXhybrid"
+Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik AICc delta weight
+2   23.57     +        2      0   -8     0  0.333
+3   23.57           +  2      0   -8     0  0.333
+4   23.57     +     +  2      0   -8     0  0.333
+1   23.57              1      0  Inf   Inf  0.000
+Models ranked by AICc(x) 
+[1] ""
+[1] "######################"
+[1] "fecundity"
+Global model call: glm(formula = Param ~ Ecology + Cross + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross Eclgy Ppltn df   logLik   AICc delta weight
+5   10.88                 + 18 -641.542 1326.2  0.00  0.249
+6  161.90     +           + 18 -641.542 1326.2  0.00  0.249
+7   10.88           +     + 18 -641.542 1326.2  0.00  0.249
+8  298.60     +     +     + 18 -641.542 1326.2  0.00  0.249
+3   27.08           +        3 -664.345 1334.9  8.70  0.003
+4   51.60     +     +        7 -661.733 1338.5 12.30  0.001
+1   72.06                    2 -675.832 1355.8 29.56  0.000
+2  102.40     +              6 -671.875 1356.5 30.32  0.000
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "elegansXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df   logLik  AICc delta weight
+3   69.93           +  6 -216.778 448.4  0.00  0.293
+4   69.93     +     +  6 -216.778 448.4  0.00  0.293
+1  102.40              2 -222.160 448.7  0.32  0.250
+2   69.93     +        3 -221.392 449.5  1.16  0.164
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df   logLik  AICc delta weight
+3   10.88           +  4 -285.661 580.2  0.00    0.5
+4   10.88     +     +  4 -285.661 580.2  0.00    0.5
+2   10.88     +        3 -295.619 597.7 17.57    0.0
+1   54.94              2 -304.393 613.0 32.87    0.0
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXgraellsii"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
+2   2.722     +        3 -71.793 152.3  0.00  0.660
+3   2.722           +  5 -68.355 155.3  3.03  0.145
+4   2.722     +     +  5 -68.355 155.3  3.03  0.145
+1  66.360              2 -76.122 157.4  5.19  0.049
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXelegans"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
+1   50.90              2 -55.605 116.9  0.00  0.629
+2   18.77     +        3 -54.093 118.2  1.26  0.335
+3   18.77           +  4 -54.012 124.0  7.10  0.018
+4   18.77     +     +  4 -54.012 124.0  7.10  0.018
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "graellsiiXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik   AICc  delta weight
+2   175.3     +        3  61.625 -129.2   0.00  0.333
+3   175.3           +  3  61.625 -129.2   0.00  0.333
+4   175.3     +     +  3  61.625 -129.2   0.00  0.333
+1   107.0              2 -11.287   14.6 143.82  0.000
+Models ranked by AICc(x) 
+[1] ""
+[1] "######################"
+[1] "fertility"
+Global model call: glm(formula = Param ~ Ecology + Cross + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+    (Intrc) Cross Eclgy Ppltn df  logLik  AICc  delta weight
+5 4.713e-17                 + 18  41.579 -37.5   0.00   0.25
+6 7.141e-01     +           + 18  41.579 -37.5   0.00   0.25
+7 7.022e-17           +     + 18  41.579 -37.5   0.00   0.25
+8 1.445e+00     +     +     + 18  41.579 -37.5   0.00   0.25
+4 1.470e-01     +     +        7   8.890  -2.4  35.11   0.00
+3 2.801e-02           +        3   3.034   0.2  37.74   0.00
+2 4.630e-01     +              6 -25.337  63.7 101.21   0.00
+1 2.798e-01                    2 -32.674  69.5 107.01   0.00
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+     (Intrc) Eclgy Ppltn df logLik  AICc delta weight
+3 -3.556e-17           +  4 37.177 -65.2  0.00    0.5
+4  7.111e-17     +     +  4 37.177 -65.2  0.00    0.5
+2  0.000e+00     +        3 13.613 -20.5 44.64    0.0
+1  1.849e-01              2 -7.003  18.3 83.52    0.0
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "elegansXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
+2 0.04195     +        3   9.138 -11.3  0.00  0.567
+3 0.04195           +  6  12.605  -9.4  1.92  0.217
+4 0.04195     +     +  6  12.605  -9.4  1.92  0.217
+1 0.46300              2 -10.937  26.3 37.65  0.000
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXelegans"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+     (Intrc) Eclgy Ppltn df logLik AICc delta weight
+1  1.883e-01              2 -4.438 14.6  0.00  0.644
+2  0.000e+00     +        3 -3.004 16.0  1.42  0.317
+3  0.000e+00           +  4 -2.793 21.6  7.00  0.019
+4 -1.755e-17     +     +  4 -2.793 21.6  7.00  0.019
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "graellsiiXhybrid"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Eclgy Ppltn df logLik   AICc delta weight
+2  0.8688     +        3 69.927 -145.9   0.0  0.333
+3  0.8688           +  3 69.927 -145.9   0.0  0.333
+4  0.8688     +     +  3 69.927 -145.9   0.0  0.333
+1  0.5034              2 -0.825   -6.4 139.5  0.000
+Models ranked by AICc(x) 
+[1] "%%%%%"
+[1] "hybridXgraellsii"
+Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
+    data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+     (Intrc) Eclgy Ppltn df logLik  AICc delta weight
+3 -1.317e-17           +  5 17.717 -10.4  0.00  0.500
+4 -1.755e-17     +     +  5 17.717 -10.4  0.00  0.500
+2  3.511e-17     +        3  3.809   2.4 12.82  0.001
+1  1.654e-01              2 -0.775   7.3 17.70  0.000
+Models ranked by AICc(x) 
