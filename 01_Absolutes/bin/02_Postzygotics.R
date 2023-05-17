@@ -34,7 +34,7 @@ colnames(summaries.2019)[1] <- "Group"
 full.2019 %>%
   filter(Group %in% summaries.2019[summaries.2019$Include == "Y","Group"]) %>%
   filter(Pair != "0") %>%
-  select(Group, Mechanical.Sucess, Mechanical.Tactile.Success, ClutchesWEggs, EggsPerClutch, Fertility) %>%
+  select(Group, Mechanical.Sucess, Mechanical.Tactile.Success, ClutchesWEggs, EggsPerClutch, Fertility, Fertility_N) %>%
   separate(Group, into = c("Type","Cross","Population"), sep = "-") -> full.2019
 rm(summaries.2019)
 
@@ -494,15 +494,15 @@ fertility <- list()
 
 full.2019 %>%
   filter(Type=="Postzygotics") %>%
-  select(Cross, Population, Fertility) -> fertility$Db2019
+  select(Cross, Population, Fertility, Fertility_N) -> fertility$Db2019
 
 allopatrics.fertilities %>%
   filter(Type=="Postzygotics") %>%
-  select(Cross, Population, Fertility) -> fertility$DbAllopatrics
+  select(Cross, Population, Fertility, Fertility_N) -> fertility$DbAllopatrics
 
 fertilities.2001 %>%
   filter(Type=="Postzygotics") %>%
-  select(Cross, Population, Fertility) -> fertility$Db2001
+  select(Cross, Population, Fertility, Fertility_N) -> fertility$Db2001
 
 fertility %>%
   bind_rows(.id = "Ecology") %>%

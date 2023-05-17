@@ -1,385 +1,702 @@
 [1] ""
 [1] "######################"
 [1] "mechanicals"
-Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+Success ~ Ecology + Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
 ---
 Model selection table 
-     (Intrc) Cross Eclgy Ppltn df   logLik   AICc   delta weight
-5  1.957e+01                 + 21  -51.392  151.0    0.00  0.486
-7  1.957e+01           +     + 21  -51.392  151.0    0.00  0.486
-6 -8.909e+13     +           + 23  -51.612  156.8    5.76  0.027
-4  3.991e+00     +     +        6  -84.545  181.6   30.58  0.000
-3  2.262e+00           +        2  -96.419  196.9   45.88  0.000
-2  2.015e+00     +              5  -96.243  202.9   51.83  0.000
-1  7.376e-01                    1 -107.015  216.1   65.03  0.000
-8  9.007e+15     +     +     + 21 -937.135 1922.5 1771.49  0.000
+  (Intrc) Cross Eclgy df   logLik  AICc delta weight
+4  3.9910     +     +  6  -84.545 181.6  0.00      1
+3  2.2620           +  2  -96.419 196.9 15.30      0
+2  2.0150     +        5  -96.243 202.9 21.25      0
+1  0.7376              1 -107.015 216.1 34.45      0
 Models ranked by AICc(x) 
+[1] ""
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] ""
 [1] "%%%%%"
-[1] "hybridXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)             0.4855     0.2594   1.871   0.0613 . 
+CrosselegansXhybrid     1.5294     0.5921   2.583   0.0098 **
+CrossgraellsiiXhybrid  -0.7087     0.7192  -0.985   0.3245   
+CrosshybridXelegans    -0.5427     0.4262  -1.273   0.2030   
+CrosshybridXgraellsii   1.3471     0.5978   2.254   0.0242 * 
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-3 20.5700           +  6 -15.276 44.1  0.00    0.5
-4 20.5700     +     +  6 -15.276 44.1  0.00    0.5
-2 18.5700     +        2 -31.092 66.4 22.33    0.0
-1  0.4855              1 -41.865 85.8 41.74    0.0
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 214.03  on 169  degrees of freedom
+Residual deviance: 192.49  on 165  degrees of freedom
+AIC: 202.49
+
+Number of Fisher Scoring iterations: 4
+
 [1] "%%%%%"
-[1] "elegansXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.0149     0.5323   3.785 0.000153 ***
+CrosshybridXhybrid     -1.5294     0.5921  -2.583 0.009800 ** 
+CrossgraellsiiXhybrid  -2.2380     0.8563  -2.613 0.008962 ** 
+CrosshybridXelegans    -2.0721     0.6306  -3.286 0.001017 ** 
+CrosshybridXgraellsii  -0.1823     0.7572  -0.241 0.809719    
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-1   2.015              1 -12.315 26.8  0.00  0.260
-3  20.570           +  4  -8.699 26.8  0.02  0.257
-4  20.570     +     +  4  -8.699 26.8  0.02  0.257
-2  18.570     +        2 -11.326 27.0  0.28  0.226
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 214.03  on 169  degrees of freedom
+Residual deviance: 192.49  on 165  degrees of freedom
+AIC: 202.49
+
+Number of Fisher Scoring iterations: 4
+
 [1] "%%%%%"
-[1] "hybridXgraellsii"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             1.8326     0.5385   3.403 0.000666 ***
+CrosselegansXhybrid     0.1823     0.7572   0.241 0.809719    
+CrosshybridXhybrid     -1.3471     0.5978  -2.254 0.024223 *  
+CrossgraellsiiXhybrid  -2.0557     0.8602  -2.390 0.016861 *  
+CrosshybridXelegans    -1.8897     0.6359  -2.972 0.002961 ** 
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-3   1.792           +  4  -5.742 21.1  0.00  0.464
-4   1.792     +     +  4  -5.742 21.1  0.00  0.464
-1   1.833              1 -11.635 25.4  4.27  0.055
-2   1.792     +        2 -11.632 27.7  6.58  0.017
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 214.03  on 169  degrees of freedom
+Residual deviance: 192.49  on 165  degrees of freedom
+AIC: 202.49
+
+Number of Fisher Scoring iterations: 4
+
 [1] "%%%%%"
-[1] "hybridXelegans"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)           -0.05716    0.33820  -0.169  0.86579   
+CrosshybridXgraellsii  1.88974    0.63591   2.972  0.00296 **
+CrosselegansXhybrid    2.07206    0.63064   3.286  0.00102 **
+CrosshybridXhybrid     0.54267    0.42625   1.273  0.20297   
+CrossgraellsiiXhybrid -0.16599    0.75125  -0.221  0.82514   
 ---
-Model selection table 
-   (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-3  1.09900           +  4 -18.972 47.3  0.00  0.329
-4  1.09900     +     +  4 -18.972 47.3  0.00  0.329
-2  1.09900     +        2 -21.608 47.6  0.31  0.281
-1 -0.05716              1 -24.246 50.6  3.34  0.062
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 214.03  on 169  degrees of freedom
+Residual deviance: 192.49  on 165  degrees of freedom
+AIC: 202.49
+
+Number of Fisher Scoring iterations: 4
+
 [1] "%%%%%"
-[1] "graellsiiXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)            -0.2231     0.6708  -0.333  0.73940   
+CrosshybridXelegans     0.1660     0.7513   0.221  0.82514   
+CrosshybridXgraellsii   2.0557     0.8602   2.390  0.01686 * 
+CrosselegansXhybrid     2.2380     0.8563   2.613  0.00896 **
+CrosshybridXhybrid      0.7087     0.7192   0.985  0.32449   
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-2 18.5700     +        2 -4.188 14.4  0.00  0.391
-1 -0.2231              1 -6.183 14.9  0.56  0.296
-3 19.5700           +  3 -2.703 16.2  1.83  0.157
-4 19.5700     +     +  3 -2.703 16.2  1.83  0.157
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 214.03  on 169  degrees of freedom
+Residual deviance: 192.49  on 165  degrees of freedom
+AIC: 202.49
+
+Number of Fisher Scoring iterations: 4
+
 [1] ""
 [1] "######################"
 [1] "mechanical.tactile"
-Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+Success ~ Ecology + Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
 ---
 Model selection table 
-    (Intrc) Cross Eclgy Ppltn df  logLik  AICc delta weight
-3 3.135e+00           +        2 -43.943  92.0  0.00  0.557
-4 4.161e+00     +     +        6 -40.180  93.1  1.14  0.314
-5 2.833e+00                 + 17 -28.416  97.1  5.15  0.042
-6 1.946e+00     +           + 17 -28.416  97.1  5.15  0.042
-1 1.752e+00                    1 -48.176  98.4  6.39  0.023
-8 1.152e+14     +     +     + 18 -28.432 100.0  8.00  0.010
-7 2.737e+00           +     + 18 -28.745 100.6  8.62  0.007
-2 2.197e+00     +              5 -45.630 101.8  9.82  0.004
+  (Intrc) Cross Eclgy df  logLik  AICc delta weight
+3   3.135           +  2 -43.943  92.0  0.00  0.620
+4   4.161     +     +  6 -40.180  93.1  1.14  0.350
+1   1.752              1 -48.176  98.4  6.39  0.025
+2   2.197     +        5 -45.630 101.8  9.82  0.005
 Models ranked by AICc(x) 
+[1] ""
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] ""
 [1] "%%%%%"
-[1] "hybridXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.4849     0.6009   4.135 3.55e-05 ***
+CrosselegansXhybrid    -0.2877     0.8553  -0.336   0.7366    
+CrossgraellsiiXhybrid  -1.3863     1.3017  -1.065   0.2869    
+CrosshybridXelegans    -1.3063     0.8295  -1.575   0.1153    
+CrosshybridXgraellsii  -1.3322     0.7618  -1.749   0.0803 .  
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-3   2.833           +  4  -6.111 21.4  0.00  0.394
-4   2.833     +     +  4  -6.111 21.4  0.00  0.394
-1   2.485              1 -10.576 23.3  1.86  0.155
-2   2.833     +        2 -10.466 25.3  3.87  0.057
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 96.352  on 114  degrees of freedom
+Residual deviance: 91.261  on 110  degrees of freedom
+AIC: 101.26
+
+Number of Fisher Scoring iterations: 5
+
 [1] "%%%%%"
-[1] "elegansXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.1972     0.6086   3.610 0.000306 ***
+CrosshybridXhybrid      0.2877     0.8553   0.336 0.736595    
+CrossgraellsiiXhybrid  -1.0986     1.3053  -0.842 0.399967    
+CrosshybridXelegans    -1.0186     0.8350  -1.220 0.222547    
+CrosshybridXgraellsii  -1.0445     0.7679  -1.360 0.173746    
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-1   2.197              1 -9.752 21.6  0.00  0.701
-2   1.792     +        2 -9.666 23.8  2.13  0.242
-3   1.792           +  4 -9.236 28.1  6.42  0.028
-4   1.792     +     +  4 -9.236 28.1  6.42  0.028
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 96.352  on 114  degrees of freedom
+Residual deviance: 91.261  on 110  degrees of freedom
+AIC: 101.26
+
+Number of Fisher Scoring iterations: 5
+
 [1] "%%%%%"
-[1] "hybridXgraellsii"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)  
+(Intercept)            1.15268    0.46829   2.461   0.0138 *
+CrosselegansXhybrid    1.04455    0.76790   1.360   0.1737  
+CrosshybridXhybrid     1.33223    0.76185   1.749   0.0803 .
+CrossgraellsiiXhybrid -0.05407    1.24605  -0.043   0.9654  
+CrosshybridXelegans    0.02598    0.73907   0.035   0.9720  
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-2  19.570     +        2  -8.972 22.5  0.00  0.357
-3  19.570           +  3  -7.795 22.7  0.24  0.317
-4  19.570     +     +  3  -7.795 22.7  0.24  0.317
-1   1.153              1 -13.777 29.7  7.24  0.010
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 96.352  on 114  degrees of freedom
+Residual deviance: 91.261  on 110  degrees of freedom
+AIC: 101.26
+
+Number of Fisher Scoring iterations: 5
+
 [1] "%%%%%"
-[1] "hybridXelegans"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)  
+(Intercept)            1.17865    0.57177   2.061   0.0393 *
+CrosshybridXgraellsii -0.02598    0.73907  -0.035   0.9720  
+CrosselegansXhybrid    1.01857    0.83504   1.220   0.2225  
+CrosshybridXhybrid     1.30625    0.82948   1.575   0.1153  
+CrossgraellsiiXhybrid -0.08004    1.28851  -0.062   0.9505  
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-2  19.570     +        2 -5.545 15.9  0.00  0.597
-3  19.570           +  3 -5.275 18.4  2.45  0.175
-4  19.570     +     +  3 -5.275 18.4  2.45  0.175
-1   1.179              1 -9.275 20.8  4.87  0.052
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 96.352  on 114  degrees of freedom
+Residual deviance: 91.261  on 110  degrees of freedom
+AIC: 101.26
+
+Number of Fisher Scoring iterations: 5
+
 [1] "%%%%%"
-[1] "graellsiiXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-1   1.099              1 -2.249  8.5  0.00  0.994
-2  19.570     +        2 -1.386 18.8 10.27  0.006
-3  23.570           +  3  0.000  Inf   Inf  0.000
-4  23.570     +     +  3  0.000  Inf   Inf  0.000
-Models ranked by AICc(x) 
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)            1.09861    1.15470   0.951    0.341
+CrosshybridXelegans    0.08004    1.28851   0.062    0.950
+CrosshybridXgraellsii  0.05407    1.24605   0.043    0.965
+CrosselegansXhybrid    1.09861    1.30526   0.842    0.400
+CrosshybridXhybrid     1.38629    1.30171   1.065    0.287
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 96.352  on 114  degrees of freedom
+Residual deviance: 91.261  on 110  degrees of freedom
+AIC: 101.26
+
+Number of Fisher Scoring iterations: 5
+
 [1] ""
 [1] "######################"
 [1] "oviposition"
-Global model call: glm(formula = Success ~ Ecology + Cross + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
+Success ~ Ecology + Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
 ---
 Model selection table 
-    (Intrc) Cross Eclgy Ppltn df  logLik  AICc delta weight
-3 1.431e+00           +        2 -48.435 101.0  0.00  0.611
-1 1.867e+00                    1 -49.994 102.0  1.05  0.361
-4 1.605e+00     +     +        6 -47.796 108.3  7.32  0.016
-2 2.169e+00     +              5 -49.078 108.7  7.69  0.013
-5 1.569e+00                 + 17 -43.585 126.8 25.82  0.000
-7 1.600e+00           +     + 18 -43.808 129.9 28.98  0.000
-8 6.118e+14     +     +     + 19 -45.160 135.4 34.46  0.000
-6 1.610e+00     +           + 19 -52.405 149.9 48.95  0.000
-Models ranked by AICc(x) 
-[1] "%%%%%"
-[1] "elegansXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-1   2.169              1 -12.897 27.9  0.00  0.730
-2   2.303     +        2 -12.885 30.1  2.20  0.243
-3   2.303           +  5 -12.009 35.8  7.93  0.014
-4   2.303     +     +  5 -12.009 35.8  7.93  0.014
-Models ranked by AICc(x) 
-[1] "%%%%%"
-[1] "hybridXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik AICc delta weight
-1   1.833              1 -23.269 48.6  0.00  0.408
-3   1.569           +  3 -21.785 50.0  1.41  0.202
-4   1.569     +     +  3 -21.785 50.0  1.41  0.202
-2   1.569     +        2 -22.976 50.2  1.56  0.187
-Models ranked by AICc(x) 
-[1] "%%%%%"
-[1] "hybridXgraellsii"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-2   1.099     +        2 -4.499 14.0  0.00  0.496
-1   1.872              1 -5.890 14.1  0.09  0.474
-3   1.099           +  4 -4.499 21.0  7.00  0.015
-4   1.099     +     +  4 -4.499 21.0  7.00  0.015
-Models ranked by AICc(x) 
-[1] "%%%%%"
-[1] "hybridXelegans"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-2  0.5108     +        2 -5.293 15.8  0.00  0.480
-1  1.2040              1 -7.023 16.4  0.62  0.351
-3  0.5108           +  3 -5.293 19.3  3.47  0.085
-4  0.5108     +     +  3 -5.293 19.3  3.47  0.085
-Models ranked by AICc(x) 
-[1] "%%%%%"
-[1] "graellsiiXhybrid"
-Global model call: glm(formula = Success ~ Ecology + Population, family = "binomial", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik AICc delta weight
-2   23.57     +        2      0   -8     0  0.333
-3   23.57           +  2      0   -8     0  0.333
-4   23.57     +     +  2      0   -8     0  0.333
-1   23.57              1      0  Inf   Inf  0.000
+  (Intrc) Cross Eclgy df  logLik  AICc delta weight
+3   1.431           +  2 -48.435 101.0  0.00  0.611
+1   1.867              1 -49.994 102.0  1.05  0.361
+4   1.605     +     +  6 -47.796 108.3  7.32  0.016
+2   2.169     +        5 -49.078 108.7  7.69  0.013
 Models ranked by AICc(x) 
 [1] ""
-[1] "######################"
-[1] "fecundity"
-Global model call: glm(formula = Param ~ Ecology + Cross + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Cross Eclgy Ppltn df   logLik   AICc delta weight
-5   10.88                 + 18 -641.542 1326.2  0.00  0.249
-6  161.90     +           + 18 -641.542 1326.2  0.00  0.249
-7   10.88           +     + 18 -641.542 1326.2  0.00  0.249
-8  298.60     +     +     + 18 -641.542 1326.2  0.00  0.249
-3   27.08           +        3 -664.345 1334.9  8.70  0.003
-4   51.60     +     +        7 -661.733 1338.5 12.30  0.001
-1   72.06                    2 -675.832 1355.8 29.56  0.000
-2  102.40     +              6 -671.875 1356.5 30.32  0.000
-Models ranked by AICc(x) 
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] ""
 [1] "%%%%%"
-[1] "elegansXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              2.1691     0.5278   4.110 3.96e-05 ***
+CrossgraellsiiXhybrid   14.3970  1696.7344   0.008    0.993    
+CrosshybridXhybrid      -0.3365     0.6508  -0.517    0.605    
+CrosshybridXelegans     -0.9651     0.8437  -1.144    0.253    
+CrosshybridXgraellsii   -0.2973     0.9249  -0.321    0.748    
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df   logLik  AICc delta weight
-3   69.93           +  6 -216.778 448.4  0.00  0.293
-4   69.93     +     +  6 -216.778 448.4  0.00  0.293
-1  102.40              2 -222.160 448.7  0.32  0.250
-2   69.93     +        3 -221.392 449.5  1.16  0.164
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 99.989  on 126  degrees of freedom
+Residual deviance: 98.157  on 122  degrees of freedom
+AIC: 108.16
+
+Number of Fisher Scoring iterations: 15
+
 [1] "%%%%%"
-[1] "hybridXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              1.83258    0.38079   4.813 1.49e-06 ***
+CrosselegansXhybrid      0.33647    0.65082   0.517    0.605    
+CrossgraellsiiXhybrid   14.73349 1696.73439   0.009    0.993    
+CrosshybridXelegans     -0.62861    0.76048  -0.827    0.408    
+CrosshybridXgraellsii    0.03922    0.84966   0.046    0.963    
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df   logLik  AICc delta weight
-3   10.88           +  4 -285.661 580.2  0.00    0.5
-4   10.88     +     +  4 -285.661 580.2  0.00    0.5
-2   10.88     +        3 -295.619 597.7 17.57    0.0
-1   54.94              2 -304.393 613.0 32.87    0.0
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 99.989  on 126  degrees of freedom
+Residual deviance: 98.157  on 122  degrees of freedom
+AIC: 108.16
+
+Number of Fisher Scoring iterations: 15
+
 [1] "%%%%%"
-[1] "hybridXgraellsii"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)  
+(Intercept)              1.87180    0.75955   2.464   0.0137 *
+CrosshybridXhybrid      -0.03922    0.84966  -0.046   0.9632  
+CrosselegansXhybrid      0.29725    0.92493   0.321   0.7479  
+CrossgraellsiiXhybrid   14.69427 1696.73451   0.009   0.9931  
+CrosshybridXelegans     -0.66783    1.00512  -0.664   0.5064  
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
-2   2.722     +        3 -71.793 152.3  0.00  0.660
-3   2.722           +  5 -68.355 155.3  3.03  0.145
-4   2.722     +     +  5 -68.355 155.3  3.03  0.145
-1  66.360              2 -76.122 157.4  5.19  0.049
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 99.989  on 126  degrees of freedom
+Residual deviance: 98.157  on 122  degrees of freedom
+AIC: 108.16
+
+Number of Fisher Scoring iterations: 15
+
 [1] "%%%%%"
-[1] "hybridXelegans"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)  
+(Intercept)              1.2040     0.6583   1.829   0.0674 .
+CrosshybridXgraellsii    0.6678     1.0051   0.664   0.5064  
+CrosshybridXhybrid       0.6286     0.7605   0.827   0.4085  
+CrosselegansXhybrid      0.9651     0.8437   1.144   0.2527  
+CrossgraellsiiXhybrid   15.3621  1696.7345   0.009   0.9928  
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
-1   50.90              2 -55.605 116.9  0.00  0.629
-2   18.77     +        3 -54.093 118.2  1.26  0.335
-3   18.77           +  4 -54.012 124.0  7.10  0.018
-4   18.77     +     +  4 -54.012 124.0  7.10  0.018
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 99.989  on 126  degrees of freedom
+Residual deviance: 98.157  on 122  degrees of freedom
+AIC: 108.16
+
+Number of Fisher Scoring iterations: 15
+
 [1] "%%%%%"
-[1] "graellsiiXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
----
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik   AICc  delta weight
-2   175.3     +        3  61.625 -129.2   0.00  0.333
-3   175.3           +  3  61.625 -129.2   0.00  0.333
-4   175.3     +     +  3  61.625 -129.2   0.00  0.333
-1   107.0              2 -11.287   14.6 143.82  0.000
-Models ranked by AICc(x) 
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)              16.57    1696.73   0.010    0.992
+CrosshybridXelegans     -15.36    1696.73  -0.009    0.993
+CrosshybridXgraellsii   -14.69    1696.73  -0.009    0.993
+CrosshybridXhybrid      -14.73    1696.73  -0.009    0.993
+CrosselegansXhybrid     -14.40    1696.73  -0.008    0.993
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 99.989  on 126  degrees of freedom
+Residual deviance: 98.157  on 122  degrees of freedom
+AIC: 108.16
+
+Number of Fisher Scoring iterations: 15
+
 [1] ""
 [1] "######################"
-[1] "fertility"
-Global model call: glm(formula = Param ~ Ecology + Cross + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Fecundity"
+Param ~ Ecology + Cross
+Global model call: glm(formula = formula, family = "poisson", data = sub.df, na.action = "na.fail")
 ---
 Model selection table 
-    (Intrc) Cross Eclgy Ppltn df  logLik  AICc  delta weight
-5 4.713e-17                 + 18  41.579 -37.5   0.00   0.25
-6 7.141e-01     +           + 18  41.579 -37.5   0.00   0.25
-7 7.022e-17           +     + 18  41.579 -37.5   0.00   0.25
-8 1.445e+00     +     +     + 18  41.579 -37.5   0.00   0.25
-4 1.470e-01     +     +        7   8.890  -2.4  35.11   0.00
-3 2.801e-02           +        3   3.034   0.2  37.74   0.00
-2 4.630e-01     +              6 -25.337  63.7 101.21   0.00
-1 2.798e-01                    2 -32.674  69.5 107.01   0.00
+  (Intrc) Cross Eclgy df    logLik    AICc   delta weight
+4   3.588     +     +  6 -4479.535  8971.8    0.00      1
+3   3.299           +  2 -4682.799  9369.7  397.86      0
+2   4.629     +        5 -5534.198 11078.9 2107.10      0
+1   4.278              1 -5913.813 11829.7 2857.81      0
 Models ranked by AICc(x) 
+[1] ""
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] ""
 [1] "%%%%%"
-[1] "hybridXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            4.62947    0.01624 285.041   <2e-16 ***
+CrossgraellsiiXhybrid  0.04336    0.07026   0.617    0.537    
+CrosshybridXhybrid    -0.62316    0.02464 -25.289   <2e-16 ***
+CrosshybridXelegans   -0.70157    0.04725 -14.849   <2e-16 ***
+CrosshybridXgraellsii -0.43284    0.03770 -11.482   <2e-16 ***
 ---
-Model selection table 
-     (Intrc) Eclgy Ppltn df logLik  AICc delta weight
-3 -3.556e-17           +  4 37.177 -65.2  0.00    0.5
-4  7.111e-17     +     +  4 37.177 -65.2  0.00    0.5
-2  0.000e+00     +        3 13.613 -20.5 44.64    0.0
-1  1.849e-01              2 -7.003  18.3 83.52    0.0
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 11271  on 114  degrees of freedom
+Residual deviance: 10511  on 110  degrees of freedom
+AIC: 11078
+
+Number of Fisher Scoring iterations: 6
+
 [1] "%%%%%"
-[1] "elegansXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            4.00630    0.01853 216.192  < 2e-16 ***
+CrosselegansXhybrid    0.62316    0.02464  25.289  < 2e-16 ***
+CrossgraellsiiXhybrid  0.66653    0.07083   9.411  < 2e-16 ***
+CrosshybridXelegans   -0.07841    0.04808  -1.631    0.103    
+CrosshybridXgraellsii  0.19032    0.03874   4.913 8.98e-07 ***
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df  logLik  AICc delta weight
-2 0.04195     +        3   9.138 -11.3  0.00  0.567
-3 0.04195           +  6  12.605  -9.4  1.92  0.217
-4 0.04195     +     +  6  12.605  -9.4  1.92  0.217
-1 0.46300              2 -10.937  26.3 37.65  0.000
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 11271  on 114  degrees of freedom
+Residual deviance: 10511  on 110  degrees of freedom
+AIC: 11078
+
+Number of Fisher Scoring iterations: 6
+
 [1] "%%%%%"
-[1] "hybridXelegans"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Param ~ Cross, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            4.19662    0.03402 123.355  < 2e-16 ***
+CrosshybridXhybrid    -0.19032    0.03874  -4.913 8.98e-07 ***
+CrosselegansXhybrid    0.43284    0.03770  11.482  < 2e-16 ***
+CrossgraellsiiXhybrid  0.47621    0.07636   6.237 4.47e-10 ***
+CrosshybridXelegans   -0.26873    0.05591  -4.806 1.54e-06 ***
 ---
-Model selection table 
-     (Intrc) Eclgy Ppltn df logLik AICc delta weight
-1  1.883e-01              2 -4.438 14.6  0.00  0.644
-2  0.000e+00     +        3 -3.004 16.0  1.42  0.317
-3  0.000e+00           +  4 -2.793 21.6  7.00  0.019
-4 -1.755e-17     +     +  4 -2.793 21.6  7.00  0.019
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 11271  on 114  degrees of freedom
+Residual deviance: 10511  on 110  degrees of freedom
+AIC: 11078
+
+Number of Fisher Scoring iterations: 6
+
 [1] "%%%%%"
-[1] "graellsiiXhybrid"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Param ~ Cross, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            3.92790    0.04437  88.530  < 2e-16 ***
+CrosshybridXgraellsii  0.26873    0.05591   4.806 1.54e-06 ***
+CrosshybridXhybrid     0.07841    0.04808   1.631    0.103    
+CrosselegansXhybrid    0.70157    0.04725  14.849  < 2e-16 ***
+CrossgraellsiiXhybrid  0.74493    0.08149   9.141  < 2e-16 ***
 ---
-Model selection table 
-  (Intrc) Eclgy Ppltn df logLik   AICc delta weight
-2  0.8688     +        3 69.927 -145.9   0.0  0.333
-3  0.8688           +  3 69.927 -145.9   0.0  0.333
-4  0.8688     +     +  3 69.927 -145.9   0.0  0.333
-1  0.5034              2 -0.825   -6.4 139.5  0.000
-Models ranked by AICc(x) 
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 11271  on 114  degrees of freedom
+Residual deviance: 10511  on 110  degrees of freedom
+AIC: 11078
+
+Number of Fisher Scoring iterations: 6
+
 [1] "%%%%%"
-[1] "hybridXgraellsii"
-Global model call: glm(formula = Param ~ Ecology + Population, family = "gaussian", 
-    data = sub.df, na.action = "na.fail")
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            4.67283    0.06836  68.358  < 2e-16 ***
+CrosshybridXelegans   -0.74493    0.08149  -9.141  < 2e-16 ***
+CrosshybridXgraellsii -0.47621    0.07636  -6.237 4.47e-10 ***
+CrosshybridXhybrid    -0.66653    0.07083  -9.411  < 2e-16 ***
+CrosselegansXhybrid   -0.04336    0.07026  -0.617    0.537    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 11271  on 114  degrees of freedom
+Residual deviance: 10511  on 110  degrees of freedom
+AIC: 11078
+
+Number of Fisher Scoring iterations: 6
+
+[1] ""
+[1] "######################"
+[1] "Fertility"
+Param ~ Ecology + Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, weights = sub.df$Fertility_N, 
+    na.action = "na.fail")
 ---
 Model selection table 
-     (Intrc) Eclgy Ppltn df logLik  AICc delta weight
-3 -1.317e-17           +  5 17.717 -10.4  0.00  0.500
-4 -1.755e-17     +     +  5 17.717 -10.4  0.00  0.500
-2  3.511e-17     +        3  3.809   2.4 12.82  0.001
-1  1.654e-01              2 -0.775   7.3 17.70  0.000
+  (Intrc) Cross Eclgy df    logLik   AICc   delta weight
+4 -2.2650     +     +  6 -2629.206 5271.4    0.00      1
+3 -1.5280           +  2 -3170.333 6344.8 1073.38      0
+2  0.1144     +        5 -4402.823 8816.4 3544.94      0
+1  0.2055              1 -4473.125 8948.3 3676.87      0
 Models ranked by AICc(x) 
+[1] ""
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] ""
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            0.16537    0.02670   6.194 5.88e-10 ***
+CrosselegansXhybrid   -0.05095    0.03490  -1.460    0.144    
+CrossgraellsiiXhybrid  0.86382    0.09351   9.238  < 2e-16 ***
+CrosshybridXelegans    0.30779    0.05857   5.255 1.48e-07 ***
+CrosshybridXgraellsii  0.08418    0.05952   1.414    0.157    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8725.5  on 89  degrees of freedom
+Residual deviance: 8585.2  on 85  degrees of freedom
+AIC: 8815.6
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            0.11443    0.02248   5.090 3.58e-07 ***
+CrosshybridXhybrid     0.05095    0.03490   1.460   0.1444    
+CrossgraellsiiXhybrid  0.91477    0.09239   9.901  < 2e-16 ***
+CrosshybridXelegans    0.35873    0.05677   6.319 2.63e-10 ***
+CrosshybridXgraellsii  0.13512    0.05774   2.340   0.0193 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8725.5  on 89  degrees of freedom
+Residual deviance: 8585.2  on 85  degrees of freedom
+AIC: 8815.6
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Param ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            0.47316    0.05213   9.077  < 2e-16 ***
+CrosselegansXhybrid   -0.35873    0.05677  -6.319 2.63e-10 ***
+CrosshybridXhybrid    -0.30779    0.05857  -5.255 1.48e-07 ***
+CrossgraellsiiXhybrid  0.55604    0.10367   5.363 8.17e-08 ***
+CrosshybridXgraellsii -0.22361    0.07447  -3.003  0.00268 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8725.5  on 89  degrees of freedom
+Residual deviance: 8585.2  on 85  degrees of freedom
+AIC: 8815.6
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Param ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            1.02920    0.08962  11.484  < 2e-16 ***
+CrosshybridXelegans   -0.55604    0.10367  -5.363 8.17e-08 ***
+CrosselegansXhybrid   -0.91477    0.09239  -9.901  < 2e-16 ***
+CrosshybridXhybrid    -0.86382    0.09351  -9.238  < 2e-16 ***
+CrosshybridXgraellsii -0.77965    0.10421  -7.481 7.36e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8725.5  on 89  degrees of freedom
+Residual deviance: 8585.2  on 85  degrees of freedom
+AIC: 8815.6
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Param ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            0.24955    0.05319   4.692 2.71e-06 ***
+CrossgraellsiiXhybrid  0.77965    0.10421   7.481 7.36e-14 ***
+CrosshybridXelegans    0.22361    0.07447   3.003  0.00268 ** 
+CrosselegansXhybrid   -0.13512    0.05774  -2.340  0.01928 *  
+CrosshybridXhybrid    -0.08418    0.05952  -1.414  0.15726    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 8725.5  on 89  degrees of freedom
+Residual deviance: 8585.2  on 85  degrees of freedom
+AIC: 8815.6
+
+Number of Fisher Scoring iterations: 5
+

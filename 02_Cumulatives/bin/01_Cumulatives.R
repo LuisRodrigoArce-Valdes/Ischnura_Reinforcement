@@ -18,10 +18,10 @@ cumulative <- read.csv(paste0("../data/Cumulatives",".csv"), header = T, encodin
 cumulative <- cumulative[,-1]
 colnames(cumulative)[7] <- "Mechanical-Tactile"
 
-# Removing rows without mechanical measurements and tidying
+# Removing selected rows with low sample sizes and strange behaviours
 cumulative %>%
-  filter(N>1) %>%
-  select(!X & !X.1) -> cumulative
+  filter(Include=="Y") %>%
+  select(!X & !Include) -> cumulative
 
 cumulative %>%
   group_by(Ecology, Cross) %>%
