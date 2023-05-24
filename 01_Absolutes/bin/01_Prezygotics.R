@@ -7,6 +7,7 @@ library(officer)
 library(dplyr)
 library(ggh4x)
 library(scales)
+library(stringr)
 
 # Figure options (plots per barrier) ####
 # Text size in points
@@ -14,7 +15,7 @@ s <- 10
 # X axis text size in points
 tx <- 6
 # x axis angle
-a <- 10
+a <- 20
 # X axis text size in points for multiple plot
 tx5 <- 8
 # x axis angle for multiple plots
@@ -99,6 +100,11 @@ fertilities.2001 %>%
   separate(Group, into = c("Type","Cross","Population"), sep = "-") -> fertilities.2001
 rm(summaries.2001)
 
+# Names table ####
+# Reading table for names conversion
+names <- read.csv("../data/Names.csv", header = T)
+names <- setNames(as.character(names$ShortName), names$Population)
+
 # Mechanical plot ####
 mechanicals <- list()
 
@@ -119,14 +125,16 @@ mechanicals %>%
   mutate(Ecology = ifelse(Ecology=="DbAllopatrics","Allopatry","Sympatry")) %>%
   na.omit() %>%
   mutate(Mechanical.Sucess = ifelse(Mechanical.Sucess==1,"Succesfull tandem","Failed tandem")) %>%
-  mutate(Mechanical.Sucess = factor(Mechanical.Sucess, levels=c("Succesfull tandem","Failed tandem"))) -> mechanicals
+  mutate(Mechanical.Sucess = factor(Mechanical.Sucess, levels=c("Succesfull tandem","Failed tandem"))) %>%
+  mutate(CrossPop = paste0(Cross, Population)) ->  mechanicals
   
 # Estimating sample size per population
-as.data.frame(table(mechanicals$Population)) -> sample.size
+as.data.frame(table(mechanicals$CrossPop)) -> sample.size
 
 # Merging sample sizes
 mechanicals %>%
-  left_join(sample.size, by=c("Population"="Var1")) %>%
+  left_join(sample.size, by=c("CrossPop"="Var1")) %>%
+  select(!CrossPop) %>%
   mutate(Population = paste0(Population," (",Freq,")")) %>%
   select(!Freq) %>%
   mutate(Cross = factor(Cross, levels=c("elegansXelegans","graellsiiXgraellsii",
@@ -134,7 +142,8 @@ mechanicals %>%
 rm(sample.size)
 
 # Estimating absolute and relative frequencies of barrier outputs
-mechanicals %>%
+mechanicals %>% 
+  mutate(Population = str_replace_all(mechanicals$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
   geom_bar(aes(x=Population, fill=Mechanical.Sucess), position = "fill") +
@@ -145,6 +154,7 @@ mechanicals %>%
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx, angle = a, hjust = 1),
         text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
         legend.position="none") -> p
 
 # Converting to dml
@@ -214,14 +224,16 @@ mechanical.tactile %>%
   mutate(Ecology = ifelse(Ecology=="DbAllopatrics","Allopatry","Sympatry")) %>%
   na.omit() %>%
   mutate(Mechanical.Tactile.Success = ifelse(Mechanical.Tactile.Success==1,"Succesfull mating","Failed mating")) %>%
-  mutate(Mechanical.Tactile.Success = factor(Mechanical.Tactile.Success, levels=c("Succesfull mating","Failed mating"))) -> mechanical.tactile
+  mutate(Mechanical.Tactile.Success = factor(Mechanical.Tactile.Success, levels=c("Succesfull mating","Failed mating"))) %>%
+  mutate(CrossPop = paste0(Cross, Population)) -> mechanical.tactile
 
 # Estimating sample size per population
-as.data.frame(table(mechanical.tactile$Population)) -> sample.size
+as.data.frame(table(mechanical.tactile$CrossPop)) -> sample.size
 
 # Merging sample sizes
 mechanical.tactile %>%
-  left_join(sample.size, by=c("Population"="Var1")) %>%
+  left_join(sample.size, by=c("CrossPop"="Var1")) %>%
+  select(!CrossPop) %>%
   mutate(Population = paste0(Population," (",Freq,")")) %>%
   select(!Freq) %>%
   mutate(Cross = factor(Cross, levels=c("elegansXelegans","graellsiiXgraellsii",
@@ -233,6 +245,7 @@ tidied$mechanical.tactile <- mechanical.tactile
 
 # Estimating absolute and relative frequencies of barrier outputs
 mechanical.tactile %>%
+  mutate(Population = str_replace_all(mechanical.tactile$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
   geom_bar(aes(x=Population, fill=Mechanical.Tactile.Success), position = "fill") +
@@ -243,6 +256,7 @@ mechanical.tactile %>%
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx, angle = a, hjust = 1),
         text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
         legend.position="none") -> p
 
 # Converting to dml
@@ -311,14 +325,16 @@ oviposition %>%
   mutate(Ecology = ifelse(Ecology=="DbAllopatrics","Allopatry","Sympatry")) %>%
   na.omit() %>%
   mutate(ClutchesWEggs = ifelse(ClutchesWEggs==1,"Succesfull oviposition","Failed oviposition")) %>%
-  mutate(ClutchesWEggs = factor(ClutchesWEggs, levels=c("Succesfull oviposition","Failed oviposition"))) -> oviposition
+  mutate(ClutchesWEggs = factor(ClutchesWEggs, levels=c("Succesfull oviposition","Failed oviposition")))%>%
+  mutate(CrossPop = paste0(Cross, Population)) -> oviposition
 
 # Estimating sample size per population
-as.data.frame(table(oviposition$Population)) -> sample.size
+as.data.frame(table(oviposition$CrossPop)) -> sample.size
 
 # Merging sample sizes
 oviposition %>%
-  left_join(sample.size, by=c("Population"="Var1")) %>%
+  left_join(sample.size, by=c("CrossPop"="Var1")) %>%
+  select(!CrossPop) %>%
   mutate(Population = paste0(Population," (",Freq,")")) %>%
   select(!Freq) %>%
   mutate(Cross = factor(Cross, levels=c("elegansXelegans","graellsiiXgraellsii",
@@ -330,6 +346,7 @@ tidied$oviposition <- oviposition
 
 # Estimating absolute and relative frequencies of barrier outputs
 oviposition %>%
+  mutate(Population = str_replace_all(oviposition$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
   geom_bar(aes(x=Population, fill=ClutchesWEggs), position = "fill") +
@@ -340,6 +357,7 @@ oviposition %>%
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx, angle = a, hjust = 1),
         text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
         legend.position="none") -> p
 
 # Converting to dml
@@ -403,14 +421,16 @@ fertilities.2001 %>%
 fecundity %>%
   bind_rows(.id = "Ecology") %>%
   mutate(Ecology = ifelse(Ecology=="DbAllopatrics","Allopatry","Sympatry")) %>%
-  na.omit() -> fecundity
+  na.omit()%>%
+  mutate(CrossPop = paste0(Cross, Population)) -> fecundity
 
 # Estimating sample size per population
-as.data.frame(table(fecundity$Population)) -> sample.size
+as.data.frame(table(fecundity$CrossPop)) -> sample.size
 
 # Merging sample sizes
 fecundity %>%
-  left_join(sample.size, by=c("Population"="Var1")) %>%
+  left_join(sample.size, by=c("CrossPop"="Var1")) %>%
+  select(!CrossPop) %>%
   mutate(Population = paste0(Population," (",Freq,")")) %>%
   select(!Freq) %>%
   mutate(Cross = factor(Cross, levels=c("elegansXelegans","graellsiiXgraellsii",
@@ -422,6 +442,7 @@ tidied$fecundity <- fecundity
 
 # Estimating absolute and relative frequencies of barrier outputs
 fecundity %>%
+  mutate(Population = str_replace_all(fecundity$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
   geom_violin(aes(x=Population, y=EggsPerClutch), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
@@ -431,6 +452,7 @@ fecundity %>%
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx, angle = a, hjust = 1),
         text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
         legend.position="none") -> p
 
 # Converting to dml
@@ -495,14 +517,16 @@ fertilities.2001 %>%
 fertility %>%
   bind_rows(.id = "Ecology") %>%
   mutate(Ecology = ifelse(Ecology=="DbAllopatrics","Allopatry","Sympatry")) %>%
-  na.omit() -> fertility
+  na.omit() %>%
+  mutate(CrossPop = paste0(Cross, Population)) -> fertility
 
 # Estimating sample size per population
-as.data.frame(table(fertility$Population)) -> sample.size
+as.data.frame(table(fertility$CrossPop)) -> sample.size
 
 # Merging sample sizes
 fertility %>%
-  left_join(sample.size, by=c("Population"="Var1")) %>%
+  left_join(sample.size, by=c("CrossPop"="Var1")) %>%
+  select(!CrossPop) %>%
   mutate(Population = paste0(Population," (",Freq,")")) %>%
   select(!Freq) %>%
   mutate(Cross = factor(Cross, levels=c("elegansXelegans","graellsiiXgraellsii",
@@ -514,6 +538,7 @@ tidied$fertility <- fertility
 
 # Estimating absolute and relative frequencies of barrier outputs
 fertility %>%
+  mutate(Population = str_replace_all(fertility$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
   geom_violin(aes(x=Population, y=Fertility), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
@@ -524,6 +549,7 @@ fertility %>%
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx, angle = a, hjust = 1),
         text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
         legend.position="none") -> p
 
 # Converting to dml

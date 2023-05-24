@@ -4,17 +4,22 @@
 rm(list = ls())
 library(dplyr)
 library(tidyr)
-library(betareg)
 library(ggplot2)
 library(MuMIn)
 
 # Using this script we will make GLMs to test statistical differences in reproductive barriers between groups.
 # Loading tidyed barriers files
+rank <- "BIC" #BIC AICc
 for(p in c("01_Prezygotics","02_Postzygotics")){
-sink(paste0("../results/",p,"_Stats.txt"), split = T)
+sink(paste0("../results/",p,"_Stats_",rank,".txt"), split = T)
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+print(paste0("All models are ranked by: ", rank))
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 load(paste0("../results/",p,".Rdata"))
 
-# Converting populations into intrapopulation vs interpopulation variables
+# Setting up data ####
+
+# Converting populations into intrapopulation vs interpopulation variables (this categorization wont be used in postzygotic barriers, ie, dont ming the warning)
 for(i in names(tidied)){
   tidied[[i]]$Population <- gsub(" .*$","",tidied[[i]]$Population)
   tidied[[i]] <- separate(tidied[[i]], col = Population, into = c("Pop1","Pop2"), sep = "X", remove = T)
@@ -27,6 +32,8 @@ for(i in names(tidied)){
   }
 }
 
+# Binomials ####
+
 # Extracting binomials barriers
 Binomials <- list()
 for(i in names(tidied)[1:3]){
@@ -38,93 +45,188 @@ for(i in names(tidied)[1:3]){
 
 # Creating prezygotics and postzygotics formulas
 if(p == "01_Prezygotics"){
-  formula <- as.formula("Success ~ Ecology + Cross + Geography")
+  formula <- as.formula("Success ~ Ecology + Cross + Geography + (Ecology * Cross)")
 } else {
-  formula <- as.formula("Success ~ Ecology + Cross")
+  formula <- as.formula("Success ~ Ecology + Cross + (Ecology * Cross)")
 }
 
 # Modeling glms for binomial barriers
 for(i in names(Binomials)){
-  print("")
   print("######################")
   print(i)
   print(formula)
   sub.df <- Binomials[[i]]
   glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
-  print(dredge(glms))
+  # Dredging glms
+  print(dredged <- dredge(glms, rank = rank))
+  # Evaluating the best model
+  glm1 <- eval(getCall(dredged, 1))
+  print("The results of the best model are: ")
+  print(summary(glm1))
+  # Getting the intercepts
+  print("The intercept levels are: ")
+  for(q in names(glm1$xlevels)){
+    print(paste0(q,":"))
+    print(glms$xlevels[[q]][1])
+  }
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+    
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
   
-  # Now we will do the posthoc analyses of differences between crosses
-  print("")
-  print("POST HOC ANALYSES PER TYPE OF CROSS:")
-  print("")
-  
-  for(n in unique(sub.df$Cross)){
-     print("%%%%%")
-     print(paste0("Intercept: ", n))
-     # Selecting reference level
-     sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-     glms <- glm(Success ~ Cross, data = sub.df, family = "binomial", na.action = "na.fail")
-     print(summary(glms))
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    print("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+    
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
   }
 }
 
-# Modeling non binomial variables
+# Modeling non binomial variables ####
 for(i in names(tidied)[4:5]){
-  colnames(tidied[[i]])[4] <- "Param"
+  colnames(tidied[[i]])[4] <- "Success"
 }
 
-# Creating prezygotics and postzygotics formulas
-if(p == "01_Prezygotics"){
-  formula <- as.formula("Param ~ Ecology + Cross + Geography")
-} else {
-  formula <- as.formula("Param ~ Ecology + Cross")
+# Fecundity ####
+for(i in names(tidied)[4]){
+  print("######################")
+  print(i)
+  print(formula)
+  sub.df <- tidied[[i]]
+  sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
+  sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
+  glms <- glm(formula, data = sub.df, family = "poisson", na.action = "na.fail")
+  # Dredging glms
+  print(dredged <- dredge(glms, rank = rank))
+  # Evaluating the best model
+  glm1 <- eval(getCall(dredged, 1))
+  print("The results of the best model are: ")
+  print(summary(glm1))
+  # Getting the intercepts
+  print("The intercept levels are: ")
+  for(q in names(glm1$xlevels)){
+    print(paste0(q,":"))
+    print(glms$xlevels[[q]][1])
+  }
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+    
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, family = "poisson", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
+  
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    print("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+    
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, family = "poisson", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
 }
 
-# Fecundity
-print("")
-print("######################")
-print("Fecundity")
-print(formula)
-sub.df <- tidied$fecundity
-sub.df$Param <- as.integer(round(sub.df$Param, digits = 0)) # Rounding to integers
-glms <- glm(formula, data = sub.df, family = "poisson", na.action = "na.fail")
-print(dredge(glms))
-
-# Now we will do the posthoc analyses of differences between crosses
-print("")
-print("POST HOC ANALYSES PER TYPE OF CROSS:")
-print("")
-
-for(n in unique(sub.df$Cross)){
-  print("%%%%%")
-  print(paste0("Intercept: ", n))
-  # Selecting reference level
-  sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-  glms <- glm(Param ~ Cross, data = sub.df, family = "poisson", na.action = "na.fail")
-  print(summary(glms))
-}
-
-# Fertility
-print("")
-print("######################")
-print("Fertility")
-print(formula)
-sub.df <- tidied$fertility
-glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
-print(dredge(glms))
-
-# Now we will do the posthoc analyses of differences between crosses
-print("")
-print("POST HOC ANALYSES PER TYPE OF CROSS:")
-print("")
-
-for(n in unique(sub.df$Cross)){
-  print("%%%%%")
-  print(paste0("Intercept: ", n))
-  # Selecting reference level
-  sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-  glms <- glm(Param ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
-  print(summary(glms))
+# Fertility ####
+for(i in names(tidied)[5]){
+  print("######################")
+  print(i)
+  print(formula)
+  sub.df <- tidied[[i]]
+  sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
+  glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+  # Dredging glms
+  print(dredged <- dredge(glms, rank = rank))
+  # Evaluating the best model
+  glm1 <- eval(getCall(dredged, 1))
+  print("The results of the best model are: ")
+  print(summary(glm1))
+  # Getting the intercepts
+  print("The intercept levels are: ")
+  for(q in names(glm1$xlevels)){
+    print(paste0(q,":"))
+    print(glms$xlevels[[q]][1])
+  }
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+    
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
+  
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    pprint("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+    
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
 }
 sink()
 }
