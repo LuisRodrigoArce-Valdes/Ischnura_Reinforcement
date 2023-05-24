@@ -9,7 +9,7 @@ library(MuMIn)
 
 # Using this script we will make GLMs to test statistical differences in reproductive barriers between groups.
 # Loading tidyed barriers files
-rank <- "BIC" #BIC AICc
+rank <- "AICc" #BIC AICc
 for(p in c("01_Prezygotics","02_Postzygotics")){
 sink(paste0("../results/",p,"_Stats_",rank,".txt"), split = T)
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -33,7 +33,6 @@ for(i in names(tidied)){
 }
 
 # Binomials ####
-
 # Extracting binomials barriers
 Binomials <- list()
 for(i in names(tidied)[1:3]){
@@ -120,7 +119,7 @@ for(i in names(tidied)[4]){
   sub.df <- tidied[[i]]
   sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
   sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
-  glms <- glm(formula, data = sub.df, family = "poisson", na.action = "na.fail")
+  glms <- glm(formula, data = sub.df, family = poisson(link = "log"), na.action = "na.fail")
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
@@ -146,7 +145,7 @@ for(i in names(tidied)[4]){
       print(paste0("Intercept: ", n))
       # Selecting reference level
       sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-      glms <- glm(Success ~ Cross, data = sub.df, family = "poisson", na.action = "na.fail")
+      glms <- glm(Success ~ Cross, data = sub.df, family = poisson(link = "log"), na.action = "na.fail")
       print(summary(glms))
     }
   }
@@ -165,7 +164,7 @@ for(i in names(tidied)[4]){
       print(paste0("Intercept: ", n))
       # Selecting reference level
       sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
-      glms <- glm(Success ~ interaction, data = sub.df, family = "poisson", na.action = "na.fail")
+      glms <- glm(Success ~ interaction, data = sub.df, family = poisson(link = "log"), na.action = "na.fail")
       print(summary(glms))
     }
   }
@@ -177,8 +176,15 @@ for(i in names(tidied)[5]){
   print(i)
   print(formula)
   sub.df <- tidied[[i]]
-  sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
-  glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+  # rounding up success cases to avoid warnings (due to excel rounding of decimals)
+  sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
+  # adding one egg to those that didnt had a single fertile egg and had a lot of eggs (becuase this is affecting statistical results when all eggs are unfertil)
+  sub.df[sub.df$Ecology=="Allopatry" & sub.df$Cross=="hybridXgraellsii" & sub.df$Fertility_N>20,"Success"] <- 1
+  sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
+  # Converting to succes ration
+  sub.df$Success <- sub.df$Success / sub.df$Fertility_N
+  # Modeling
+  glms <- glm(formula, data = sub.df, family = binomial(link = "logit"), na.action = "na.fail", weights = sub.df$Fertility_N)
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
@@ -197,33 +203,33 @@ for(i in names(tidied)[5]){
     print("%%%%%")
     print("POST HOC ANALYSES PER TYPE OF CROSS:")
     print("%%%%%")
-    
+
     # Iterating over different crosses
     for(n in unique(sub.df$Cross)){
       print("%%%%%")
       print(paste0("Intercept: ", n))
       # Selecting reference level
       sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-      glms <- glm(Success ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      glms <- glm(Success ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = binomial(link = "logit"), na.action = "na.fail")
       print(summary(glms))
     }
   }
-  
+
   # Posthocing interaction between cross and Ecology
   if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
     print("%%%%%")
     print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
-    pprint("%%%%%")
+    print("%%%%%")
     sub.df %>%
       mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
-    
+
     # Iterating over different combinations
     for(n in unique(sub.df$interaction)){
       print("%%%%%")
       print(paste0("Intercept: ", n))
       # Selecting reference level
       sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
-      glms <- glm(Success ~ interaction, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      glms <- glm(Success ~ interaction, data = sub.df, weights = sub.df$Fertility_N, family = binomial(link = "logit"), na.action = "na.fail")
       print(summary(glms))
     }
   }
