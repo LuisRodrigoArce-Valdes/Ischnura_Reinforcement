@@ -630,9 +630,9 @@ glm(formula = Success ~ Cross, family = poisson(link = "log"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            4.00733    0.01852 216.359  < 2e-16 ***
-CrosselegansXhybrid    0.62293    0.02463  25.292  < 2e-16 ***
-CrossgraellsiiXhybrid  0.66550    0.07082   9.397  < 2e-16 ***
+(Intercept)            4.00733    0.01852 216.359  <2e-16 ***
+CrosselegansXhybrid    0.62293    0.02463  25.292  <2e-16 ***
+CrossgraellsiiXhybrid  0.66550    0.07082   9.397  <2e-16 ***
 CrosshybridXelegans   -0.07944    0.04808  -1.652   0.0985 .  
 CrosshybridXgraellsii  0.18929    0.03874   4.887 1.03e-06 ***
 ---
@@ -655,9 +655,9 @@ glm(formula = Success ~ Cross, family = poisson(link = "log"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            4.19662    0.03402 123.355  < 2e-16 ***
+(Intercept)            4.19662    0.03402 123.355  <2e-16 ***
 CrosshybridXhybrid    -0.18929    0.03874  -4.887 1.03e-06 ***
-CrosselegansXhybrid    0.43363    0.03770  11.503  < 2e-16 ***
+CrosselegansXhybrid    0.43363    0.03770  11.503  <2e-16 ***
 CrossgraellsiiXhybrid  0.47621    0.07636   6.237 4.47e-10 ***
 CrosshybridXelegans   -0.26873    0.05591  -4.806 1.54e-06 ***
 ---
@@ -680,11 +680,11 @@ glm(formula = Success ~ Cross, family = poisson(link = "log"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            3.92790    0.04437  88.530  < 2e-16 ***
+(Intercept)            3.92790    0.04437  88.530  <2e-16 ***
 CrosshybridXgraellsii  0.26873    0.05591   4.806 1.54e-06 ***
 CrosshybridXhybrid     0.07944    0.04808   1.652   0.0985 .  
-CrosselegansXhybrid    0.70236    0.04724  14.866  < 2e-16 ***
-CrossgraellsiiXhybrid  0.74493    0.08149   9.141  < 2e-16 ***
+CrosselegansXhybrid    0.70236    0.04724  14.866  <2e-16 ***
+CrossgraellsiiXhybrid  0.74493    0.08149   9.141  <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -705,10 +705,10 @@ glm(formula = Success ~ Cross, family = poisson(link = "log"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            4.67283    0.06836  68.358  < 2e-16 ***
-CrosshybridXelegans   -0.74493    0.08149  -9.141  < 2e-16 ***
+(Intercept)            4.67283    0.06836  68.358  <2e-16 ***
+CrosshybridXelegans   -0.74493    0.08149  -9.141  <2e-16 ***
 CrosshybridXgraellsii -0.47621    0.07636  -6.237 4.47e-10 ***
-CrosshybridXhybrid    -0.66550    0.07082  -9.397  < 2e-16 ***
+CrosshybridXhybrid    -0.66550    0.07082  -9.397  <2e-16 ***
 CrosselegansXhybrid   -0.04257    0.07026  -0.606    0.545    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -1087,7 +1087,7 @@ Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
 (Intercept)            0.16714    0.02670   6.259 3.87e-10 ***
 CrosselegansXhybrid   -0.04939    0.03491  -1.415    0.157    
-CrossgraellsiiXhybrid  0.86205    0.09351   9.219  < 2e-16 ***
+CrossgraellsiiXhybrid  0.86205    0.09351   9.219  <2e-16 ***
 CrosshybridXelegans    0.32044    0.05865   5.464 4.66e-08 ***
 CrosshybridXgraellsii  0.08488    0.05952   1.426    0.154    
 ---
@@ -1112,7 +1112,7 @@ Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
 (Intercept)            0.11775    0.02248   5.238 1.63e-07 ***
 CrosshybridXhybrid     0.04939    0.03491   1.415   0.1571    
-CrossgraellsiiXhybrid  0.91144    0.09239   9.865  < 2e-16 ***
+CrossgraellsiiXhybrid  0.91144    0.09239   9.865  <2e-16 ***
 CrosshybridXelegans    0.36983    0.05685   6.505 7.75e-11 ***
 CrosshybridXgraellsii  0.13427    0.05775   2.325   0.0201 *  
 ---
@@ -1135,7 +1135,7 @@ glm(formula = Success ~ Cross, family = binomial(link = "logit"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            0.48758    0.05222   9.338  < 2e-16 ***
+(Intercept)            0.48758    0.05222   9.338  <2e-16 ***
 CrosselegansXhybrid   -0.36983    0.05685  -6.505 7.75e-11 ***
 CrosshybridXhybrid    -0.32044    0.05865  -5.464 4.66e-08 ***
 CrossgraellsiiXhybrid  0.54161    0.10372   5.222 1.77e-07 ***
@@ -1160,10 +1160,10 @@ glm(formula = Success ~ Cross, family = binomial(link = "logit"),
 
 Coefficients:
                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            1.02920    0.08962  11.484  < 2e-16 ***
+(Intercept)            1.02920    0.08962  11.484  <2e-16 ***
 CrosshybridXelegans   -0.54161    0.10372  -5.222 1.77e-07 ***
-CrosselegansXhybrid   -0.91144    0.09239  -9.865  < 2e-16 ***
-CrosshybridXhybrid    -0.86205    0.09351  -9.219  < 2e-16 ***
+CrosselegansXhybrid   -0.91144    0.09239  -9.865  <2e-16 ***
+CrosshybridXhybrid    -0.86205    0.09351  -9.219  <2e-16 ***
 CrosshybridXgraellsii -0.77717    0.10422  -7.457 8.84e-14 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
