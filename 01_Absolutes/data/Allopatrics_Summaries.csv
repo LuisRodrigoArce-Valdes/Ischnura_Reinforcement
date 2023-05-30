@@ -20,6 +20,7 @@ Conspecifics-elegansXelegans-SwedenX(E:BelgiumXSweden),N,0,0,NA,0,0,NA,1,1,0.000
 Conspecifics-elegansXelegans-SwedenXSweden,Y,4,3,0.250,3,3,0.000,3,2,0.333,2,274.8,0.027,2,0.919,0.081
 Conspecifics-graellsiiXgraellsii-AlbaXAlba,Y,0,0,NA,0,0,NA,14,13,0.071,13,224.2,0.206,13,0.980,0.020
 Conspecifics-graellsiiXgraellsii-CachadasXCachadas,Y,11,10,0.091,10,9,0.100,10,10,0.000,10,114.6,0.594,10,0.440,0.560
+Conspecifics-graellsiiXgraellsii-RiomaiorXRiomaior,Y,14,14,0.000,14,14,0.000,0,0,NA,0,NA,NA,0,NA,NA
 Heterospecifics-elegansXgraellsii-ArlesXCachadas,Y,7,7,0.000,7,5,0.286,10,9,0.100,9,26.4,0.906,9,0.000,1.000
 Heterospecifics-elegansXgraellsii-BelgiumXCachadas,Y,42,34,0.190,34,25,0.265,11,8,0.273,8,18.7,0.934,8,0.000,1.000
 Heterospecifics-elegansXgraellsii-LaigualXCachadas,Y,6,4,0.333,4,4,0.000,3,1,0.667,1,2.0,0.993,1,0.000,1.000
@@ -31,8 +32,7 @@ Postzygotics-graellsiiXhybrid-AlloGraX(H:BelgiumXCachadas),Y,2,2,0.000,2,2,0.000
 Postzygotics-hybridXelegans-(H:BelgiumXCachadas)XAlloEle,Y,12,9,0.250,9,9,0.000,8,5,0.375,5,18.8,0.934,5,0.000,1.000
 Postzygotics-hybridXgraellsii-(H:BelgiumXCachadas)XAlloGra,Y,14,12,0.143,12,12,0.000,8,6,0.250,6,2.7,0.990,6,0.000,1.000
 Postzygotics-hybridXhybrid-(H:BelgiumXCachadas)X(H:BelgiumXCachadas),Y,18,18,0.000,18,17,0.056,29,24,0.172,24,10.9,0.961,24,0.000,1.000
-0,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
+0,N,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
