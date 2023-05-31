@@ -12,7 +12,7 @@ library(MuMIn)
 rank <- "AICc" #BIC AICc
 p <- "01_Prezygotics"
 
-#sink(paste0("../results/",p,"_Asymmetries_",rank,".txt"), split = T)
+sink(paste0("../results/",p,"_Asymmetries_",rank,".txt"), split = T)
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 print(paste0("All models are ranked by: ", rank))
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -266,4 +266,4 @@ for(i in names(full)[5]){
 }
 
 # Sinking
-#sink()
+sink()
