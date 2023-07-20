@@ -103,6 +103,7 @@ rm(summaries.2001)
 # Names table ####
 # Reading table for names conversion
 names <- read.csv("../data/Names.csv", header = T)
+colnames(names) <- c("Population","ShortName")
 names <- setNames(as.character(names$ShortName), names$Population)
 
 # Mechanical plot ####
