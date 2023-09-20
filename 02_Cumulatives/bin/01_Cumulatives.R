@@ -21,7 +21,7 @@ colnames(cumulative)[7] <- "Mechanical-Tactile"
 # Removing selected rows with low sample sizes and strange behaviours
 cumulative %>%
   filter(Include=="Y") %>%
-  select(!X & !Include) -> cumulative
+  select(!Include) -> cumulative
 
 cumulative %>%
   group_by(Ecology, Cross) %>%

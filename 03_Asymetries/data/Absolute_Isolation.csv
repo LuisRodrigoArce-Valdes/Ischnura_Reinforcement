@@ -1,4 +1,4 @@
-﻿ID,Ecology,Type,Cross,Population,N,Mechanical,Mechanical-Tactile,Oviposition,Fecundity,Fertility,Asymmetries
+ID,Ecology,Type,Cross,Population,N,Mechanical,Mechanical-Tactile,Oviposition,Fecundity,Fertility,Asymmetries
 1,Allopatry,Conspecific crosses,E♂E♀,ArlesXArles,3,0.000,0.333,0.158,0.000,0.271,N
 2,Allopatry,Conspecific crosses,E♂E♀,BelgiumXBelgium,8,0.000,0.125,0.000,0.408,0.406,N
 3,Allopatry,Conspecific crosses,E♂E♀,BelgiumXSweden,5,0.000,0.000,0.000,0.051,0.256,N
