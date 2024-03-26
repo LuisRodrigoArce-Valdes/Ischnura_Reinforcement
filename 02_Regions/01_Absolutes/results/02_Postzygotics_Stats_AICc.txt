@@ -1,0 +1,1627 @@
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "All models are ranked by: AICc"
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "######################"
+[1] "mechanicals"
+Success ~ Ecology + Cross + (Ecology * Cross)
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+    (Int) Crs Ecl Crs:Ecl df   logLik  rank delta weight
+8 18.5700   +   +       + 10  -81.190 183.7  0.00  0.545
+4  4.1240   +   +          6  -85.793 184.1  0.37  0.454
+3  2.2620       +          2  -99.130 202.3 18.61  0.000
+2  2.1400   +              5  -97.190 204.7 21.01  0.000
+1  0.7802                  1 -108.935 219.9 36.17  0.000
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + Ecology + Cross:Ecology + 1, 
+    family = "binomial", data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)                            1.857e+01  2.465e+03   0.008    0.994
+CrossgraellsiiXhybrid                  1.044e-07  5.230e+03   0.000    1.000
+CrosshybridXelegans                   -1.747e+01  2.465e+03  -0.007    0.994
+CrosshybridXgraellsii                 -1.677e+01  2.465e+03  -0.007    0.995
+CrosshybridXhybrid                     5.078e-08  2.905e+03   0.000    1.000
+EcologySympatry                       -1.666e+01  2.465e+03  -0.007    0.995
+CrossgraellsiiXhybrid:EcologySympatry -2.826e+00  5.230e+03  -0.001    1.000
+CrosshybridXelegans:EcologySympatry    1.493e+01  2.465e+03   0.006    0.995
+CrosshybridXgraellsii:EcologySympatry  1.674e+01  2.465e+03   0.007    0.995
+CrosshybridXhybrid:EcologySympatry    -1.997e+00  2.905e+03  -0.001    0.999
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXhybrid"
+[1] "Ecology:"
+[1] "Allopatry"
+[1] "%%%%%"
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)             0.5108     0.2582   1.978  0.04788 * 
+CrosselegansXhybrid     1.6292     0.5883   2.770  0.00561 **
+CrossgraellsiiXhybrid  -0.7340     0.7188  -1.021  0.30720   
+CrosshybridXelegans    -0.5680     0.4255  -1.335  0.18192   
+CrosshybridXgraellsii   1.3218     0.5972   2.213  0.02688 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 194.38  on 170  degrees of freedom
+AIC: 204.38
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             1.8326     0.5385   3.403 0.000666 ***
+CrosshybridXhybrid     -1.3218     0.5972  -2.213 0.026884 *  
+CrosselegansXhybrid     0.3075     0.7546   0.407 0.683646    
+CrossgraellsiiXhybrid  -2.0557     0.8602  -2.390 0.016861 *  
+CrosshybridXelegans    -1.8897     0.6359  -2.972 0.002961 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 194.38  on 170  degrees of freedom
+AIC: 204.38
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.05716    0.33820  -0.169 0.865790    
+CrosshybridXgraellsii  1.88974    0.63591   2.972 0.002961 ** 
+CrosshybridXhybrid     0.56798    0.42549   1.335 0.181916    
+CrosselegansXhybrid    2.19722    0.62751   3.502 0.000463 ***
+CrossgraellsiiXhybrid -0.16599    0.75125  -0.221 0.825135    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 194.38  on 170  degrees of freedom
+AIC: 204.38
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.1401     0.5286   4.049 5.15e-05 ***
+CrosshybridXelegans    -2.1972     0.6275  -3.502 0.000463 ***
+CrosshybridXgraellsii  -0.3075     0.7546  -0.407 0.683646    
+CrosshybridXhybrid     -1.6292     0.5883  -2.770 0.005613 ** 
+CrossgraellsiiXhybrid  -2.3632     0.8540  -2.767 0.005656 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 194.38  on 170  degrees of freedom
+AIC: 204.38
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)   
+(Intercept)            -0.2231     0.6708  -0.333  0.73940   
+CrosselegansXhybrid     2.3632     0.8540   2.767  0.00566 **
+CrosshybridXelegans     0.1660     0.7513   0.221  0.82514   
+CrosshybridXgraellsii   2.0557     0.8602   2.390  0.01686 * 
+CrosshybridXhybrid      0.7340     0.7188   1.021  0.30720   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 194.38  on 170  degrees of freedom
+AIC: 204.38
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)   
+(Intercept)                             -0.08701    0.29516  -0.295   0.7682   
+interactionelegansXhybrid-Allopatry     18.65308 2465.32568   0.008   0.9940   
+interactionelegansXhybrid-Sympatry       1.99655    0.61168   3.264   0.0011 **
+interactiongraellsiiXhybrid-Allopatry   18.65308 4612.20200   0.004   0.9968   
+interactiongraellsiiXhybrid-Sympatry    -0.82928    0.88720  -0.935   0.3499   
+interactionhybridXelegans-Allopatry      1.18562    0.72909   1.626   0.1039   
+interactionhybridXelegans-Sympatry      -0.54160    0.52800  -1.026   0.3050   
+interactionhybridXgraellsii-Allopatry    1.87877    0.81881   2.295   0.0218 * 
+interactionhybridXgraellsii-Sympatry     1.95881    0.81489   2.404   0.0162 * 
+interactionhybridXhybrid-Allopatry      18.65308 1537.40069   0.012   0.9903   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)   
+(Intercept)                              1.87180    0.75955   2.464  0.01373 * 
+interactionhybridXhybrid-Sympatry       -1.95881    0.81489  -2.404  0.01623 * 
+interactionelegansXhybrid-Allopatry     16.69427 2465.32578   0.007  0.99460   
+interactionelegansXhybrid-Sympatry       0.03774    0.92949   0.041  0.96761   
+interactiongraellsiiXhybrid-Allopatry   16.69427 4612.20205   0.004  0.99711   
+interactiongraellsiiXhybrid-Sympatry    -2.78809    1.13001  -2.467  0.01361 * 
+interactionhybridXelegans-Allopatry     -0.77319    1.01063  -0.765  0.44424   
+interactionhybridXelegans-Sympatry      -2.50041    0.87669  -2.852  0.00434 **
+interactionhybridXgraellsii-Allopatry   -0.08004    1.07715  -0.074  0.94076   
+interactionhybridXhybrid-Allopatry      16.69427 1537.40085   0.011  0.99134   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                             -0.6286     0.4378  -1.436 0.151047    
+interactionhybridXgraellsii-Sympatry     2.5004     0.8767   2.852 0.004343 ** 
+interactionhybridXhybrid-Sympatry        0.5416     0.5280   1.026 0.305012    
+interactionelegansXhybrid-Allopatry     19.1947  2465.3257   0.008 0.993788    
+interactionelegansXhybrid-Sympatry       2.5382     0.6919   3.668 0.000244 ***
+interactiongraellsiiXhybrid-Allopatry   19.1947  4612.2020   0.004 0.996679    
+interactiongraellsiiXhybrid-Sympatry    -0.2877     0.9443  -0.305 0.760627    
+interactionhybridXelegans-Allopatry      1.7272     0.7976   2.166 0.030341 *  
+interactionhybridXgraellsii-Allopatry    2.4204     0.8803   2.749 0.005971 ** 
+interactionhybridXhybrid-Allopatry      19.1947  1537.4007   0.012 0.990039    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                              1.90954    0.53576   3.564 0.000365 ***
+interactionhybridXelegans-Sympatry      -2.53815    0.69188  -3.668 0.000244 ***
+interactionhybridXgraellsii-Sympatry    -0.03774    0.92949  -0.041 0.967612    
+interactionhybridXhybrid-Sympatry       -1.99655    0.61168  -3.264 0.001098 ** 
+interactionelegansXhybrid-Allopatry     16.65653 2465.32572   0.007 0.994609    
+interactiongraellsiiXhybrid-Allopatry   16.65653 4612.20202   0.004 0.997119    
+interactiongraellsiiXhybrid-Sympatry    -2.82583    0.99350  -2.844 0.004451 ** 
+interactionhybridXelegans-Allopatry     -0.81093    0.85527  -0.948 0.343048    
+interactionhybridXgraellsii-Allopatry   -0.11778    0.93294  -0.126 0.899534    
+interactionhybridXhybrid-Allopatry      16.65653 1537.40075   0.011 0.991356    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)   
+(Intercept)                             -0.9163     0.8367  -1.095  0.27344   
+interactionelegansXhybrid-Sympatry       2.8258     0.9935   2.844  0.00445 **
+interactionhybridXelegans-Sympatry       0.2877     0.9443   0.305  0.76063   
+interactionhybridXgraellsii-Sympatry     2.7881     1.1300   2.467  0.01361 * 
+interactionhybridXhybrid-Sympatry        0.8293     0.8872   0.935  0.34993   
+interactionelegansXhybrid-Allopatry     19.4824  2465.3258   0.008  0.99369   
+interactiongraellsiiXhybrid-Allopatry   19.4824  4612.2021   0.004  0.99663   
+interactionhybridXelegans-Allopatry      2.0149     1.0698   1.883  0.05964 . 
+interactionhybridXgraellsii-Allopatry    2.7081     1.1328   2.390  0.01683 * 
+interactionhybridXhybrid-Allopatry      19.4824  1537.4009   0.013  0.98989   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)                            1.857e+01  2.465e+03   0.008    0.994
+interactiongraellsiiXhybrid-Sympatry  -1.948e+01  2.465e+03  -0.008    0.994
+interactionelegansXhybrid-Sympatry    -1.666e+01  2.465e+03  -0.007    0.995
+interactionhybridXelegans-Sympatry    -1.919e+01  2.465e+03  -0.008    0.994
+interactionhybridXgraellsii-Sympatry  -1.669e+01  2.465e+03  -0.007    0.995
+interactionhybridXhybrid-Sympatry     -1.865e+01  2.465e+03  -0.008    0.994
+interactiongraellsiiXhybrid-Allopatry -5.591e-08  5.230e+03   0.000    1.000
+interactionhybridXelegans-Allopatry   -1.747e+01  2.465e+03  -0.007    0.994
+interactionhybridXgraellsii-Allopatry -1.677e+01  2.465e+03  -0.007    0.995
+interactionhybridXhybrid-Allopatry    -5.125e-08  2.905e+03   0.000    1.000
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)                            1.857e+01  4.612e+03   0.004    0.997
+interactionelegansXhybrid-Allopatry   -3.835e-07  5.230e+03   0.000    1.000
+interactiongraellsiiXhybrid-Sympatry  -1.948e+01  4.612e+03  -0.004    0.997
+interactionelegansXhybrid-Sympatry    -1.666e+01  4.612e+03  -0.004    0.997
+interactionhybridXelegans-Sympatry    -1.919e+01  4.612e+03  -0.004    0.997
+interactionhybridXgraellsii-Sympatry  -1.669e+01  4.612e+03  -0.004    0.997
+interactionhybridXhybrid-Sympatry     -1.865e+01  4.612e+03  -0.004    0.997
+interactionhybridXelegans-Allopatry   -1.747e+01  4.612e+03  -0.004    0.997
+interactionhybridXgraellsii-Allopatry -1.677e+01  4.612e+03  -0.004    0.997
+interactionhybridXhybrid-Allopatry    -3.795e-07  4.862e+03   0.000    1.000
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)  
+(Intercept)                              1.0986     0.6667   1.648   0.0994 .
+interactiongraellsiiXhybrid-Allopatry   17.4675  4612.2020   0.004   0.9970  
+interactionelegansXhybrid-Allopatry     17.4675  2465.3258   0.007   0.9943  
+interactiongraellsiiXhybrid-Sympatry    -2.0149     1.0698  -1.883   0.0596 .
+interactionelegansXhybrid-Sympatry       0.8109     0.8553   0.948   0.3430  
+interactionhybridXelegans-Sympatry      -1.7272     0.7976  -2.166   0.0303 *
+interactionhybridXgraellsii-Sympatry     0.7732     1.0106   0.765   0.4442  
+interactionhybridXhybrid-Sympatry       -1.1856     0.7291  -1.626   0.1039  
+interactionhybridXgraellsii-Allopatry    0.6931     1.0138   0.684   0.4942  
+interactionhybridXhybrid-Allopatry      17.4675  1537.4008   0.011   0.9909  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)   
+(Intercept)                              1.79176    0.76376   2.346  0.01898 * 
+interactionhybridXelegans-Allopatry     -0.69315    1.01379  -0.684  0.49415   
+interactiongraellsiiXhybrid-Allopatry   16.77431 4612.20205   0.004  0.99710   
+interactionelegansXhybrid-Allopatry     16.77431 2465.32578   0.007  0.99457   
+interactiongraellsiiXhybrid-Sympatry    -2.70805    1.13284  -2.390  0.01683 * 
+interactionelegansXhybrid-Sympatry       0.11778    0.93294   0.126  0.89953   
+interactionhybridXelegans-Sympatry      -2.42037    0.88034  -2.749  0.00597 **
+interactionhybridXgraellsii-Sympatry     0.08004    1.07715   0.074  0.94076   
+interactionhybridXhybrid-Sympatry       -1.87877    0.81881  -2.295  0.02176 * 
+interactionhybridXhybrid-Allopatry      16.77431 1537.40085   0.011  0.99129   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)                            1.857e+01  1.537e+03   0.012    0.990
+interactionhybridXgraellsii-Allopatry -1.677e+01  1.537e+03  -0.011    0.991
+interactionhybridXelegans-Allopatry   -1.747e+01  1.537e+03  -0.011    0.991
+interactiongraellsiiXhybrid-Allopatry -2.718e-08  4.862e+03   0.000    1.000
+interactionelegansXhybrid-Allopatry   -3.124e-08  2.905e+03   0.000    1.000
+interactiongraellsiiXhybrid-Sympatry  -1.948e+01  1.537e+03  -0.013    0.990
+interactionelegansXhybrid-Sympatry    -1.666e+01  1.537e+03  -0.011    0.991
+interactionhybridXelegans-Sympatry    -1.919e+01  1.537e+03  -0.012    0.990
+interactionhybridXgraellsii-Sympatry  -1.669e+01  1.537e+03  -0.011    0.991
+interactionhybridXhybrid-Sympatry     -1.865e+01  1.537e+03  -0.012    0.990
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 217.87  on 174  degrees of freedom
+Residual deviance: 162.38  on 165  degrees of freedom
+AIC: 182.38
+
+Number of Fisher Scoring iterations: 17
+
+[1] "######################"
+[1] "mechanical.tactile"
+Success ~ Ecology + Cross + (Ecology * Cross)
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Int) Crs Ecl Crs:Ecl df  logLik  rank delta weight
+4 4.316   +   +          6 -40.810  94.4  0.00  0.358
+3 3.135       +          2 -45.159  94.4  0.06  0.348
+8 1.792   +   +       + 10 -36.468  95.0  0.59  0.266
+1 1.802                  1 -48.957  99.9  5.59  0.022
+2 2.335   +              5 -46.104 102.7  8.37  0.005
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + Ecology + 1, family = "binomial", 
+    data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             4.3164     0.9932   4.346 1.39e-05 ***
+CrossgraellsiiXhybrid  -1.8104     1.4099  -1.284  0.19911    
+CrosshybridXelegans    -1.7811     0.8894  -2.002  0.04524 *  
+CrosshybridXgraellsii  -1.7028     0.8047  -2.116  0.03434 *  
+CrosshybridXhybrid     -0.1574     0.8669  -0.182  0.85596    
+EcologySympatry        -2.2019     0.8111  -2.715  0.00664 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 81.619  on 114  degrees of freedom
+AIC: 93.619
+
+Number of Fisher Scoring iterations: 6
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXhybrid"
+[1] "Ecology:"
+[1] "Allopatry"
+[1] "%%%%%"
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)  
+(Intercept)            1.15268    0.46829   2.461   0.0138 *
+CrosselegansXhybrid    1.18270    0.76478   1.546   0.1220  
+CrossgraellsiiXhybrid -0.05407    1.24605  -0.043   0.9654  
+CrosshybridXelegans    0.02598    0.73907   0.035   0.9720  
+CrosshybridXhybrid     1.35963    0.76135   1.786   0.0741 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 92.207  on 115  degrees of freedom
+AIC: 102.21
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.5123     0.6003   4.185 2.85e-05 ***
+CrosshybridXgraellsii  -1.3596     0.7614  -1.786   0.0741 .  
+CrosselegansXhybrid    -0.1769     0.8520  -0.208   0.8355    
+CrossgraellsiiXhybrid  -1.4137     1.3014  -1.086   0.2774    
+CrosshybridXelegans    -1.3337     0.8290  -1.609   0.1077    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 92.207  on 115  degrees of freedom
+AIC: 102.21
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.3354     0.6046   3.862 0.000112 ***
+CrosshybridXhybrid      0.1769     0.8520   0.208 0.835496    
+CrosshybridXgraellsii  -1.1827     0.7648  -1.546 0.121996    
+CrossgraellsiiXhybrid  -1.2368     1.3034  -0.949 0.342695    
+CrosshybridXelegans    -1.1567     0.8322  -1.390 0.164530    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 92.207  on 115  degrees of freedom
+AIC: 102.21
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)            1.09861    1.15470   0.951    0.341
+CrosselegansXhybrid    1.23676    1.30343   0.949    0.343
+CrosshybridXhybrid     1.41369    1.30142   1.086    0.277
+CrosshybridXgraellsii  0.05407    1.24605   0.043    0.965
+CrosshybridXelegans    0.08004    1.28851   0.062    0.950
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 92.207  on 115  degrees of freedom
+AIC: 102.21
+
+Number of Fisher Scoring iterations: 5
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)  
+(Intercept)            1.17865    0.57177   2.061   0.0393 *
+CrossgraellsiiXhybrid -0.08004    1.28851  -0.062   0.9505  
+CrosselegansXhybrid    1.15672    0.83217   1.390   0.1645  
+CrosshybridXhybrid     1.33365    0.82903   1.609   0.1077  
+CrosshybridXgraellsii -0.02598    0.73907  -0.035   0.9720  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.915  on 119  degrees of freedom
+Residual deviance: 92.207  on 115  degrees of freedom
+AIC: 102.21
+
+Number of Fisher Scoring iterations: 5
+
+[1] "######################"
+[1] "oviposition"
+Success ~ Ecology + Cross + (Ecology * Cross)
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Int) Crs Ecl Crs:Ecl df  logLik  rank delta weight
+3 1.431       +          2 -49.112 102.3  0.00  0.706
+1 1.937                  1 -51.107 104.2  1.93  0.269
+4 1.580   +   +          6 -48.667 110.0  7.67  0.015
+2 2.251   +              5 -50.478 111.4  9.11  0.007
+8 2.303   +   +       + 10 -45.975 113.7 11.41  0.002
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Ecology + 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                Estimate Std. Error z value Pr(>|z|)    
+(Intercept)       1.4307     0.3356   4.263 2.02e-05 ***
+EcologySympatry   1.0542     0.5415   1.947   0.0516 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 102.213  on 134  degrees of freedom
+Residual deviance:  98.225  on 133  degrees of freedom
+AIC: 102.22
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Ecology:"
+[1] "Allopatry"
+[1] "######################"
+[1] "fecundity"
+Success ~ Ecology + Cross + (Ecology * Cross)
+[1] "family for 02_Postzygotics: Gamma"
+Global model call: glm(formula = formula, family = fam, data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+     (Int) Crs Ecl Crs:Ecl df   logLik   rank delta weight
+8 0.014270   +   +       + 11 -605.307 1235.0  0.00      1
+3 0.036890       +          3 -624.056 1254.3 19.32      0
+4 0.033880   +   +          7 -622.645 1260.3 25.27      0
+1 0.012970                  2 -637.434 1279.0 43.98      0
+2 0.009328   +              6 -634.436 1281.6 46.60      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + Ecology + Cross:Ecology + 1, 
+    family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.014265   0.005211   2.737 0.007195 ** 
+CrossgraellsiiXhybrid                 -0.008551   0.008410  -1.017 0.311451    
+CrosshybridXelegans                    0.039498   0.028260   1.398 0.164953    
+CrosshybridXgraellsii                  0.338676   0.166533   2.034 0.044326 *  
+CrosshybridXhybrid                     0.077689   0.022297   3.484 0.000703 ***
+EcologySympatry                       -0.005902   0.005502  -1.073 0.285681    
+CrossgraellsiiXhybrid:EcologySympatry  0.025829   0.030842   0.837 0.404110    
+CrosshybridXelegans:EcologySympatry   -0.038845   0.028506  -1.363 0.175696    
+CrosshybridXgraellsii:EcologySympatry -0.338775   0.166581  -2.034 0.044325 *  
+CrosshybridXhybrid:EcologySympatry    -0.075125   0.022489  -3.341 0.001134 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXhybrid"
+[1] "Ecology:"
+[1] "Allopatry"
+[1] "%%%%%"
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           9.328e-03  1.808e-03   5.161 1.01e-06 ***
+CrossgraellsiiXhybrid 1.744e-05  8.298e-03   0.002   0.9983    
+CrosshybridXelegans   3.151e-03  4.343e-03   0.726   0.4695    
+CrosshybridXgraellsii 5.718e-03  5.424e-03   1.054   0.2940    
+CrosshybridXhybrid    8.853e-03  3.554e-03   2.491   0.0141 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.501803)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 283.89  on 118  degrees of freedom
+AIC: 1280.9
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            0.015046   0.005114   2.942  0.00392 **
+CrosselegansXhybrid   -0.005718   0.005424  -1.054  0.29395   
+CrossgraellsiiXhybrid -0.005701   0.009578  -0.595  0.55288   
+CrosshybridXelegans   -0.002567   0.006461  -0.397  0.69185   
+CrosshybridXhybrid     0.003136   0.005960   0.526  0.59981   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.501803)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 283.89  on 118  degrees of freedom
+AIC: 1280.9
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            0.018182   0.003061   5.941 2.94e-08 ***
+CrosshybridXgraellsii -0.003136   0.005960  -0.526   0.5998    
+CrosselegansXhybrid   -0.008853   0.003554  -2.491   0.0141 *  
+CrossgraellsiiXhybrid -0.008836   0.008658  -1.021   0.3095    
+CrosshybridXelegans   -0.005703   0.004996  -1.141   0.2560    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.501803)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 283.89  on 118  degrees of freedom
+AIC: 1280.9
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            0.012479   0.003949   3.160    0.002 **
+CrosshybridXhybrid     0.005703   0.004996   1.141    0.256   
+CrosshybridXgraellsii  0.002567   0.006461   0.397    0.692   
+CrosselegansXhybrid   -0.003151   0.004343  -0.726    0.470   
+CrossgraellsiiXhybrid -0.003133   0.009010  -0.348    0.729   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.501803)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 283.89  on 118  degrees of freedom
+AIC: 1280.9
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)
+(Intercept)            9.346e-03  8.099e-03   1.154    0.251
+CrosshybridXelegans    3.133e-03  9.010e-03   0.348    0.729
+CrosshybridXhybrid     8.836e-03  8.658e-03   1.021    0.310
+CrosshybridXgraellsii  5.700e-03  9.578e-03   0.595    0.553
+CrosselegansXhybrid   -1.744e-05  8.298e-03  -0.002    0.998
+
+(Dispersion parameter for Gamma family taken to be 1.501803)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 283.89  on 118  degrees of freedom
+AIC: 1280.9
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            8.364e-03  1.764e-03   4.741 6.24e-06 ***
+interactionelegansXhybrid-Allopatry    5.902e-03  5.502e-03   1.073 0.285681    
+interactiongraellsiiXhybrid-Allopatry -2.649e-03  6.833e-03  -0.388 0.698949    
+interactiongraellsiiXhybrid-Sympatry   1.728e-02  2.967e-02   0.582 0.561552    
+interactionhybridXelegans-Allopatry    4.540e-02  2.783e-02   1.631 0.105623    
+interactionhybridXelegans-Sympatry     6.536e-04  3.737e-03   0.175 0.861458    
+interactionhybridXgraellsii-Allopatry  3.446e-01  1.665e-01   2.070 0.040729 *  
+interactionhybridXgraellsii-Sympatry  -9.907e-05  4.017e-03  -0.025 0.980365    
+interactionhybridXhybrid-Allopatry     8.359e-02  2.175e-02   3.843 0.000201 ***
+interactionhybridXhybrid-Sympatry      2.563e-03  2.934e-03   0.874 0.384080    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            8.264e-03  3.608e-03   2.290 0.023861 *  
+interactionelegansXhybrid-Sympatry     9.907e-05  4.017e-03   0.025 0.980365    
+interactionelegansXhybrid-Allopatry    6.001e-03  6.339e-03   0.947 0.345806    
+interactiongraellsiiXhybrid-Allopatry -2.550e-03  7.523e-03  -0.339 0.735254    
+interactiongraellsiiXhybrid-Sympatry   1.738e-02  2.984e-02   0.582 0.561505    
+interactionhybridXelegans-Allopatry    4.550e-02  2.801e-02   1.624 0.107067    
+interactionhybridXelegans-Sympatry     7.527e-04  4.886e-03   0.154 0.877845    
+interactionhybridXgraellsii-Allopatry  3.447e-01  1.665e-01   2.070 0.040708 *  
+interactionhybridXhybrid-Allopatry     8.369e-02  2.198e-02   3.808 0.000228 ***
+interactionhybridXhybrid-Sympatry      2.662e-03  4.303e-03   0.619 0.537330    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.010927   0.002344   4.662 8.65e-06 ***
+interactionhybridXgraellsii-Sympatry  -0.002662   0.004303  -0.619 0.537330    
+interactionelegansXhybrid-Sympatry    -0.002563   0.002934  -0.874 0.384080    
+interactionelegansXhybrid-Allopatry    0.003338   0.005714   0.584 0.560224    
+interactiongraellsiiXhybrid-Allopatry -0.005213   0.007005  -0.744 0.458344    
+interactiongraellsiiXhybrid-Sympatry   0.014714   0.029713   0.495 0.621419    
+interactionhybridXelegans-Allopatry    0.042837   0.027874   1.537 0.127143    
+interactionhybridXelegans-Sympatry    -0.001910   0.004043  -0.472 0.637569    
+interactionhybridXgraellsii-Allopatry  0.342014   0.166468   2.055 0.042230 *  
+interactionhybridXhybrid-Allopatry     0.081027   0.021806   3.716 0.000317 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.0090171  0.0032940   2.737  0.00720 ** 
+interactionhybridXhybrid-Sympatry      0.0019098  0.0040429   0.472  0.63757    
+interactionhybridXgraellsii-Sympatry  -0.0007527  0.0048859  -0.154  0.87785    
+interactionelegansXhybrid-Sympatry    -0.0006536  0.0037366  -0.175  0.86146    
+interactionelegansXhybrid-Allopatry    0.0052482  0.0061651   0.851  0.39641    
+interactiongraellsiiXhybrid-Allopatry -0.0033028  0.0073774  -0.448  0.65523    
+interactiongraellsiiXhybrid-Sympatry   0.0166239  0.0298033   0.558  0.57809    
+interactionhybridXelegans-Allopatry    0.0447463  0.0279702   1.600  0.11244    
+interactionhybridXgraellsii-Allopatry  0.3439240  0.1664839   2.066  0.04113 *  
+interactionhybridXhybrid-Allopatry     0.0829369  0.0219283   3.782  0.00025 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                            0.02564    0.02962   0.866   0.3885  
+interactionhybridXelegans-Sympatry    -0.01662    0.02980  -0.558   0.5781  
+interactionhybridXhybrid-Sympatry     -0.01471    0.02971  -0.495   0.6214  
+interactionhybridXgraellsii-Sympatry  -0.01738    0.02984  -0.582   0.5615  
+interactionelegansXhybrid-Sympatry    -0.01728    0.02967  -0.582   0.5616  
+interactionelegansXhybrid-Allopatry   -0.01138    0.03008  -0.378   0.7060  
+interactiongraellsiiXhybrid-Allopatry -0.01993    0.03035  -0.657   0.5128  
+interactionhybridXelegans-Allopatry    0.02812    0.04061   0.693   0.4900  
+interactionhybridXgraellsii-Allopatry  0.32730    0.16907   1.936   0.0554 .
+interactionhybridXhybrid-Allopatry     0.06631    0.03671   1.807   0.0735 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.09195    0.02168   4.242 4.56e-05 ***
+interactiongraellsiiXhybrid-Sympatry  -0.06631    0.03671  -1.807 0.073492 .  
+interactionhybridXelegans-Sympatry    -0.08294    0.02193  -3.782 0.000250 ***
+interactionhybridXhybrid-Sympatry     -0.08103    0.02181  -3.716 0.000317 ***
+interactionhybridXgraellsii-Sympatry  -0.08369    0.02198  -3.808 0.000228 ***
+interactionelegansXhybrid-Sympatry    -0.08359    0.02175  -3.843 0.000201 ***
+interactionelegansXhybrid-Allopatry   -0.07769    0.02230  -3.484 0.000703 ***
+interactiongraellsiiXhybrid-Allopatry -0.08624    0.02266  -3.805 0.000230 ***
+interactionhybridXelegans-Allopatry   -0.03819    0.03523  -1.084 0.280719    
+interactionhybridXgraellsii-Allopatry  0.26099    0.16786   1.555 0.122786    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                            0.05376    0.02778   1.936   0.0554 .
+interactionhybridXhybrid-Allopatry     0.03819    0.03523   1.084   0.2807  
+interactiongraellsiiXhybrid-Sympatry  -0.02812    0.04061  -0.693   0.4900  
+interactionhybridXelegans-Sympatry    -0.04475    0.02797  -1.600   0.1124  
+interactionhybridXhybrid-Sympatry     -0.04284    0.02787  -1.537   0.1271  
+interactionhybridXgraellsii-Sympatry  -0.04550    0.02801  -1.624   0.1071  
+interactionelegansXhybrid-Sympatry    -0.04540    0.02783  -1.631   0.1056  
+interactionelegansXhybrid-Allopatry   -0.03950    0.02826  -1.398   0.1650  
+interactiongraellsiiXhybrid-Allopatry -0.04805    0.02855  -1.683   0.0951 .
+interactionhybridXgraellsii-Allopatry  0.29918    0.16875   1.773   0.0789 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                             0.3529     0.1665   2.120   0.0362 *
+interactionhybridXelegans-Allopatry    -0.2992     0.1688  -1.773   0.0789 .
+interactionhybridXhybrid-Allopatry     -0.2610     0.1679  -1.555   0.1228  
+interactiongraellsiiXhybrid-Sympatry   -0.3273     0.1691  -1.936   0.0554 .
+interactionhybridXelegans-Sympatry     -0.3439     0.1665  -2.066   0.0411 *
+interactionhybridXhybrid-Sympatry      -0.3420     0.1665  -2.055   0.0422 *
+interactionhybridXgraellsii-Sympatry   -0.3447     0.1665  -2.070   0.0407 *
+interactionelegansXhybrid-Sympatry     -0.3446     0.1665  -2.070   0.0407 *
+interactionelegansXhybrid-Allopatry    -0.3387     0.1665  -2.034   0.0443 *
+interactiongraellsiiXhybrid-Allopatry  -0.3472     0.1666  -2.084   0.0394 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                           0.005714   0.006601   0.866  0.38852    
+interactionhybridXgraellsii-Allopatry 0.347227   0.166582   2.084  0.03938 *  
+interactionhybridXelegans-Allopatry   0.048049   0.028549   1.683  0.09513 .  
+interactionhybridXhybrid-Allopatry    0.086240   0.022662   3.805  0.00023 ***
+interactiongraellsiiXhybrid-Sympatry  0.019927   0.030347   0.657  0.51276    
+interactionhybridXelegans-Sympatry    0.003303   0.007377   0.448  0.65523    
+interactionhybridXhybrid-Sympatry     0.005213   0.007005   0.744  0.45834    
+interactionhybridXgraellsii-Sympatry  0.002550   0.007523   0.339  0.73525    
+interactionelegansXhybrid-Sympatry    0.002649   0.006833   0.388  0.69895    
+interactionelegansXhybrid-Allopatry   0.008551   0.008410   1.017  0.31145    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = fam, data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            0.014265   0.005211   2.737 0.007195 ** 
+interactiongraellsiiXhybrid-Allopatry -0.008551   0.008410  -1.017 0.311451    
+interactionhybridXgraellsii-Allopatry  0.338676   0.166533   2.034 0.044326 *  
+interactionhybridXelegans-Allopatry    0.039498   0.028260   1.398 0.164953    
+interactionhybridXhybrid-Allopatry     0.077689   0.022297   3.484 0.000703 ***
+interactiongraellsiiXhybrid-Sympatry   0.011376   0.030076   0.378 0.705965    
+interactionhybridXelegans-Sympatry    -0.005248   0.006165  -0.851 0.396413    
+interactionhybridXhybrid-Sympatry     -0.003338   0.005714  -0.584 0.560224    
+interactionhybridXgraellsii-Sympatry  -0.006001   0.006339  -0.947 0.345806    
+interactionelegansXhybrid-Sympatry    -0.005902   0.005502  -1.073 0.285681    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for Gamma family taken to be 1.334507)
+
+    Null deviance: 294.71  on 122  degrees of freedom
+Residual deviance: 195.06  on 113  degrees of freedom
+AIC: 1232.6
+
+Number of Fisher Scoring iterations: 7
+
+[1] "######################"
+[1] "fertility"
+Success ~ Ecology + Cross + (Ecology * Cross)
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+    (Int) Crs Ecl Crs:Ecl df    logLik    rank   delta weight
+8 -2.4610   +   +       + 10 -20583.43 41186.9    0.00      1
+4 -2.3310   +   +          6 -20805.42 41622.8  435.99      0
+3 -1.7040       +          2 -21081.30 42166.6  979.75      0
+2 -0.5813   +              5 -21574.65 43159.3 1972.43      0
+1 -0.5435                  1 -21606.92 43215.8 2028.98      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + Ecology + Cross:Ecology + 1, 
+    family = "binomial", data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -2.46135    0.07787 -31.610  < 2e-16 ***
+CrossgraellsiiXhybrid                   2.32074    0.10076  23.032  < 2e-16 ***
+CrosshybridXelegans                    -2.06405    0.58567  -3.524 0.000425 ***
+CrosshybridXgraellsii                 -11.10471   76.48735  -0.145 0.884566    
+CrosshybridXhybrid                     -2.79788    0.58406  -4.790 1.66e-06 ***
+EcologySympatry                         2.09726    0.07998  26.224  < 2e-16 ***
+CrossgraellsiiXhybrid:EcologySympatry  -3.93765    0.28567 -13.784  < 2e-16 ***
+CrosshybridXelegans:EcologySympatry     2.11625    0.58655   3.608 0.000309 ***
+CrosshybridXgraellsii:EcologySympatry  10.92723   76.48736   0.143 0.886398    
+CrosshybridXhybrid:EcologySympatry      2.65567    0.58480   4.541 5.59e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXhybrid"
+[1] "Ecology:"
+[1] "Allopatry"
+[1] "%%%%%"
+[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.581335   0.017200 -33.798  < 2e-16 ***
+CrossgraellsiiXhybrid  0.275842   0.062989   4.379 1.19e-05 ***
+CrosshybridXelegans    0.191425   0.031258   6.124 9.12e-10 ***
+CrosshybridXgraellsii  0.005042   0.047238   0.107    0.915    
+CrosshybridXhybrid    -0.031728   0.028279  -1.122    0.262    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 43149  on 32855  degrees of freedom
+AIC: 43159
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.576293   0.043995 -13.099  < 2e-16 ***
+CrosselegansXhybrid   -0.005042   0.047238  -0.107 0.914993    
+CrossgraellsiiXhybrid  0.270800   0.074882   3.616 0.000299 ***
+CrosshybridXelegans    0.186383   0.051154   3.644 0.000269 ***
+CrosshybridXhybrid    -0.036771   0.049390  -0.744 0.456576    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 43149  on 32855  degrees of freedom
+AIC: 43159
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.61306    0.02245 -27.313  < 2e-16 ***
+CrosshybridXgraellsii  0.03677    0.04939   0.744    0.457    
+CrosselegansXhybrid    0.03173    0.02828   1.122    0.262    
+CrossgraellsiiXhybrid  0.30757    0.06462   4.760 1.94e-06 ***
+CrosshybridXelegans    0.22315    0.03442   6.482 9.02e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 43149  on 32855  degrees of freedom
+AIC: 43159
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.38991    0.02610 -14.939  < 2e-16 ***
+CrosshybridXhybrid    -0.22315    0.03442  -6.482 9.02e-11 ***
+CrosshybridXgraellsii -0.18638    0.05115  -3.644 0.000269 ***
+CrosselegansXhybrid   -0.19143    0.03126  -6.124 9.12e-10 ***
+CrossgraellsiiXhybrid  0.08442    0.06598   1.279 0.200725    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 43149  on 32855  degrees of freedom
+AIC: 43159
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid"
+
+Call:
+glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.30549    0.06060  -5.042 4.62e-07 ***
+CrosshybridXelegans   -0.08442    0.06598  -1.279 0.200725    
+CrosshybridXhybrid    -0.30757    0.06462  -4.760 1.94e-06 ***
+CrosshybridXgraellsii -0.27080    0.07488  -3.616 0.000299 ***
+CrosselegansXhybrid   -0.27584    0.06299  -4.379 1.19e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 43149  on 32855  degrees of freedom
+AIC: 43159
+
+Number of Fisher Scoring iterations: 4
+
+[1] "%%%%%"
+[1] "POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:"
+[1] "%%%%%"
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -0.36409    0.01825 -19.955  < 2e-16 ***
+interactionelegansXhybrid-Allopatry    -2.09726    0.07998 -26.224  < 2e-16 ***
+interactiongraellsiiXhybrid-Allopatry   0.22347    0.06650   3.361 0.000778 ***
+interactiongraellsiiXhybrid-Sympatry   -1.61691    0.26731  -6.049 1.46e-09 ***
+interactionhybridXelegans-Allopatry    -4.16131    0.58075  -7.165 7.76e-13 ***
+interactionhybridXelegans-Sympatry      0.05220    0.03221   1.621 0.105044    
+interactionhybridXgraellsii-Allopatry -13.20197   76.48731  -0.173 0.862963    
+interactionhybridXgraellsii-Sympatry   -0.17748    0.04789  -3.706 0.000210 ***
+interactionhybridXhybrid-Allopatry     -4.89514    0.57914  -8.452  < 2e-16 ***
+interactionhybridXhybrid-Sympatry      -0.14221    0.02928  -4.857 1.19e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -0.54157    0.04427 -12.232  < 2e-16 ***
+interactionelegansXhybrid-Sympatry      0.17748    0.04789   3.706  0.00021 ***
+interactionelegansXhybrid-Allopatry    -1.91978    0.08957 -21.432  < 2e-16 ***
+interactiongraellsiiXhybrid-Allopatry   0.40096    0.07778   5.155 2.53e-07 ***
+interactiongraellsiiXhybrid-Sympatry   -1.43943    0.27033  -5.325 1.01e-07 ***
+interactionhybridXelegans-Allopatry    -3.98383    0.58215  -6.843 7.74e-12 ***
+interactionhybridXelegans-Sympatry      0.22969    0.05162   4.450 8.60e-06 ***
+interactionhybridXgraellsii-Allopatry -13.02449   76.48732  -0.170  0.86479    
+interactionhybridXhybrid-Allopatry     -4.71766    0.58054  -8.126 4.43e-16 ***
+interactionhybridXhybrid-Sympatry       0.03527    0.04984   0.708  0.47914    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -0.50630    0.02290 -22.112  < 2e-16 ***
+interactionhybridXgraellsii-Sympatry   -0.03527    0.04984  -0.708    0.479    
+interactionelegansXhybrid-Sympatry      0.14221    0.02928   4.857 1.19e-06 ***
+interactionelegansXhybrid-Allopatry    -1.95505    0.08116 -24.088  < 2e-16 ***
+interactiongraellsiiXhybrid-Allopatry   0.36568    0.06792   5.384 7.29e-08 ***
+interactiongraellsiiXhybrid-Sympatry   -1.47470    0.26767  -5.509 3.60e-08 ***
+interactionhybridXelegans-Allopatry    -4.01910    0.58092  -6.919 4.56e-12 ***
+interactionhybridXelegans-Sympatry      0.19441    0.03505   5.546 2.92e-08 ***
+interactionhybridXgraellsii-Allopatry -13.05977   76.48731  -0.171    0.864    
+interactionhybridXhybrid-Allopatry     -4.75293    0.57930  -8.205 2.31e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -0.31189    0.02654 -11.752  < 2e-16 ***
+interactionhybridXhybrid-Sympatry      -0.19441    0.03505  -5.546 2.92e-08 ***
+interactionhybridXgraellsii-Sympatry   -0.22969    0.05162  -4.450 8.60e-06 ***
+interactionelegansXhybrid-Sympatry     -0.05220    0.03221  -1.621   0.1050    
+interactionelegansXhybrid-Allopatry    -2.14947    0.08227 -26.128  < 2e-16 ***
+interactiongraellsiiXhybrid-Allopatry   0.17127    0.06924   2.474   0.0134 *  
+interactiongraellsiiXhybrid-Sympatry   -1.66911    0.26800  -6.228 4.72e-10 ***
+interactionhybridXelegans-Allopatry    -4.21352    0.58107  -7.251 4.13e-13 ***
+interactionhybridXgraellsii-Allopatry -13.25418   76.48731  -0.173   0.8624    
+interactionhybridXhybrid-Allopatry     -4.94734    0.57946  -8.538  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Sympatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -1.9810     0.2667  -7.428 1.10e-13 ***
+interactionhybridXelegans-Sympatry      1.6691     0.2680   6.228 4.72e-10 ***
+interactionhybridXhybrid-Sympatry       1.4747     0.2677   5.509 3.60e-08 ***
+interactionhybridXgraellsii-Sympatry    1.4394     0.2703   5.325 1.01e-07 ***
+interactionelegansXhybrid-Sympatry      1.6169     0.2673   6.049 1.46e-09 ***
+interactionelegansXhybrid-Allopatry    -0.4804     0.2778  -1.729   0.0838 .  
+interactiongraellsiiXhybrid-Allopatry   1.8404     0.2742   6.711 1.94e-11 ***
+interactionhybridXelegans-Allopatry    -2.5444     0.6388  -3.983 6.80e-05 ***
+interactionhybridXgraellsii-Allopatry -11.5851    76.4878  -0.151   0.8796    
+interactionhybridXhybrid-Allopatry     -3.2782     0.6373  -5.144 2.69e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -5.2592     0.5788  -9.086  < 2e-16 ***
+interactiongraellsiiXhybrid-Sympatry    3.2782     0.6373   5.144 2.69e-07 ***
+interactionhybridXelegans-Sympatry      4.9473     0.5795   8.538  < 2e-16 ***
+interactionhybridXhybrid-Sympatry       4.7529     0.5793   8.205 2.31e-16 ***
+interactionhybridXgraellsii-Sympatry    4.7177     0.5805   8.126 4.43e-16 ***
+interactionelegansXhybrid-Sympatry      4.8951     0.5791   8.452  < 2e-16 ***
+interactionelegansXhybrid-Allopatry     2.7979     0.5841   4.790 1.66e-06 ***
+interactiongraellsiiXhybrid-Allopatry   5.1186     0.5824   8.789  < 2e-16 ***
+interactionhybridXelegans-Allopatry     0.7338     0.8198   0.895    0.371    
+interactionhybridXgraellsii-Allopatry  -8.3068    76.4895  -0.109    0.914    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXelegans-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -4.5254     0.5805  -7.796 6.38e-15 ***
+interactionhybridXhybrid-Allopatry     -0.7338     0.8198  -0.895 0.370697    
+interactiongraellsiiXhybrid-Sympatry    2.5444     0.6388   3.983 6.80e-05 ***
+interactionhybridXelegans-Sympatry      4.2135     0.5811   7.251 4.13e-13 ***
+interactionhybridXhybrid-Sympatry       4.0191     0.5809   6.919 4.56e-12 ***
+interactionhybridXgraellsii-Sympatry    3.9838     0.5822   6.843 7.74e-12 ***
+interactionelegansXhybrid-Sympatry      4.1613     0.5808   7.165 7.76e-13 ***
+interactionelegansXhybrid-Allopatry     2.0641     0.5857   3.524 0.000425 ***
+interactiongraellsiiXhybrid-Allopatry   4.3848     0.5840   7.508 5.98e-14 ***
+interactionhybridXgraellsii-Allopatry  -9.0407    76.4895  -0.118 0.905913    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: graellsiiXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -0.14062    0.06395  -2.199 0.027882 *  
+interactionhybridXelegans-Allopatry    -4.38479    0.58398  -7.508 5.98e-14 ***
+interactionhybridXhybrid-Allopatry     -5.11861    0.58237  -8.789  < 2e-16 ***
+interactiongraellsiiXhybrid-Sympatry   -1.84038    0.27424  -6.711 1.94e-11 ***
+interactionhybridXelegans-Sympatry     -0.17127    0.06924  -2.474 0.013372 *  
+interactionhybridXhybrid-Sympatry      -0.36568    0.06792  -5.384 7.29e-08 ***
+interactionhybridXgraellsii-Sympatry   -0.40096    0.07778  -5.155 2.53e-07 ***
+interactionelegansXhybrid-Sympatry     -0.22347    0.06650  -3.361 0.000778 ***
+interactionelegansXhybrid-Allopatry    -2.32074    0.10076 -23.032  < 2e-16 ***
+interactionhybridXgraellsii-Allopatry -13.42545   76.48734  -0.176 0.860667    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: elegansXhybrid-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                            -2.46135    0.07787 -31.610  < 2e-16 ***
+interactiongraellsiiXhybrid-Allopatry   2.32074    0.10076  23.032  < 2e-16 ***
+interactionhybridXelegans-Allopatry    -2.06405    0.58567  -3.524 0.000425 ***
+interactionhybridXhybrid-Allopatry     -2.79788    0.58406  -4.790 1.66e-06 ***
+interactiongraellsiiXhybrid-Sympatry    0.48035    0.27782   1.729 0.083808 .  
+interactionhybridXelegans-Sympatry      2.14947    0.08227  26.128  < 2e-16 ***
+interactionhybridXhybrid-Sympatry       1.95505    0.08116  24.088  < 2e-16 ***
+interactionhybridXgraellsii-Sympatry    1.91978    0.08957  21.432  < 2e-16 ***
+interactionelegansXhybrid-Sympatry      2.09726    0.07998  26.224  < 2e-16 ***
+interactionhybridXgraellsii-Allopatry -11.10471   76.48735  -0.145 0.884566    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+
+[1] "%%%%%"
+[1] "Intercept: hybridXgraellsii-Allopatry"
+
+Call:
+glm(formula = Success ~ interaction, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                                      Estimate Std. Error z value Pr(>|z|)
+(Intercept)                            -13.566     76.487  -0.177    0.859
+interactionelegansXhybrid-Allopatry     11.105     76.487   0.145    0.885
+interactiongraellsiiXhybrid-Allopatry   13.425     76.487   0.176    0.861
+interactionhybridXelegans-Allopatry      9.041     76.490   0.118    0.906
+interactionhybridXhybrid-Allopatry       8.307     76.490   0.109    0.914
+interactiongraellsiiXhybrid-Sympatry    11.585     76.488   0.151    0.880
+interactionhybridXelegans-Sympatry      13.254     76.487   0.173    0.862
+interactionhybridXhybrid-Sympatry       13.060     76.487   0.171    0.864
+interactionhybridXgraellsii-Sympatry    13.024     76.487   0.170    0.865
+interactionelegansXhybrid-Sympatry      13.202     76.487   0.173    0.863
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 43214  on 32859  degrees of freedom
+Residual deviance: 41167  on 32850  degrees of freedom
+AIC: 41187
+
+Number of Fisher Scoring iterations: 12
+

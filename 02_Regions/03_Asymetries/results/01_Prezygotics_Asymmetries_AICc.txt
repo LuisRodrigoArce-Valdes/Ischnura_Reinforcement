@@ -1,0 +1,821 @@
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "All models are ranked by: AICc"
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+[1] "GLOBAL TESTS"
+[1] ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+[1] ""
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "Sympatry"
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "######################"
+[1] "mechanicals"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df   logLik  rank delta weight
+2  1.3280     +  2  -71.849 147.8   0.0      1
+1  0.3455        1 -103.124 208.3  60.5      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              1.3278     0.2398   5.537 3.07e-08 ***
+CrossgraellsiiXelegans  -3.2496     0.4986  -6.518 7.12e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 206.25  on 151  degrees of freedom
+Residual deviance: 143.70  on 150  degrees of freedom
+AIC: 147.7
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "######################"
+[1] "mechanical.tactile"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik  rank delta weight
+1   1.175        1 -48.627  99.3  0.00  0.709
+2   1.214     +  2 -48.470 101.1  1.78  0.291
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   1.1750     0.2496   4.707 2.52e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 97.254  on 88  degrees of freedom
+Residual deviance: 97.254  on 88  degrees of freedom
+AIC: 99.254
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "oviposition"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   2.411        1 -24.181 50.4  0.00  0.687
+2   2.372     +  2 -23.918 52.0  1.57  0.313
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   2.4108     0.3946    6.11 9.96e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 48.361  on 84  degrees of freedom
+Residual deviance: 48.361  on 84  degrees of freedom
+AIC: 50.361
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "fecundity"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "poisson", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df    logLik   rank delta weight
+2   4.490     +  2 -3243.226 6490.6  0.00      1
+1   4.509        1 -3271.210 6544.5 53.86      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             4.49028    0.01223 367.163  < 2e-16 ***
+CrossgraellsiiXelegans  0.40756    0.05135   7.936 2.08e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 6100.8  on 77  degrees of freedom
+Residual deviance: 6044.8  on 76  degrees of freedom
+AIC: 6490.5
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "######################"
+[1] "fertility"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, weights = sub.df$Fertility_N, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df    logLik   rank delta weight
+1   1.119        1 -2830.357 5662.8   0.0  0.711
+2   1.121     +  2 -2830.204 5664.6   1.8  0.289
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  1.11886    0.01673   66.89   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 5332.7  on 76  degrees of freedom
+Residual deviance: 5332.7  on 76  degrees of freedom
+AIC: 5662.7
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] ""
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "Allopatry"
+[1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+[1] "######################"
+[1] "mechanicals"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.580        1 -37.478 77.0   0.0  0.741
+2   1.576     +  2 -37.477 79.1   2.1  0.259
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   1.5805     0.2935   5.385 7.23e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 74.955  on 81  degrees of freedom
+Residual deviance: 74.955  on 81  degrees of freedom
+AIC: 76.955
+
+Number of Fisher Scoring iterations: 3
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "mechanical.tactile"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.442        1 -33.179 68.4  0.00  0.669
+2   1.344     +  2 -32.820 69.8  1.41  0.331
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   1.4424     0.3084   4.677 2.91e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 66.358  on 67  degrees of freedom
+Residual deviance: 66.358  on 67  degrees of freedom
+AIC: 68.358
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "oviposition"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+2  0.5465     +  2 -19.715 43.8  0.00  0.789
+1  0.8210        1 -22.158 46.4  2.64  0.211
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)
+(Intercept)               0.5465     0.3789   1.443    0.149
+CrossgraellsiiXelegans   18.0195  2662.8561   0.007    0.995
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 44.316  on 35  degrees of freedom
+Residual deviance: 39.429  on 34  degrees of freedom
+AIC: 43.429
+
+Number of Fisher Scoring iterations: 17
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "######################"
+[1] "fecundity"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "poisson", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df    logLik   rank   delta weight
+2   3.062     +  2  -462.131  928.8    0.00      1
+1   4.289        1 -1629.010 3260.2 2331.39      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "poisson", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             3.06191    0.04963   61.70   <2e-16 ***
+CrossgraellsiiXelegans  2.40262    0.05629   42.68   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 3137.47  on 24  degrees of freedom
+Residual deviance:  803.72  on 23  degrees of freedom
+AIC: 928.26
+
+Number of Fisher Scoring iterations: 6
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "######################"
+[1] "fertility"
+Success ~ Cross
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, weights = sub.df$Fertility_N, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df    logLik   rank  delta weight
+2 -5.0610     +  2  -875.601 1755.7    0.0      1
+1  0.5421        1 -1575.386 3152.9 1397.2      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             -5.0610     0.5015  -10.09   <2e-16 ***
+CrossgraellsiiXelegans   6.0741     0.5028   12.08   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 3107.6  on 24  degrees of freedom
+Residual deviance: 1708.1  on 23  degrees of freedom
+AIC: 1755.2
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "######################"
+[1] "mechanicals"
+Success ~ Cross
+[1] "////////////////////"
+[1] "CachadasXLaxe"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik  rank delta weight
+2   1.347     +  2 -38.465  81.1  0.00      1
+1   0.550        1 -53.850 109.8 28.67      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)              1.3471     0.3113   4.327 1.51e-05 ***
+CrossgraellsiiXelegans  -3.4871     0.8097  -4.306 1.66e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 107.701  on 81  degrees of freedom
+Residual deviance:  76.931  on 80  degrees of freedom
+AIC: 80.931
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "////////////////////"
+[1] "BelgiumXCachadas"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.459        1 -25.668 53.4  0.00  0.746
+2   1.447     +  2 -25.666 55.6  2.16  0.254
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   1.4586     0.3511   4.155 3.26e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 51.336  on 52  degrees of freedom
+Residual deviance: 51.336  on 52  degrees of freedom
+AIC: 53.336
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "LanzadaXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+2  19.570     +  2  -4.157 12.7   0.0      1
+1  -1.056        1 -17.702 37.5  24.8      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)
+(Intercept)               19.57    4064.63   0.005    0.996
+CrossgraellsiiXelegans   -22.70    4064.63  -0.006    0.996
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 35.4034  on 30  degrees of freedom
+Residual deviance:  8.3138  on 29  degrees of freedom
+AIC: 12.314
+
+Number of Fisher Scoring iterations: 18
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "////////////////////"
+[1] "CorrubedoXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df logLik rank delta weight
+1   1.386        1 -2.502  8.3  0.00  0.956
+2  18.570     +  2 -2.249 14.5  6.16  0.044
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)    1.386      1.118    1.24    0.215
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 5.004  on 4  degrees of freedom
+Residual deviance: 5.004  on 4  degrees of freedom
+AIC: 7.004
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "mechanical.tactile"
+Success ~ Cross
+[1] "////////////////////"
+[1] "CachadasXLaxe"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.316        1 -26.831 55.7  0.00  0.659
+2   1.386     +  2 -26.406 57.1  1.31  0.341
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)   1.3157     0.3396   3.875 0.000107 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 53.663  on 51  degrees of freedom
+Residual deviance: 53.663  on 51  degrees of freedom
+AIC: 55.663
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "BelgiumXCachadas"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.194        1 -23.321 48.7  0.00  0.639
+2   1.022     +  2 -22.789 49.9  1.14  0.361
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)    1.194      0.361   3.307 0.000941 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 46.642  on 42  degrees of freedom
+Residual deviance: 46.642  on 42  degrees of freedom
+AIC: 48.642
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "LanzadaXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df logLik rank delta weight
+1  0.5108        1 -5.293 13.3  0.00  0.682
+2  0.9163     +  2 -4.188 14.8  1.52  0.318
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)   0.5108     0.7303   0.699    0.484
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 10.585  on 7  degrees of freedom
+Residual deviance: 10.585  on 7  degrees of freedom
+AIC: 12.585
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "CorrubedoXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df logLik rank delta weight
+1   23.57        1      0    4     0  0.998
+2   23.57     +  2      0   16    12  0.002
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)    23.57   39731.01   0.001        1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 0.000e+00  on 3  degrees of freedom
+Residual deviance: 4.661e-10  on 3  degrees of freedom
+AIC: 2
+
+Number of Fisher Scoring iterations: 22
+
+[1] "The intercept levels are: "
+[1] "######################"
+[1] "oviposition"
+Success ~ Cross
+[1] "////////////////////"
+[1] "CachadasXLaxe"
+[1] "///////////////////"
+[1] "Only one cross direction"
+[1] "////////////////////"
+[1] "BelgiumXCachadas"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df logLik rank delta weight
+1  1.4660        1 -7.721 17.7  0.00  0.511
+2  0.9808     +  2 -6.445 17.8  0.09  0.489
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)   1.4663     0.6405   2.289   0.0221 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 15.442  on 15  degrees of freedom
+Residual deviance: 15.442  on 15  degrees of freedom
+AIC: 17.442
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "CorrubedoXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df logLik rank delta weight
+1   24.57        1      0  3.3  0.00  0.966
+2   24.57     +  2      0 10.0  6.67  0.034
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)    24.57   58589.80       0        1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 0.0000e+00  on 4  degrees of freedom
+Residual deviance: 2.1434e-10  on 4  degrees of freedom
+AIC: 2
+
+Number of Fisher Scoring iterations: 23
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "LanzadaXLouro"
+[1] "///////////////////"
+[1] "Only one cross direction"
+[1] "######################"
+[1] "fecundity"
+Success ~ Cross
+[1] "////////////////////"
+[1] "CachadasXLaxe"
+[1] "///////////////////"
+[1] "Only one cross direction"
+[1] "////////////////////"
+[1] "BelgiumXCachadas"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = poisson(link = "log"), data = sub.df, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df   logLik   rank  delta weight
+2   2.931     +  2  -82.398  170.0    0.0      1
+1   4.679        1 -872.914 1748.2 1578.2      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = poisson(link = "log"), 
+    data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             2.93119    0.08165   35.90   <2e-16 ***
+CrossgraellsiiXelegans  2.59027    0.08641   29.98   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 1673.5  on 12  degrees of freedom
+Residual deviance:   92.5  on 11  degrees of freedom
+AIC: 168.8
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "////////////////////"
+[1] "CorrubedoXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = poisson(link = "log"), data = sub.df, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df   logLik  rank delta weight
+2   4.431     +  2 -124.964 259.9  0.00      1
+1   4.736        1 -138.639 280.6 20.68      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = poisson(link = "log"), 
+    data = sub.df, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             4.43082    0.07715  57.433  < 2e-16 ***
+CrossgraellsiiXelegans  0.46702    0.09187   5.084  3.7e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 248.11  on 4  degrees of freedom
+Residual deviance: 220.76  on 3  degrees of freedom
+AIC: 253.93
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "////////////////////"
+[1] "LanzadaXLouro"
+[1] "///////////////////"
+[1] "Only one cross direction"
+[1] "######################"
+[1] "fertility"
+Success ~ Cross
+[1] "////////////////////"
+[1] "CachadasXLaxe"
+[1] "///////////////////"
+[1] "Only one cross direction"
+[1] "////////////////////"
+[1] "BelgiumXCachadas"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, weights = sub.df$Fertility_N, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df   logLik   rank  delta weight
+2  -5.056     +  2 -374.343  753.9   0.00      1
+1   1.122        1 -851.080 1704.5 950.64      0
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             -5.0562     0.7094  -7.128 1.02e-12 ***
+CrossgraellsiiXelegans   6.5965     0.7108   9.281  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1668.80  on 12  degrees of freedom
+Residual deviance:  715.33  on 11  degrees of freedom
+AIC: 752.69
+
+Number of Fisher Scoring iterations: 5
+
+[1] "The intercept levels are: "
+[1] "Cross:"
+[1] "elegansXgraellsii"
+[1] "////////////////////"
+[1] "CorrubedoXLouro"
+[1] "///////////////////"
+Global model call: glm(formula = formula, family = "binomial", data = sub.df, weights = sub.df$Fertility_N, 
+    na.action = "na.fail")
+---
+Model selection table 
+  (Intrc) Cross df  logLik rank delta weight
+1   1.168        1 -47.679 98.7  0.00  0.615
+2   1.389     +  2 -44.814 99.6  0.94  0.385
+Models ranked by rank(x) 
+[1] "The results of the best model are: "
+
+Call:
+glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
+    weights = sub.df$Fertility_N, na.action = "na.fail")
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  1.16837    0.05682   20.56   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 70.855  on 4  degrees of freedom
+Residual deviance: 70.855  on 4  degrees of freedom
+AIC: 97.357
+
+Number of Fisher Scoring iterations: 4
+
+[1] "The intercept levels are: "
+[1] "////////////////////"
+[1] "LanzadaXLouro"
+[1] "///////////////////"
+[1] "Only one cross direction"
