@@ -116,7 +116,7 @@ asymmetries %>%
   geom_hline(aes(yintercept=0)) +
   coord_flip() +
   scale_fill_manual(values = c('#984ea3','#a65628')) +
-  scale_y_continuous(n.breaks = 5, limits = c(-1,1)) +
+  scale_y_continuous(n.breaks = 5, limits = c(-1.2,1.2)) +
   labs(y="Reproductive isolation asymmetry (G♂E♀ - E♂G♀)") +
   theme_classic() +
   theme(legend.position = "none",
@@ -129,7 +129,7 @@ asymmetries %>%
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../../00_BasePPTX/PNAS_Tall_Image.pptx") %>%
+officer::read_pptx("../../../00_BasePPTX/PNAS_Tall_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide

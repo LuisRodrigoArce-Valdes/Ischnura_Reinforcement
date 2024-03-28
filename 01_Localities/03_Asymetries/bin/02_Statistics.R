@@ -6,6 +6,15 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(MuMIn)
+library(DHARMa) # <- To validate the best selected model.
+
+# Creating directory to save DHARMA plots
+dir.create("../results/DHARMA", showWarnings = F)
+
+# Specifying DHARMA plots parameters (in cm)
+wi <- 30 #width
+h <- 15 #height
+r <- 600 #resolution
 
 # Using this script we will make GLMs to test statistical differences in reproductive barriers between groups.
 # Loading tidyed barriers files
@@ -69,6 +78,14 @@ load(paste0("../../01_Absolutes/results/",p,".Rdata"))
     print(dredged <- dredge(glms, rank = rank))
     # Evaluating the best model
     glm1 <- eval(getCall(dredged, 1))
+    
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    # Plotting the DHARMA plots to check for model fit
+    png(paste0("../results/DHARMA/",eco,"_",i,".png"), width = wi, height = h, res = r, units = "cm")
+    plot(simulateResiduals(fittedModel = glm1))
+    dev.off()
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     print("The results of the best model are: ")
     print(summary(glm1))
     # Getting the intercepts
@@ -92,11 +109,19 @@ load(paste0("../../01_Absolutes/results/",p,".Rdata"))
     sub.df <- tidied[[i]]
     sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
     sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
-    glms <- glm(formula, data = sub.df, family = "poisson", na.action = "na.fail")
+    glms <- glm(formula, data = sub.df, family = "Gamma", na.action = "na.fail")
     # Dredging glms
     print(dredged <- dredge(glms, rank = rank))
     # Evaluating the best model
     glm1 <- eval(getCall(dredged, 1))
+    
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    # Plotting the DHARMA plots to check for model fit
+    png(paste0("../results/DHARMA/",eco,"_",i,".png"), width = wi, height = h, res = r, units = "cm")
+    plot(simulateResiduals(fittedModel = glm1))
+    dev.off()
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     print("The results of the best model are: ")
     print(summary(glm1))
     # Getting the intercepts
@@ -117,13 +142,38 @@ load(paste0("../../01_Absolutes/results/",p,".Rdata"))
     sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
     # adding one egg to those that didnt had a single fertile egg and had a lot of eggs (becuase this is affecting statistical results when all eggs are unfertil)
     sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
-    # Converting to succes ratio
-    sub.df$Success <- sub.df$Success / sub.df$Fertility_N
-    glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+    
+    # ¡NEW EDITIONS AFTER TESTING WITH DHARMA! ####
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    # Converting to 1 and 0s long table as the other binomial barriers.
+    # Estimating unsucessful events (unfertile eggs)
+    sub.df$Unsuccess <- sub.df$Fertility_N - sub.df$Success
+    sub.df <- sub.df[,-5]
+    # Adding female code
+    sub.df$female <- paste0("Female_", 1:nrow(sub.df))
+    # Tidying
+    sub.df <- gather(sub.df, "Success","Fertile", 4:5)
+    # Repeating rows (to transform it into 0 and 1 per female)
+    sub.df <- sub.df[rep(row.names(sub.df), sub.df$Fertile),-6]
+    # Converting to 1 and 0s
+    sub.df$Success <- ifelse(sub.df$Success=="Success",1,0)
+    # Modeling
+    glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
+    
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     # Dredging glms
     print(dredged <- dredge(glms, rank = rank))
     # Evaluating the best model
     glm1 <- eval(getCall(dredged, 1))
+    
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    # Plotting the DHARMA plots to check for model fit
+    png(paste0("../results/DHARMA/",eco,"_",i,".png"), width = wi, height = h, res = r, units = "cm")
+    plot(simulateResiduals(fittedModel = glm1))
+    dev.off()
+    # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     print("The results of the best model are: ")
     print(summary(glm1))
     # Getting the intercepts
@@ -136,7 +186,7 @@ load(paste0("../../01_Absolutes/results/",p,".Rdata"))
 }
   
 # Per population tests ####
-rm(list = setdiff(ls(),c("full","rank")))
+rm(list = setdiff(ls(),c("full","rank","p","wi","h","r","eco")))
 
 # Reading selected populations
 asymmetries <- read.csv("../data/Absolute_Isolation.csv")
@@ -184,6 +234,14 @@ for(i in names(Binomials)){
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",eco,"_",i,"_",w,".png"), width = wi, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts
@@ -214,11 +272,19 @@ for(i in names(full)[4]){
     if(length(unique(sub.df$Cross))>1){
   sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
   sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
-  glms <- glm(formula, data = sub.df, family = poisson(link = "log"), na.action = "na.fail")
+  glms <- glm(formula, data = sub.df, family = "Gamma", na.action = "na.fail")
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",eco,"_",i,"_",w,".png"), width = wi, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts
@@ -246,13 +312,39 @@ for(i in names(full)[5]){
       sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
       # adding one egg to those that didnt had a single fertile egg and had a lot of eggs (becuase this is affecting statistical results when all eggs are unfertil)
       sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
-      # Converting to succes ration
-      sub.df$Success <- sub.df$Success / sub.df$Fertility_N # Rounding to integers
-  glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      
+      # ¡NEW EDITIONS AFTER TESTING WITH DHARMA! ####
+      # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      
+      # Converting to 1 and 0s long table as the other binomial barriers.
+      # Estimating unsucessful events (unfertile eggs)
+      sub.df$Unsuccess <- sub.df$Fertility_N - sub.df$Success
+      sub.df <- sub.df[,-5]
+      # Adding female code
+      sub.df$female <- paste0("Female_", 1:nrow(sub.df))
+      # Tidying
+      sub.df <- gather(sub.df, "Success","Fertile", 4:5)
+      # Repeating rows (to transform it into 0 and 1 per female)
+      sub.df <- sub.df[rep(row.names(sub.df), sub.df$Fertile),-6]
+      # Converting to 1 and 0s
+      sub.df$Success <- ifelse(sub.df$Success=="Success",1,0)
+      # Modeling
+      glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
+      
+      # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",eco,"_",i,"_",w,".png"), width = wi, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts

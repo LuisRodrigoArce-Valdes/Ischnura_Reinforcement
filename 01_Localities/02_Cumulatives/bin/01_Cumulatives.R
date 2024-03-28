@@ -39,9 +39,10 @@ cumulative %>%
   mutate(Cross = factor(Cross, levels = c("E♂E♀","G♂G♀","E♂G♀","G♂E♀"), labels = c("EE","GG","EG","GE"))) %>%
   ggplot() +
   facet_grid2(rows=vars(Ecology), cols = vars(Cross)) +
+  geom_hline(yintercept=0) +
   geom_line(aes(x=Barrier, y=Isolation, group=Population, color = id)) +
   geom_point(aes(x=Barrier, y=Isolation,color = id)) +
-  scale_y_continuous(n.breaks = 5, limits = c(0,1), labels = percent) +
+  scale_y_continuous(n.breaks = 5, labels = percent) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
@@ -54,7 +55,7 @@ cumulative %>%
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../../00_BasePPTX/PNAS_Large_Image.pptx") %>%
+officer::read_pptx("../../../00_BasePPTX/PNAS_Large_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
@@ -66,9 +67,10 @@ cumulative %>%
   mutate(Cross = factor(Cross, levels = c("E♂H♀","G♂H♀","H♂H♀","H♂E♀","H♂G♀"), labels = c("EH","GH","HH","HE","HG"))) %>%
   ggplot() +
   facet_grid2(rows=vars(Ecology), cols = vars(Cross)) +
+  geom_hline(yintercept=0) +
   geom_line(aes(x=Barrier, y=Isolation, group=Population, color = id)) +
   geom_point(aes(x=Barrier, y=Isolation,color = id)) +
-  scale_y_continuous(n.breaks = 5, limits = c(0,1), labels = percent) +
+  scale_y_continuous(n.breaks = 5, labels = percent) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
@@ -81,7 +83,7 @@ cumulative %>%
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../../00_BasePPTX/PNAS_Large_Image.pptx") %>%
+officer::read_pptx("../../../00_BasePPTX/PNAS_Large_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide

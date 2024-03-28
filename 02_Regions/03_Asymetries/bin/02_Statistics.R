@@ -5,185 +5,80 @@ rm(list = ls())
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(MuMIn)
+library(MuMIn) # <- To automatize 
+library(DHARMa) # <- To validate the best selected model.
+
+# Creating directory to save DHARMA plots
+dir.create("../results/DHARMA", showWarnings = F)
+
+# Specifying DHARMA plots parameters (in cm)
+w <- 30 #width
+h <- 15 #height
+r <- 600 #resolution
 
 # Using this script we will make GLMs to test statistical differences in reproductive barriers between groups.
 # Loading tidyed barriers files
 rank <- "AICc" #BIC AICc
-p <- "01_Prezygotics"
 
+p <- "01_Prezygotics"
 sink(paste0("../results/",p,"_Asymmetries_",rank,".txt"), split = T)
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 print(paste0("All models are ranked by: ", rank))
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 load(paste0("../../01_Absolutes/results/",p,".Rdata"))
-  
-# Setting up data ####
-  
-# Cleaning populations names
-  for(i in names(tidied)){
-    tidied[[i]]$Population <- gsub(" .*$","",tidied[[i]]$Population)
-    tidied[[i]] <- tidied[[i]][tidied[[i]]$Cross=="elegansXgraellsii" | tidied[[i]]$Cross=="graellsiiXelegans",]
-  }
 
-  print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-  print("GLOBAL TESTS")
-  print(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
-  
-  # Saving full data
-  full <- tidied
-  
-  # Global tests ####
-  for(eco in unique(tidied$mechanicals$Ecology)){
-    print("")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print(eco)
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    
-    # Selecting ecology
-    for(i in names(full)){
-      tidied[[i]] <- full[[i]][full[[i]]$Ecology==eco,]
-    }
-    
-  # Binomials ###
-  # Extracting binomials barriers
-  Binomials <- list()
-  for(i in names(tidied)[1:3]){
-    Binomials[[i]] <- tidied[[i]]
-    colnames(Binomials[[i]])[4] <- "Success"
-    Binomials[[i]]$Success <- grepl("Succesfull",Binomials[[i]]$Success)
-    Binomials[[i]]$Success <- ifelse(Binomials[[i]]$Success==T,1,0)
-  }
-  
-  # Creating prezygotics and postzygotics formulas
-  formula <- as.formula("Success ~ Cross")
-  
-  # Modeling glms for binomial barriers
-  for(i in names(Binomials)){
-    print("######################")
-    print(i)
-    print(formula)
-    sub.df <- Binomials[[i]]
-    glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
-    # Dredging glms
-    print(dredged <- dredge(glms, rank = rank))
-    # Evaluating the best model
-    glm1 <- eval(getCall(dredged, 1))
-    print("The results of the best model are: ")
-    print(summary(glm1))
-    # Getting the intercepts
-    print("The intercept levels are: ")
-    for(q in names(glm1$xlevels)){
-      print(paste0(q,":"))
-      print(glms$xlevels[[q]][1])
-    }
-  }
-  
-  # Modeling non binomial variables 
-  for(i in names(tidied)[4:5]){
-    colnames(tidied[[i]])[4] <- "Success"
-  }
-  
-  # Fecundity 
-  for(i in names(tidied)[4]){
-    print("######################")
-    print(i)
-    print(formula)
-    sub.df <- tidied[[i]]
-    sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
-    sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
-    glms <- glm(formula, data = sub.df, family = "poisson", na.action = "na.fail")
-    # Dredging glms
-    print(dredged <- dredge(glms, rank = rank))
-    # Evaluating the best model
-    glm1 <- eval(getCall(dredged, 1))
-    print("The results of the best model are: ")
-    print(summary(glm1))
-    # Getting the intercepts
-    print("The intercept levels are: ")
-    for(q in names(glm1$xlevels)){
-      print(paste0(q,":"))
-      print(glms$xlevels[[q]][1])
-    }
-  }
-  
-  # Fertility 
-  for(i in names(tidied)[5]){
-    print("######################")
-    print(i)
-    print(formula)
-    sub.df <- tidied[[i]]
-    # rounding up success cases to avoid warnings (due to excel rounding of decimals)
-    sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
-    # adding one egg to those that didnt had a single fertile egg and had a lot of eggs (becuase this is affecting statistical results when all eggs are unfertil)
-    sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
-    # Converting to succes ratio
-    sub.df$Success <- sub.df$Success / sub.df$Fertility_N
-    glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
-    # Dredging glms
-    print(dredged <- dredge(glms, rank = rank))
-    # Evaluating the best model
-    glm1 <- eval(getCall(dredged, 1))
-    print("The results of the best model are: ")
-    print(summary(glm1))
-    # Getting the intercepts
-    print("The intercept levels are: ")
-    for(q in names(glm1$xlevels)){
-      print(paste0(q,":"))
-      print(glms$xlevels[[q]][1])
-    }
-  }
-}
-  
-# Per population tests ####
-rm(list = setdiff(ls(),c("full","rank")))
-
-# Reading selected populations
-asymmetries <- read.csv("../data/Absolute_Isolation.csv")
-asymmetries %>%
-  filter(Asymmetries == "Y") -> asymmetries
-
-# Tyding data
-for(i in names(full)){
-  # Filtering data to only include this localities
-  full[[i]] <- full[[i]][full[[i]]$Population %in% asymmetries$Population,]
-  
-  # Unifying names
-  full[[i]][full[[i]]$Population=="CachadasXBelgium","Population"] <- "BelgiumXCachadas"
-  full[[i]][full[[i]]$Population=="LouroXCorrubedo","Population"] <- "CorrubedoXLouro"
-  full[[i]][full[[i]]$Population=="LouroXLanzada","Population"] <- "LanzadaXLouro"
-  full[[i]][full[[i]]$Population=="LaxeXCachadas","Population"] <- "CachadasXLaxe"
+# Spliting between sympatry and allopatry
+ecos <- tidied
+for(u in c("Allopatry","Sympatry")){
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+print(u)
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+for(i in names(tidied)){
+  tidied[[i]] <- ecos[[i]][ecos[[i]]$Ecology==u,]
 }
 
-# Binomials ###
+
+# Filtering for heterospecific crosses only and splitting between ecologies!
+for(i in names(tidied)){
+  tidied[[i]] <- tidied[[i]][tidied[[i]]$Cross=="elegansXgraellsii" | tidied[[i]]$Cross=="graellsiiXelegans",]
+}
+
+# Binomials ####
 # Extracting binomials barriers
 Binomials <- list()
-for(i in names(full)[1:3]){
-  Binomials[[i]] <- full[[i]]
-  colnames(Binomials[[i]])[4] <- "Success"
+for(i in names(tidied)[1:3]){
+  Binomials[[i]] <- tidied[[i]]
+  colnames(Binomials[[i]])[3] <- "Success"
   Binomials[[i]]$Success <- grepl("Succesfull",Binomials[[i]]$Success)
   Binomials[[i]]$Success <- ifelse(Binomials[[i]]$Success==T,1,0)
 }
 
 # Creating prezygotics and postzygotics formulas
-formula <- as.formula("Success ~ Cross")
+if(p == "01_Prezygotics"){
+  formula <- as.formula("Success ~ Cross")
+} else {
+  formula <- as.formula("Success ~ Cross")
+}
 
 # Modeling glms for binomial barriers
 for(i in names(Binomials)){
   print("######################")
   print(i)
   print(formula)
-  for(w in unique(Binomials[[i]]$Population)){
-  print("////////////////////")
-  print(w)
-  print("///////////////////")
-  sub.df <- Binomials[[i]][Binomials[[i]]$Population==w,]
-  if(length(unique(sub.df$Cross))>1){
+  sub.df <- Binomials[[i]]
   glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts
@@ -192,33 +87,77 @@ for(i in names(Binomials)){
     print(paste0(q,":"))
     print(glms$xlevels[[q]][1])
   }
-  } else {print("Only one cross direction")}
-}
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+    
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
+  
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    print("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+    
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
+  }
 }
 
-# Modeling non binomial variables 
-for(i in names(full)[4:5]){
-  colnames(full[[i]])[4] <- "Success"
+# Modeling non binomial variables ####
+for(i in names(tidied)[4:5]){
+  colnames(tidied[[i]])[3] <- "Success"
 }
 
-# Fecundity 
-for(i in names(full)[4]){
+# Fecundity ####
+i <- names(tidied)[4]
   print("######################")
   print(i)
   print(formula)
-  for(w in unique(full[[4]]$Population)){
-    print("////////////////////")
-    print(w)
-    print("///////////////////")
-    sub.df <- full[[4]][full[[4]]$Population==w,]
-    if(length(unique(sub.df$Cross))>1){
+  sub.df <- tidied[[i]]
   sub.df$Success <- as.integer(round(sub.df$Success, digits = 0)) # Rounding to integers
   sub.df$Success[sub.df$Success==0] <- 1 # Converting 0s to 1s (since we have excluded non ovipositing females and poisson distributions needs positive values)
-  glms <- glm(formula, data = sub.df, family = poisson(link = "log"), na.action = "na.fail")
+  
+  # ¡NEW EDITIONS AFTER TESTING WITH DHARMA! ####
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  fam <- ifelse(p=="01_Prezygotics","Gamma","Gamma") #"!!!! gaussian worked better for prezygotics and Gamma for postzygotics"
+  print(paste0("family for ", p, ": ", fam))
+  glms <- glm(formula, data = sub.df, family = fam, na.action = "na.fail")
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts
@@ -227,32 +166,86 @@ for(i in names(full)[4]){
     print(paste0(q,":"))
     print(glms$xlevels[[q]][1])
   }
-  } else {print("Only one cross direction")}
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+    
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, family = fam, na.action = "na.fail")
+      print(summary(glms))
+    }
   }
+  
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    print("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+    
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, family = fam, na.action = "na.fail")
+      print(summary(glms))
+    }
   }
 
-# Fertility 
-for(i in names(full)[5]){
+# Fertility ####
+i <- names(tidied)[5]
   print("######################")
   print(i)
   print(formula)
-  for(w in unique(full[[5]]$Population)){
-    print("////////////////////")
-    print(w)
-    print("///////////////////")
-    sub.df <- full[[5]][full[[5]]$Population==w,]
-    if(length(unique(sub.df$Cross))>1){
-      # rounding up success cases to avoid warnings (due to excel rounding of decimals)
-      sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
-      # adding one egg to those that didnt had a single fertile egg and had a lot of eggs (becuase this is affecting statistical results when all eggs are unfertil)
-      sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
-      # Converting to succes ration
-      sub.df$Success <- sub.df$Success / sub.df$Fertility_N # Rounding to integers
-  glms <- glm(formula, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+  sub.df <- tidied[[i]]
+  # rounding up success cases to avoid warnings (due to excel rounding of decimals)
+  sub.df$Success <- round(sub.df$Success * sub.df$Fertility_N, digits = 0)
+  # adding one egg when a high number of infertile eggs was seen (without it GLMs behave weridly):
+  sub.df$Success[sub.df$Success==0 & sub.df$Fertility_N > 50] <- 1
+  
+  # ¡NEW EDITIONS AFTER TESTING WITH DHARMA! ####
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  # Converting to 1 and 0s long table as the other binomial barriers.
+  # Estimating unsucessful events (unfertile eggs)
+  sub.df$Unsuccess <- sub.df$Fertility_N - sub.df$Success
+  sub.df <- sub.df[,-5]
+  # Adding female code
+  sub.df$female <- paste0("Female_", 1:nrow(sub.df))
+  # Tidying
+  sub.df <- gather(sub.df, "Success","Fertile", 3:4)
+  # Repeating rows (to transform it into 0 and 1 per female)
+  sub.df <- sub.df[rep(row.names(sub.df), sub.df$Fertile),-5]
+  # Converting to 1 and 0s
+  sub.df$Success <- ifelse(sub.df$Success=="Success",1,0)
+  # Modeling
+  glms <- glm(formula, data = sub.df, family = "binomial", na.action = "na.fail")
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   # Dredging glms
   print(dredged <- dredge(glms, rank = rank))
   # Evaluating the best model
   glm1 <- eval(getCall(dredged, 1))
+  
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  # Plotting the DHARMA plots to check for model fit
+  png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
+  plot(simulateResiduals(fittedModel = glm1))
+  dev.off()
+  # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
   print("The results of the best model are: ")
   print(summary(glm1))
   # Getting the intercepts
@@ -260,10 +253,42 @@ for(i in names(full)[5]){
   for(q in names(glm1$xlevels)){
     print(paste0(q,":"))
     print(glms$xlevels[[q]][1])
+  }
+  # Posthoc analyses
+  # Posthocing crosses
+  if("Cross" %in% names(glm1$xlevels)){
+    print("%%%%%")
+    print("POST HOC ANALYSES PER TYPE OF CROSS:")
+    print("%%%%%")
+
+    # Iterating over different crosses
+    for(n in unique(sub.df$Cross)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
+      glms <- glm(Success ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
     }
-    } else {print("Only one cross direction")}
+  }
+
+  # Posthocing interaction between cross and Ecology
+  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
+    print("%%%%%")
+    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
+    print("%%%%%")
+    sub.df %>%
+      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
+
+    # Iterating over different combinations
+    for(n in unique(sub.df$interaction)){
+      print("%%%%%")
+      print(paste0("Intercept: ", n))
+      # Selecting reference level
+      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
+      glms <- glm(Success ~ interaction, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
+      print(summary(glms))
+    }
   }
 }
-
-# Sinking
 sink()

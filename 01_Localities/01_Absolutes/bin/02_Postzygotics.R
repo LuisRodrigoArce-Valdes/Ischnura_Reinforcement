@@ -23,7 +23,7 @@ a5 <- 20
 # line width for Binomial plots
 l <- 1
 # Select slide size
-slide.size <- "../../00_BasePPTX/PNAS_Large_Image.pptx"
+slide.size <- "../../../00_BasePPTX/PNAS_Large_Image.pptx"
 
 # Tidying 2019 ####
 full.2019 <- read.csv("../data/2019_R.csv", header = T, encoding = "UTF-8")
@@ -617,7 +617,7 @@ fertility %>%
 
 # All barriers plot ####
 # Select slide size
-slide.size <- "../../00_BasePPTX/Multiple_5.pptx"
+slide.size <- "../../../00_BasePPTX/Multiple_5.pptx"
 
 # Creating powerpoint slides
 read_pptx(slide.size) %>%
