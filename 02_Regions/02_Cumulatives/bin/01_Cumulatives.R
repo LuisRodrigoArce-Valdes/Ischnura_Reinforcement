@@ -25,7 +25,6 @@ cumulative %>%
   mutate(Type = ifelse(Type=="Postzygotics","Postzygotics","Prezygotics")) %>%
   mutate(Type = factor(Type, levels = c("Prezygotics","Postzygotics"))) %>%  
   mutate(Cross = factor(Cross, levels = unique(Cross))) %>%
-  filter(N > 5) %>%
   select(!N) -> cumulative
 
 # Prezygotics crosses ####

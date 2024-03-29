@@ -127,8 +127,6 @@ A.2X5.2,Postzygotics-graellsiiXhybrid,1,1
 5.8X5.9,Postzygotics-hybridXhybrid,1,1
 5.11X3.5,Postzygotics-hybridXhybrid,1,1
 3.3X5.11,Postzygotics-hybridXhybrid,1,1
-H.2XH.1,Conspecifics-elegansXelegans,1,1
-K.11XK.12,Conspecifics-elegansXelegans,1,1
 A.23XA.22,Conspecifics-elegansXelegans,1,1
 A.27XA.29,Conspecifics-elegansXelegans,1,1
 A.2XA.8,Conspecifics-elegansXelegans,1,1
@@ -137,16 +135,11 @@ B.6XB.8,Conspecifics-elegansXelegans,1,1
 B.6XE.5,Conspecifics-elegansXelegans,1,1
 E.6XE.5,Conspecifics-elegansXelegans,1,0
 E10XE.11,Conspecifics-elegansXelegans,1,1
-E.3XK.12,Conspecifics-elegansXelegans,1,0
-E.15XK.13,Conspecifics-elegansXelegans,1,1
-B.10XK.9,Conspecifics-elegansXelegans,1,1
 A.2XA.12,Conspecifics-elegansXelegans,1,1
 A.10XC.1,Conspecifics-elegansXelegans,1,1
 A.19XC.10,Conspecifics-elegansXelegans,1,1
 A.46XC.25,Conspecifics-elegansXelegans,1,1
 E15XV.1,Conspecifics-elegansXelegans,1,1
-P.16XE.3,Conspecifics-elegansXelegans,1,1
-P.15XK.2,Conspecifics-elegansXelegans,1,1
 C.7XA.12,Conspecifics-elegansXelegans,0,NA
 C.6XA.20,Conspecifics-elegansXelegans,1,1
 C.17XC.22,Conspecifics-elegansXelegans,1,1
@@ -187,3 +180,9 @@ B.45XB.57,Conspecifics-graellsiiXgraellsii,1,1
 2023-2.18X2.17,Conspecifics-graellsiiXgraellsii,1,1
 2023-2.16X2.26,Conspecifics-graellsiiXgraellsii,1,1
 0,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,

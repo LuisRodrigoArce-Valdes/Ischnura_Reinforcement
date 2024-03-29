@@ -38,11 +38,11 @@ cumulative %>%
   filter(Type == "Conspecific crosses" | Type == "Heterospecific crosses") %>%
   mutate(Cross = factor(Cross, levels = c("E♂E♀","G♂G♀","E♂G♀","G♂E♀"), labels = c("EE","GG","EG","GE"))) %>%
   ggplot() +
-  facet_grid2(rows=vars(Ecology), cols = vars(Cross)) +
+  facet_grid2(rows=vars(Ecology), cols = vars(Cross), scales = "free_y") +
   geom_hline(yintercept=0) +
   geom_line(aes(x=Barrier, y=Isolation, group=Population, color = id)) +
   geom_point(aes(x=Barrier, y=Isolation,color = id)) +
-  scale_y_continuous(n.breaks = 5, labels = percent) +
+  scale_y_continuous(breaks = seq(from = -0.5, to = 1, by = 0.25), labels = percent) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
@@ -66,7 +66,7 @@ cumulative %>%
   filter(Type == "Postzygotics") %>%
   mutate(Cross = factor(Cross, levels = c("E♂H♀","G♂H♀","H♂H♀","H♂E♀","H♂G♀"), labels = c("EH","GH","HH","HE","HG"))) %>%
   ggplot() +
-  facet_grid2(rows=vars(Ecology), cols = vars(Cross)) +
+  facet_grid2(rows=vars(Ecology), cols = vars(Cross), scales = "free_y") +
   geom_hline(yintercept=0) +
   geom_line(aes(x=Barrier, y=Isolation, group=Population, color = id)) +
   geom_point(aes(x=Barrier, y=Isolation,color = id)) +

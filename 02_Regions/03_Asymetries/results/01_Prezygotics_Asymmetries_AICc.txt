@@ -424,8 +424,8 @@ Global model call: glm(formula = formula, family = "binomial", data = sub.df, na
 ---
 Model selection table 
   (Intrc) Cross df  logLik rank delta weight
-1   2.159        1 -28.936 59.9  0.00  0.671
-2   2.120     +  2 -28.602 61.3  1.43  0.329
+1   2.411        1 -24.181 50.4  0.00  0.687
+2   2.372     +  2 -23.918 52.0  1.57  0.313
 Models ranked by rank(x) 
 [1] "The results of the best model are: "
 
@@ -435,17 +435,17 @@ glm(formula = Success ~ 1, family = "binomial", data = sub.df,
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
-(Intercept)    2.159      0.352   6.135 8.54e-10 ***
+(Intercept)   2.4108     0.3946    6.11 9.96e-10 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 57.871  on 86  degrees of freedom
-Residual deviance: 57.871  on 86  degrees of freedom
-AIC: 59.871
+    Null deviance: 48.361  on 84  degrees of freedom
+Residual deviance: 48.361  on 84  degrees of freedom
+AIC: 50.361
 
-Number of Fisher Scoring iterations: 4
+Number of Fisher Scoring iterations: 5
 
 [1] "The intercept levels are: "
 [1] "######################"

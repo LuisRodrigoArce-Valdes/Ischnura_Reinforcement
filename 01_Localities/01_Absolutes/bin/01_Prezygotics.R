@@ -446,8 +446,9 @@ fecundity %>%
   mutate(Population = str_replace_all(fecundity$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
-  geom_violin(aes(x=Population, y=EggsPerClutch), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
+  geom_violin(aes(x=Population, y=EggsPerClutch, color = Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Population, y=EggsPerClutch), size = 1) +
+  scale_color_manual(values = c("#7570b3","#e7298a")) +
   theme_classic() +
   labs(y="Fecundity (Eggs per clutch)") +
   theme(axis.title.x = element_blank(),
@@ -493,7 +494,8 @@ fecundity %>%
   geom_violin(aes(x=Ecology2, y=EggsPerClutch, fill=Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Ecology2, y=EggsPerClutch, shape=Ecology), size = 1) +
   scale_shape_manual(values = c(17, 16)) +
-  scale_fill_manual(values = c("#7570b3","#e7298a")) +  theme_classic() +
+  scale_fill_manual(values = c("#7570b3","#e7298a")) +
+  theme_classic() +
   labs(title="D", y="Fecundity (Eggs per clutch)") +
   theme(axis.title.x = element_blank(),
         axis.text.x = element_text(size = tx5, angle = a5, hjust = 1),
@@ -542,8 +544,9 @@ fertility %>%
   mutate(Population = str_replace_all(fertility$Population, names)) %>%
   ggplot() +
   facet_grid2(cols = vars(Cross), rows = vars(Ecology), scales = "free_x", independent = "x") +
-  geom_violin(aes(x=Population, y=Fertility), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
+  geom_violin(aes(x=Population, y=Fertility, color = Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Population, y=Fertility), size = 1) +
+  scale_color_manual(values = c("#7570b3","#e7298a")) +
   scale_y_continuous(labels = percent) +
   theme_classic() +
   labs(y="Fertility (Ratio of fertile eggs)") +

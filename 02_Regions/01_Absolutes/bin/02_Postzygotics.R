@@ -220,8 +220,9 @@ fecundity %>%
   mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
-  geom_violin(aes(x=Ecology, y=EggsPerClutch), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
+  geom_violin(aes(x=Ecology, y=EggsPerClutch, color=Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Ecology, y=EggsPerClutch), size = 1) +
+  scale_color_manual(values = c("#7570b3","#e7298a")) +
   theme_classic() +
   labs(y="Fecundity (Average eggs per clutch per female)") +
   theme(axis.title.x = element_blank(),
@@ -261,8 +262,9 @@ fertility %>%
   mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
-  geom_violin(aes(x=Ecology, y=Fertility), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
+  geom_violin(aes(x=Ecology, y=Fertility, color=Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Ecology, y=Fertility), size = 1) +
+  scale_color_manual(values = c("#7570b3","#e7298a")) +
   scale_y_continuous(labels = percent) +
   theme_classic() +
   labs(y="Fertility (Ratio of fertile eggs per female)") +

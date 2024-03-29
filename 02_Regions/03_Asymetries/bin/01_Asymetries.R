@@ -65,7 +65,7 @@ asymmetries %>%
   geom_hline(aes(yintercept=0)) +
   coord_flip() +
   scale_fill_manual(values = c('#984ea3','#a65628')) +
-  scale_y_continuous(breaks = c(-1,-.75,-.5,-.25,0,.25,.5,.75,1), limits = c(-1.1,1.1)) +
+  scale_y_continuous(breaks = c(-1,-.75,-.5,-.25,0,.25,.5,.75,1), limits = c(-1,1)) +
   labs(y="Reproductive isolation asymmetry (G♂E♀ - E♂G♀)") +
   theme_classic() +
   theme(legend.position = "none",
