@@ -81,7 +81,7 @@ mechanicals %>%
 
 # Plotting
 mechanicals %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXhybrid","hybridXelegans","hybridXgraellsii"))) %>% 
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
   geom_bar(aes(x=Ecology, fill=Mechanical.Sucess), position = "fill") +
@@ -126,7 +126,7 @@ mechanical.tactile %>%
 
 # Plotting
 mechanical.tactile %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXhybrid","hybridXelegans","hybridXgraellsii"))) %>% 
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
   geom_bar(aes(x=Ecology, fill=Mechanical.Tactile.Success), position = "fill") +
@@ -175,7 +175,7 @@ tidied$oviposition <- oviposition
 
 # Plotting
 oviposition %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>%
+  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXhybrid","hybridXelegans","hybridXgraellsii"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
   geom_bar(aes(x=Ecology, fill=ClutchesWEggs), position = "fill") +
@@ -217,7 +217,7 @@ tidied$fecundity <- fecundity
 
 # Estimating absolute and relative frequencies of barrier outputs
 fecundity %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>%
+  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXhybrid","hybridXelegans","hybridXgraellsii"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
   geom_violin(aes(x=Ecology, y=EggsPerClutch, color=Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
@@ -259,7 +259,7 @@ tidied$fertility <- fertility
 
 # Plotting
 fertility %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXelegans","hybridXgraellsii","hybridXhybrid"))) %>%
+  mutate(Cross = factor(Cross, levels = c("elegansXhybrid","graellsiiXhybrid","hybridXhybrid","hybridXelegans","hybridXgraellsii"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 5) +
   geom_violin(aes(x=Ecology, y=Fertility, color=Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +

@@ -238,6 +238,30 @@ pptx %>%
   add_slide(layout = "En blanco", master = "Tema de Office") %>%
   ph_with(p_dml, ph_location_fullsize()) -> pptx
 
+# NEW PLOT LIMITING Y AXIS
+fecundity %>%
+  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>%
+  ggplot() +
+  facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
+  geom_violin(aes(x=Ecology, y=EggsPerClutch, color = Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
+  geom_point(aes(x=Ecology, y=EggsPerClutch), size = 1) +
+  scale_color_manual(values = c("#7570b3","#e7298a")) +
+  scale_y_continuous(limits = c(0,400)) +
+  theme_classic() +
+  labs(y="Fecundity (Average eggs per clutch per female)") +
+  theme(axis.title.x = element_blank(),
+        text = element_text(family = "serif", size = s),
+        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
+        legend.position="none") -> p
+
+# Converting to dml
+p_dml <- dml(ggobj = p)
+
+# Adding plot to new slide at fullsize
+pptx %>%
+  add_slide(layout = "En blanco", master = "Tema de Office") %>%
+  ph_with(p_dml, ph_location_fullsize()) -> pptx
+
 # Fertility plot ####
 fertility <- list()
 

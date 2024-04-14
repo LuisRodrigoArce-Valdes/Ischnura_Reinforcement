@@ -108,7 +108,9 @@ asymmetries %>%
   mutate(Barrier = factor(Barrier, levels=rev(unique(Barrier)))) %>%
   mutate(Direction = ifelse(Asymmetry > 0,"positive","negative")) -> asymmetries
 
+# Plotting
 asymmetries %>%
+  filter(Population != "Average Allopatry" & Population != "Average Sympatry") %>%  # Filtering averages since we have now the global measurements
   na.omit() %>%
   ggplot() +
   facet_wrap(. ~ Population, ncol = 1) +
@@ -129,7 +131,7 @@ asymmetries %>%
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../../../00_BasePPTX/PNAS_Tall_Image.pptx") %>%
+officer::read_pptx("../../../00_BasePPTX/PNAS_Square_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
