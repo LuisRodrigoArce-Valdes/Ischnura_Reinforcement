@@ -17,32 +17,32 @@
 16,Allopatry,Postzygotics,H♂E♀,(H:BelgiumXCachadas)XAlloEle,12,0.215,0.152,0.425,0.953,1.000,Y
 17,Allopatry,Postzygotics,H♂G♀,(H:BelgiumXCachadas)XAlloGra,14,0.102,0.031,0.212,0.991,1.000,Y
 18,Allopatry,Postzygotics,H♂H♀,(H:BelgiumXCachadas)X(H:BelgiumXCachadas),18,-0.047,-0.067,0.042,0.954,1.000,Y
-19,Sympatry,Conspecific crosses,E♂E♀,LouroXLouro,5,0.372,0.322,0.412,0.483,0.411,Y
-20,Sympatry,Conspecific crosses,E♂E♀,LaxeXLaxe,41,0.132,0.311,0.333,0.738,0.735,Y
-21,Sympatry,Conspecific crosses,G♂G♀,LanzadaXLanzada,2,-0.047,1.000,NA,NA,NA,N
-22,Sympatry,Conspecific crosses,G♂G♀,MontalvoXMontalvo,10,-0.047,-0.130,-0.226,0.507,0.669,Y
+19,Sympatry,Conspecific crosses,E♂E♀,LouroXLouro,5,0.335,0.163,0.284,-0.325,-0.489,Y
+20,Sympatry,Conspecific crosses,E♂E♀,LaxeXLaxe,41,0.081,0.150,0.188,0.329,0.329,Y
+21,Sympatry,Conspecific crosses,G♂G♀,LanzadaXLanzada,2,-0.108,1.000,NA,NA,NA,N
+22,Sympatry,Conspecific crosses,G♂G♀,MontalvoXMontalvo,10,-0.108,-0.394,-0.492,-0.264,0.163,Y
 23,Sympatry,Heterospecific crosses,E♂G♀,LouroXCenteans,0,NA,NA,NA,NA,NA,N
-24,Sympatry,Heterospecific crosses,E♂G♀,LouroXCorrubedo,1,-0.047,-0.130,-0.226,0.547,0.749,N
-25,Sympatry,Heterospecific crosses,E♂G♀,LouroXLanzada,7,-0.047,0.193,0.363,0.703,0.686,Y
-26,Sympatry,Heterospecific crosses,E♂G♀,LaxeXCachadas,63,0.169,0.282,0.266,0.743,0.800,Y
-27,Sympatry,Heterospecific crosses,E♂G♀,LaxeXMontalvo,34,0.230,0.402,0.351,0.705,0.777,Y
-28,Sympatry,Heterospecific crosses,G♂E♀,CorrubedoXLouro,4,0.215,0.152,0.081,0.460,0.446,Y
-29,Sympatry,Heterospecific crosses,G♂E♀,LanzadaXLouro,24,0.956,1.000,NA,NA,NA,Y
-30,Sympatry,Heterospecific crosses,G♂E♀,CachadasXLaxe,19,0.890,0.941,NA,NA,NA,Y
+24,Sympatry,Heterospecific crosses,E♂G♀,LouroXCorrubedo,1,-0.108,-0.394,-0.492,-0.160,0.365,N
+25,Sympatry,Heterospecific crosses,E♂G♀,LouroXLanzada,7,-0.108,0.004,0.225,0.239,0.207,Y
+26,Sympatry,Heterospecific crosses,E♂G♀,LaxeXCachadas,63,0.120,0.115,0.106,0.341,0.495,Y
+27,Sympatry,Heterospecific crosses,E♂G♀,LaxeXMontalvo,34,0.185,0.262,0.210,0.245,0.437,Y
+28,Sympatry,Heterospecific crosses,G♂E♀,CorrubedoXLouro,4,0.169,-0.046,-0.119,-0.383,-0.401,Y
+29,Sympatry,Heterospecific crosses,G♂E♀,LanzadaXLouro,24,0.954,1.000,NA,NA,NA,Y
+30,Sympatry,Heterospecific crosses,G♂E♀,CachadasXLaxe,19,0.883,0.927,NA,NA,NA,Y
 31,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LouroXCenteans),0,NA,NA,NA,NA,NA,N
-32,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LouroXLanzada),8,-0.047,0.011,0.017,0.302,0.315,Y
-33,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LaxeXCachadas),4,-0.047,-0.130,-0.226,0.964,0.963,Y
-34,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LaxeXMontalvo),15,0.232,0.247,0.331,0.636,0.675,Y
-35,Sympatry,Postzygotics,G♂H♀,SymGraX(H:LouroXLanzada),6,0.825,1.000,NA,NA,NA,Y
-36,Sympatry,Postzygotics,G♂H♀,SymGraX(H:LaxeXMontalvo),1,-0.047,-0.130,-0.226,0.792,0.961,N
+32,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LouroXLanzada),8,-0.108,-0.220,-0.197,-0.787,-0.732,Y
+33,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LaxeXCachadas),4,-0.108,-0.394,-0.492,0.907,0.908,Y
+34,Sympatry,Postzygotics,E♂H♀,SymEleX(H:LaxeXMontalvo),15,0.187,0.071,0.186,0.067,0.178,Y
+35,Sympatry,Postzygotics,G♂H♀,SymGraX(H:LouroXLanzada),6,0.815,1.000,NA,NA,NA,Y
+36,Sympatry,Postzygotics,G♂H♀,SymGraX(H:LaxeXMontalvo),1,-0.108,-0.394,-0.492,0.468,0.900,N
 37,Sympatry,Postzygotics,H♂E♀,(H:LouroxCenteans)XSymEle,5,1.000,NA,NA,NA,NA,Y
-38,Sympatry,Postzygotics,H♂E♀,(H:LouroxLanzada)XSymEle,10,0.476,0.774,0.755,0.902,0.960,Y
-39,Sympatry,Postzygotics,H♂E♀,(H:LaxeXMontalvo)XSymEle,8,0.607,0.717,0.694,0.904,0.935,Y
-40,Sympatry,Postzygotics,H♂G♀,(H:LouroXCenteans)XSymGra,8,-0.047,0.576,0.540,0.616,0.653,Y
+38,Sympatry,Postzygotics,H♂E♀,(H:LouroxLanzada)XSymEle,10,0.446,0.721,0.702,0.750,0.898,Y
+39,Sympatry,Postzygotics,H♂E♀,(H:LaxeXMontalvo)XSymEle,8,0.584,0.651,0.627,0.755,0.837,Y
+40,Sympatry,Postzygotics,H♂G♀,(H:LouroXCenteans)XSymGra,8,-0.108,0.477,0.440,0.017,0.124,Y
 41,Sympatry,Postzygotics,H♂G♀,(H:LouroXLanzada)XSymGra,2,1.000,NA,NA,NA,NA,N
-42,Sympatry,Postzygotics,H♂G♀,(H:LaxeXMontalvo)XSymGra,5,-0.047,0.096,0.019,0.526,0.953,Y
+42,Sympatry,Postzygotics,H♂G♀,(H:LaxeXMontalvo)XSymGra,5,-0.108,-0.115,-0.194,-0.215,0.881,Y
 43,Sympatry,Postzygotics,H♂H♀,(H:LouroXCenteans)X(H:LouroXCenteans),9,1.000,NA,NA,NA,NA,Y
 44,Sympatry,Postzygotics,H♂H♀,(H:LouroXCenteans)X(H:LouroXLanzada),1,1.000,NA,NA,NA,NA,N
-45,Sympatry,Postzygotics,H♂H♀,(H:LouroXLanzada)X(H:LouroXCenteans),1,-0.047,1.000,NA,NA,NA,N
-46,Sympatry,Postzygotics,H♂H♀,(H:LouroXLanzada)X(H:LouroXLanzada),16,0.738,0.788,0.770,0.835,0.848,Y
-47,Sympatry,Postzygotics,H♂H♀,(H:LouroXMontalvo)X(H:LouroXMontalvo),18,0.069,-0.005,0.074,0.719,0.923,Y
+45,Sympatry,Postzygotics,H♂H♀,(H:LouroXLanzada)X(H:LouroXCenteans),1,-0.108,1.000,NA,NA,NA,N
+46,Sympatry,Postzygotics,H♂H♀,(H:LouroXLanzada)X(H:LouroXLanzada),16,0.723,0.739,0.720,0.578,0.617,Y
+47,Sympatry,Postzygotics,H♂H♀,(H:LouroXMontalvo)X(H:LouroXMontalvo),18,0.015,-0.239,-0.128,0.279,0.806,Y

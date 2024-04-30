@@ -30,26 +30,27 @@ cumulative %>%
 # Prezygotics crosses ####
 cumulative %>%
   filter(Type == "Prezygotics") %>%
+  filter(Cross == "ElegansXGraellsii" | Cross == "GraellsiiXElegans") %>%
   ggplot() +
   facet_wrap2(. ~ Cross, ncol = 2) +
   geom_hline(yintercept = 0) +
   geom_line(aes(x=Barrier, y=Isolation, group = Ecology, color = Ecology)) +
   geom_point(aes(x=Barrier, y=Isolation, color = Ecology)) + 
   scale_y_continuous(labels = percent, n.breaks = 6) +
+  scale_x_discrete(labels = as.character(seq(1,5))) +
   scale_color_manual(values = c("#7570b3","#e7298a")) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
         panel.grid.major.y = element_line(colour = "grey"),
         text = element_text(family = "serif", size = s),
-        axis.text.x = element_text(hjust = 1, angle = 10, size = x),
         legend.position = "none") -> p
 
 # Converting to dml
 p_dml <- rvg::dml(ggobj = p)
 
 # Exporting
-officer::read_pptx("../../../00_BasePPTX/PNAS_Big_Image.pptx") %>%
+officer::read_pptx("../../../00_BasePPTX/PNAS_Wide_Image.pptx") %>%
   # specify object and location of object (full size)
   officer::ph_with(p_dml, ph_location_fullsize()) %>%
   # export slide
@@ -61,18 +62,18 @@ cumulative %>%
   filter(Type == "Postzygotics") %>%
   mutate(Cross = factor(as.vector(Cross), levels = c("ElegansXHybrid","GraellsiiXHybrid","HybridXHybrid","HybridXElegans","HybridXGraellsii"))) %>% 
   ggplot() +
-  facet_wrap2(. ~ Cross, nrow = 2) +
+  facet_wrap2(. ~ Cross, nrow = 2, scales = "free") +
   geom_hline(yintercept = 0) +
   geom_line(aes(x=Barrier, y=Isolation, group = Ecology, color = Ecology)) +
   geom_point(aes(x=Barrier, y=Isolation, color = Ecology)) + 
   scale_y_continuous(labels = percent, n.breaks = 6) +
+  scale_x_discrete(labels = as.character(seq(1,5))) +
   scale_color_manual(values = c("#7570b3","#e7298a")) +
   theme_classic() +
   labs(y="Cumulative Reproductive Isolation") +
   theme(axis.title.x = element_blank(),
         panel.grid.major.y = element_line(colour = "grey"),
         text = element_text(family = "serif", size = s),
-        axis.text.x = element_text(hjust = 1, angle = 15, size = x),
         legend.position = "none") -> p
 
 # Converting to dml
