@@ -74,54 +74,9 @@ for(i in names(Binomials)){
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   # Plotting the DHARMA plots to check for model fit
   png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
-  plot(simulateResiduals(fittedModel = glm1))
+  plot(simulateResiduals(fittedModel = glms))
   dev.off()
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  print("The results of the best model are: ")
-  print(summary(glm1))
-  # Getting the intercepts
-  print("The intercept levels are: ")
-  for(q in names(glm1$xlevels)){
-    print(paste0(q,":"))
-    print(glms$xlevels[[q]][1])
-  }
-  # Posthoc analyses
-  # Posthocing crosses
-  if("Cross" %in% names(glm1$xlevels)){
-    print("%%%%%")
-    print("POST HOC ANALYSES PER TYPE OF CROSS:")
-    print("%%%%%")
-    
-    # Iterating over different crosses
-    for(n in unique(sub.df$Cross)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-      glms <- glm(Success ~ Cross, data = sub.df, family = "binomial", na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
-  
-  # Posthocing interaction between cross and Ecology
-  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
-    print("%%%%%")
-    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
-    print("%%%%%")
-    sub.df %>%
-      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
-    
-    # Iterating over different combinations
-    for(n in unique(sub.df$interaction)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
-      glms <- glm(Success ~ interaction, data = sub.df, family = "binomial", na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
 }
 
 # Modeling non binomial variables ####
@@ -153,54 +108,9 @@ for(i in names(tidied)[4]){
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   # Plotting the DHARMA plots to check for model fit
   png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
-  plot(simulateResiduals(fittedModel = glm1))
+  plot(simulateResiduals(fittedModel = glms))
   dev.off()
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  print("The results of the best model are: ")
-  print(summary(glm1))
-  # Getting the intercepts
-  print("The intercept levels are: ")
-  for(q in names(glm1$xlevels)){
-    print(paste0(q,":"))
-    print(glms$xlevels[[q]][1])
-  }
-  # Posthoc analyses
-  # Posthocing crosses
-  if("Cross" %in% names(glm1$xlevels)){
-    print("%%%%%")
-    print("POST HOC ANALYSES PER TYPE OF CROSS:")
-    print("%%%%%")
-    
-    # Iterating over different crosses
-    for(n in unique(sub.df$Cross)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-      glms <- glm(Success ~ Cross, data = sub.df, family = fam, na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
-  
-  # Posthocing interaction between cross and Ecology
-  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
-    print("%%%%%")
-    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
-    print("%%%%%")
-    sub.df %>%
-      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
-    
-    # Iterating over different combinations
-    for(n in unique(sub.df$interaction)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
-      glms <- glm(Success ~ interaction, data = sub.df, family = fam, na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
 }
 
 # Fertility ####
@@ -244,54 +154,9 @@ for(i in names(tidied)[5]){
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   # Plotting the DHARMA plots to check for model fit
   png(paste0("../results/DHARMA/",p,"_",i,".png"), width = w, height = h, res = r, units = "cm")
-  plot(simulateResiduals(fittedModel = glm1))
+  plot(simulateResiduals(fittedModel = glms))
   dev.off()
   # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
-  print("The results of the best model are: ")
-  print(summary(glm1))
-  # Getting the intercepts
-  print("The intercept levels are: ")
-  for(q in names(glm1$xlevels)){
-    print(paste0(q,":"))
-    print(glms$xlevels[[q]][1])
-  }
-  # Posthoc analyses
-  # Posthocing crosses
-  if("Cross" %in% names(glm1$xlevels)){
-    print("%%%%%")
-    print("POST HOC ANALYSES PER TYPE OF CROSS:")
-    print("%%%%%")
-
-    # Iterating over different crosses
-    for(n in unique(sub.df$Cross)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$Cross <- relevel(factor(sub.df$Cross, ordered = F), ref = n)
-      glms <- glm(Success ~ Cross, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
-
-  # Posthocing interaction between cross and Ecology
-  if(grepl("Cross:Ecology",as.character(summary(glm1)$call)[2], fixed = T)){
-    print("%%%%%")
-    print("POST HOC ANALYSES FOR INTERACTION OF ECOLOGY AND CROSS:")
-    print("%%%%%")
-    sub.df %>%
-      mutate(interaction = paste0(Cross,"-", Ecology)) -> sub.df
-
-    # Iterating over different combinations
-    for(n in unique(sub.df$interaction)){
-      print("%%%%%")
-      print(paste0("Intercept: ", n))
-      # Selecting reference level
-      sub.df$interaction <- relevel(factor(sub.df$interaction, ordered = F), ref = n)
-      glms <- glm(Success ~ interaction, data = sub.df, weights = sub.df$Fertility_N, family = "binomial", na.action = "na.fail")
-      print(summary(glms))
-    }
-  }
 }
 sink()
 }

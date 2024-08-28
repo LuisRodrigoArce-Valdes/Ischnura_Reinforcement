@@ -14,27 +14,12 @@ Model selection table
 1   1.580        1 -37.478 77.0   0.0  0.741
 2   1.576     +  2 -37.477 79.1   2.1  0.259
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate    SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans  -0.0339 0.837 Inf  -0.041  0.9677
 
-Call:
-glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)    
-(Intercept)   1.5805     0.2935   5.385 7.23e-08 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 74.955  on 81  degrees of freedom
-Residual deviance: 74.955  on 81  degrees of freedom
-AIC: 76.955
-
-Number of Fisher Scoring iterations: 3
-
-[1] "The intercept levels are: "
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "mechanical.tactile"
 Success ~ Cross
@@ -45,27 +30,12 @@ Model selection table
 1   1.442        1 -33.179 68.4  0.00  0.669
 2   1.344     +  2 -32.820 69.8  1.41  0.331
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate  SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans   -0.853 1.1 Inf  -0.774  0.4389
 
-Call:
-glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)    
-(Intercept)   1.4424     0.3084   4.677 2.91e-06 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 66.358  on 67  degrees of freedom
-Residual deviance: 66.358  on 67  degrees of freedom
-AIC: 68.358
-
-Number of Fisher Scoring iterations: 4
-
-[1] "The intercept levels are: "
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "oviposition"
 Success ~ Cross
@@ -76,71 +46,12 @@ Model selection table
 2  0.5465     +  2 -19.715 43.8  0.00  0.789
 1  0.8210        1 -22.158 46.4  2.64  0.211
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate   SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans      -18 2663 Inf  -0.007  0.9946
 
-Call:
-glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                        Estimate Std. Error z value Pr(>|z|)
-(Intercept)               0.5465     0.3789   1.443    0.149
-CrossgraellsiiXelegans   18.0195  2662.8561   0.007    0.995
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 44.316  on 35  degrees of freedom
-Residual deviance: 39.429  on 34  degrees of freedom
-AIC: 43.429
-
-Number of Fisher Scoring iterations: 17
-
-[1] "The intercept levels are: "
-[1] "Cross:"
-[1] "elegansXgraellsii"
-[1] "%%%%%"
-[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
-[1] "%%%%%"
-[1] "%%%%%"
-[1] "Intercept: elegansXgraellsii"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                        Estimate Std. Error z value Pr(>|z|)
-(Intercept)               0.5465     0.3789   1.443    0.149
-CrossgraellsiiXelegans   18.0195  2662.8561   0.007    0.995
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 44.316  on 35  degrees of freedom
-Residual deviance: 39.429  on 34  degrees of freedom
-AIC: 43.429
-
-Number of Fisher Scoring iterations: 17
-
-[1] "%%%%%"
-[1] "Intercept: graellsiiXelegans"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)
-(Intercept)               18.57    2662.86   0.007    0.994
-CrosselegansXgraellsii   -18.02    2662.86  -0.007    0.995
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 44.316  on 35  degrees of freedom
-Residual deviance: 39.429  on 34  degrees of freedom
-AIC: 43.429
-
-Number of Fisher Scoring iterations: 17
-
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "fecundity"
 Success ~ Cross
@@ -152,75 +63,13 @@ Model selection table
 2 0.04680     +  3 -115.978 239.1  0.00      1
 1 0.01371        2 -126.543 257.6 18.53      0
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate     SE df t.ratio p.value
+ elegansXgraellsii - graellsiiXelegans   0.0426 0.0191 23   2.225  0.0362
 
-Call:
-glm(formula = Success ~ Cross + 1, family = fam, data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error t value Pr(>|t|)  
-(Intercept)             0.04680    0.01888   2.478   0.0210 *
-CrossgraellsiiXelegans -0.04256    0.01913  -2.225   0.0362 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for Gamma family taken to be 3.093978)
-
-    Null deviance: 66.686  on 24  degrees of freedom
-Residual deviance: 34.145  on 23  degrees of freedom
-AIC: 237.96
-
-Number of Fisher Scoring iterations: 8
-
-[1] "The intercept levels are: "
-[1] "Cross:"
-[1] "elegansXgraellsii"
-[1] "%%%%%"
-[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
-[1] "%%%%%"
-[1] "%%%%%"
-[1] "Intercept: elegansXgraellsii"
-
-Call:
-glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error t value Pr(>|t|)  
-(Intercept)             0.04680    0.01888   2.478   0.0210 *
-CrossgraellsiiXelegans -0.04256    0.01913  -2.225   0.0362 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for Gamma family taken to be 3.093978)
-
-    Null deviance: 66.686  on 24  degrees of freedom
-Residual deviance: 34.145  on 23  degrees of freedom
-AIC: 237.96
-
-Number of Fisher Scoring iterations: 8
-
-[1] "%%%%%"
-[1] "Intercept: graellsiiXelegans"
-
-Call:
-glm(formula = Success ~ Cross, family = fam, data = sub.df, na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error t value Pr(>|t|)  
-(Intercept)            0.004234   0.003041   1.393   0.1771  
-CrosselegansXgraellsii 0.042564   0.019128   2.225   0.0362 *
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for Gamma family taken to be 3.093978)
-
-    Null deviance: 66.686  on 24  degrees of freedom
-Residual deviance: 34.145  on 23  degrees of freedom
-AIC: 237.96
-
-Number of Fisher Scoring iterations: 8
-
+Note: contrasts are still on the inverse scale. Consider using
+      regrid() if you want contrasts of back-transformed estimates. 
 [1] "######################"
 [1] "fertility"
 Success ~ Cross
@@ -231,77 +80,12 @@ Model selection table
 2 -5.0670     +  2 -4657.773 9319.5   0.00      1
 1 -0.4584        1 -4966.610 9935.2 615.67      0
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate    SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans    -4.76 0.502 Inf  -9.476  <.0001
 
-Call:
-glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)             -5.0673     0.5015 -10.105   <2e-16 ***
-CrossgraellsiiXelegans   4.7576     0.5021   9.476   <2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 9933.2  on 7439  degrees of freedom
-Residual deviance: 9315.5  on 7438  degrees of freedom
-AIC: 9319.5
-
-Number of Fisher Scoring iterations: 7
-
-[1] "The intercept levels are: "
-[1] "Cross:"
-[1] "elegansXgraellsii"
-[1] "%%%%%"
-[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
-[1] "%%%%%"
-[1] "%%%%%"
-[1] "Intercept: graellsiiXelegans"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    weights = sub.df$Fertility_N, na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)            -0.30976    0.02454 -12.621   <2e-16 ***
-CrosselegansXgraellsii -4.75757    0.50206  -9.476   <2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 9933.2  on 7439  degrees of freedom
-Residual deviance: 9315.5  on 7438  degrees of freedom
-AIC: 9319.5
-
-Number of Fisher Scoring iterations: 7
-
-[1] "%%%%%"
-[1] "Intercept: elegansXgraellsii"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    weights = sub.df$Fertility_N, na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)             -5.0673     0.5015 -10.105   <2e-16 ***
-CrossgraellsiiXelegans   4.7576     0.5021   9.476   <2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 9933.2  on 7439  degrees of freedom
-Residual deviance: 9315.5  on 7438  degrees of freedom
-AIC: 9319.5
-
-Number of Fisher Scoring iterations: 7
-
+Results are given on the log odds ratio (not the response) scale. 
 [1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 [1] "Sympatry"
 [1] "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -315,77 +99,12 @@ Model selection table
 2  1.3280     +  2  -71.849 147.8   0.0      1
 1  0.3455        1 -103.124 208.3  60.5      0
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate    SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans     3.25 0.499 Inf   6.518  <.0001
 
-Call:
-glm(formula = Success ~ Cross + 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)              1.3278     0.2398   5.537 3.07e-08 ***
-CrossgraellsiiXelegans  -3.2496     0.4986  -6.518 7.12e-11 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 206.25  on 151  degrees of freedom
-Residual deviance: 143.70  on 150  degrees of freedom
-AIC: 147.7
-
-Number of Fisher Scoring iterations: 4
-
-[1] "The intercept levels are: "
-[1] "Cross:"
-[1] "elegansXgraellsii"
-[1] "%%%%%"
-[1] "POST HOC ANALYSES PER TYPE OF CROSS:"
-[1] "%%%%%"
-[1] "%%%%%"
-[1] "Intercept: graellsiiXelegans"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)             -1.9218     0.4371  -4.397 1.10e-05 ***
-CrosselegansXgraellsii   3.2496     0.4986   6.518 7.12e-11 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 206.25  on 151  degrees of freedom
-Residual deviance: 143.70  on 150  degrees of freedom
-AIC: 147.7
-
-Number of Fisher Scoring iterations: 4
-
-[1] "%%%%%"
-[1] "Intercept: elegansXgraellsii"
-
-Call:
-glm(formula = Success ~ Cross, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-                       Estimate Std. Error z value Pr(>|z|)    
-(Intercept)              1.3278     0.2398   5.537 3.07e-08 ***
-CrossgraellsiiXelegans  -3.2496     0.4986  -6.518 7.12e-11 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 206.25  on 151  degrees of freedom
-Residual deviance: 143.70  on 150  degrees of freedom
-AIC: 147.7
-
-Number of Fisher Scoring iterations: 4
-
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "mechanical.tactile"
 Success ~ Cross
@@ -396,27 +115,12 @@ Model selection table
 1   1.175        1 -48.627  99.3  0.00  0.709
 2   1.214     +  2 -48.470 101.1  1.78  0.291
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate    SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans    0.521 0.905 Inf   0.576  0.5644
 
-Call:
-glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)    
-(Intercept)   1.1750     0.2496   4.707 2.52e-06 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 97.254  on 88  degrees of freedom
-Residual deviance: 97.254  on 88  degrees of freedom
-AIC: 99.254
-
-Number of Fisher Scoring iterations: 4
-
-[1] "The intercept levels are: "
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "oviposition"
 Success ~ Cross
@@ -427,27 +131,12 @@ Model selection table
 1   2.411        1 -24.181 50.4  0.00  0.687
 2   2.372     +  2 -23.918 52.0  1.57  0.313
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate   SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans    -15.2 2284 Inf  -0.007  0.9947
 
-Call:
-glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)    
-(Intercept)   2.4108     0.3946    6.11 9.96e-10 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 48.361  on 84  degrees of freedom
-Residual deviance: 48.361  on 84  degrees of freedom
-AIC: 50.361
-
-Number of Fisher Scoring iterations: 5
-
-[1] "The intercept levels are: "
+Results are given on the log odds ratio (not the response) scale. 
 [1] "######################"
 [1] "fecundity"
 Success ~ Cross
@@ -459,26 +148,13 @@ Model selection table
 1 0.01100        2 -429.635 863.4  0.00    0.7
 2 0.01122     +  3 -429.400 865.1  1.69    0.3
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate     SE df t.ratio p.value
+ elegansXgraellsii - graellsiiXelegans  0.00375 0.0041 76   0.915  0.3632
 
-Call:
-glm(formula = Success ~ 1, family = fam, data = sub.df, na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept) 0.011005   0.001114   9.876  2.5e-15 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for Gamma family taken to be 0.7997791)
-
-    Null deviance: 108.81  on 77  degrees of freedom
-Residual deviance: 108.81  on 77  degrees of freedom
-AIC: 863.27
-
-Number of Fisher Scoring iterations: 6
-
-[1] "The intercept levels are: "
+Note: contrasts are still on the inverse scale. Consider using
+      regrid() if you want contrasts of back-transformed estimates. 
 [1] "######################"
 [1] "fertility"
 Success ~ Cross
@@ -489,24 +165,9 @@ Model selection table
 1 -0.2827        1 -23077.76 46157.5  0.00  0.727
 2 -0.2821     +  2 -23077.74 46159.5  1.96  0.273
 Models ranked by rank(x) 
-[1] "The results of the best model are: "
+[1] "&&&&&&&&&&&&&&&&&&&&&"
+[1] "Posthoc test"
+ contrast                              estimate     SE  df z.ratio p.value
+ elegansXgraellsii - graellsiiXelegans  0.00949 0.0455 Inf   0.209  0.8346
 
-Call:
-glm(formula = Success ~ 1, family = "binomial", data = sub.df, 
-    na.action = "na.fail")
-
-Coefficients:
-            Estimate Std. Error z value Pr(>|z|)    
-(Intercept) -0.28266    0.01099  -25.72   <2e-16 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-(Dispersion parameter for binomial family taken to be 1)
-
-    Null deviance: 46156  on 33775  degrees of freedom
-Residual deviance: 46156  on 33775  degrees of freedom
-AIC: 46158
-
-Number of Fisher Scoring iterations: 4
-
-[1] "The intercept levels are: "
+Results are given on the log odds ratio (not the response) scale. 

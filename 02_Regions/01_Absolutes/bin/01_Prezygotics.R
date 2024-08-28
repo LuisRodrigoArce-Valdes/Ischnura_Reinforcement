@@ -15,7 +15,11 @@ s <- 10
 # line width for Binomial plots
 l <- 1
 # Select slide size
-slide.size <- "../../../00_BasePPTX/PNAS_Large_Image.pptx"
+slide.size <- "../../../00_BasePPTX/PNAS_Small_Image.pptx"
+
+# Conspecific baseline dataset
+cons <- read.csv("../data/Conspecific_Baseline.csv")
+cons[complete.cases(cons),] -> cons
 
 # Tidying sympatrics ####
 full.sympatrics <- read.csv("../data/sympatrics_R.csv", header = T, encoding = "UTF-8")
@@ -81,10 +85,12 @@ mechanicals %>%
   
 # Plotting
 mechanicals %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>% 
+  filter(Cross != "elegansXelegans" & Cross != "graellsiiXgraellsii") %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXgraellsii","graellsiiXelegans"))) %>% 
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
   geom_bar(aes(x=Ecology, fill=Mechanical.Sucess), position = "fill") +
+  geom_point(data=cons, aes(x=Ecology, y=Mechanical), shape = "-", color = "red", size = 5) +
   scale_fill_manual(values = c('#66c2a5','#fc8d62'), name = "Outcome") +
   scale_y_continuous(labels = percent) +
   theme_classic() +
@@ -126,10 +132,12 @@ mechanical.tactile %>%
 
 # Plotting
 mechanical.tactile %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>% 
+  filter(Cross != "elegansXelegans" & Cross != "graellsiiXgraellsii") %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXgraellsii","graellsiiXelegans"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
   geom_bar(aes(x=Ecology, fill=Mechanical.Tactile.Success), position = "fill") +
+  geom_point(data=cons, aes(x=Ecology, y=Mechanical.Tactile), shape = "-", color = "red", size = 5) +
   scale_fill_manual(values = c('#66c2a5','#fc8d62'), name = "Outcome") +
   scale_y_continuous(labels = percent) +
   theme_classic() +
@@ -175,10 +183,12 @@ tidied$oviposition <- oviposition
 
 # Plotting
 oviposition %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>%
+  filter(Cross != "elegansXelegans" & Cross != "graellsiiXgraellsii") %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXgraellsii","graellsiiXelegans"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
   geom_bar(aes(x=Ecology, fill=ClutchesWEggs), position = "fill") +
+  geom_point(data=cons, aes(x=Ecology, y=Oviposition), shape = "-", color = "red", size = 5) +
   scale_fill_manual(values = c('#66c2a5','#fc8d62'), name = "Outcome") +
   scale_y_continuous(labels = percent) +
   theme_classic() +
@@ -215,38 +225,27 @@ fecundity %>%
 # Listing tidyed dataframe for statistical tests
 tidied$fecundity <- fecundity
 
+# Summary statistics
+for(i in unique(fecundity$Ecology)){
+  print(i)
+  tmp <- fecundity[fecundity$Ecology==i,]
+  print("Mean:")
+  print(tapply(tmp$EggsPerClutch, tmp$Cross, mean))
+  print("SD:")
+  print(tapply(tmp$EggsPerClutch, tmp$Cross, sd))
+}
+
+
 # Estimating absolute and relative frequencies of barrier outputs
 fecundity %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>%
+  filter(Cross != "elegansXelegans" & Cross != "graellsiiXgraellsii") %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXgraellsii","graellsiiXelegans"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
   geom_violin(aes(x=Ecology, y=EggsPerClutch, color = Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Ecology, y=EggsPerClutch), size = 1) +
+  geom_point(data=cons, aes(x=Ecology, y=Fecundity), shape = "-", color = "red", size = 5) +
   scale_color_manual(values = c("#7570b3","#e7298a")) +
-  theme_classic() +
-  labs(y="Fecundity (Average eggs per clutch per female)") +
-  theme(axis.title.x = element_blank(),
-        text = element_text(family = "serif", size = s),
-        plot.margin = margin(t=5.5,r=5.5,l=5.5,b=20),
-        legend.position="none") -> p
-
-# Converting to dml
-p_dml <- dml(ggobj = p)
-
-# Adding plot to new slide at fullsize
-pptx %>%
-  add_slide(layout = "En blanco", master = "Tema de Office") %>%
-  ph_with(p_dml, ph_location_fullsize()) -> pptx
-
-# NEW PLOT LIMITING Y AXIS
-fecundity %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>%
-  ggplot() +
-  facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
-  geom_violin(aes(x=Ecology, y=EggsPerClutch, color = Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
-  geom_point(aes(x=Ecology, y=EggsPerClutch), size = 1) +
-  scale_color_manual(values = c("#7570b3","#e7298a")) +
-  scale_y_continuous(limits = c(0,400)) +
   theme_classic() +
   labs(y="Fecundity (Average eggs per clutch per female)") +
   theme(axis.title.x = element_blank(),
@@ -281,13 +280,25 @@ fertility %>%
 # Listing tidyed dataframe for statistical tests
 tidied$fertility <- fertility
 
+# Summary statistics
+for(i in unique(fertility$Ecology)){
+  print(i)
+  tmp <- fertility[fertility$Ecology==i,]
+  print("Mean:")
+  print(tapply(tmp$Fertility, tmp$Cross, mean))
+  print("SD:")
+  print(tapply(tmp$Fertility, tmp$Cross, sd))
+}
+
 # Plotting
 fertility %>%
-  mutate(Cross = factor(Cross, levels = c("elegansXelegans","graellsiiXgraellsii","elegansXgraellsii","graellsiiXelegans"))) %>%
+  filter(Cross != "elegansXelegans" & Cross != "graellsiiXgraellsii") %>% 
+  mutate(Cross = factor(Cross, levels = c("elegansXgraellsii","graellsiiXelegans"))) %>%
   ggplot() +
   facet_wrap(. ~ Cross, scales = "free_x", ncol = 4) +
   geom_violin(aes(x=Ecology, y=Fertility, color= Ecology), alpha = 0.5, draw_quantiles = 0.5, scale = "width") +
   geom_point(aes(x=Ecology, y=Fertility), size = 1) +
+  geom_point(data=cons, aes(x=Ecology, y=Fertility), shape = "-", color = "red", size = 5) +
   scale_color_manual(values = c("#7570b3","#e7298a")) +
   scale_y_continuous(labels = percent) +
   theme_classic() +
