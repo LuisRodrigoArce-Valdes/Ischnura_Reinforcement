@@ -19,7 +19,7 @@ On each sub-directory the following elements can be found:
 - bin: Contains all R scripts used to analyse the data. Scripts must be ran in the way they are numbered.
 - data: Contains UTF-8 csv files from the Barriers_Calculation.xlsx excel file to be imported into R.
 - figures: Contains powerpoint files with plots for final editions to be included in the publication.
-- results: Contains text files with GLMs statistics tests results and DHARMA plots to check model fitting.
+- results: Contains text files with GLM modelling, statistics tests results and DHARMA plots to check model fitting.
 
 02_Cumulatives directory contains all files related the plotting of relative barriers and cumulative isolation:
 
