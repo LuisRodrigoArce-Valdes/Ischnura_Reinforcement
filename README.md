@@ -1,4 +1,4 @@
-## Welcome to the repository for the **Testing the predictions of reinforcement: long-term empirical data from a damselfly mottled hybrid zone** article
+## Welcome to the repository for the "Testing the predictions of reinforcement: long-term empirical data from a damselfly mottled hybrid zone" article
 
 ### by Luis Rodrigo Arce-Valdés, Andrea Viviana Ballén-Guapacha, Anais Rivas-Torres, Jesús Ramsés Chávez-Ríos, Maren Wellenreuther, Bengt Hansson & Rosa Ana Sánchez Guillén
 
