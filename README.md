@@ -4,7 +4,7 @@
 
 ### Objective:
 
-In this manuscript we tested Turelli's et al. prediction 2014 on the damselflies *I. elegans* and *I. graellsii* to evaluate the presence of reinforcement of reproductive isolation in their Spanish mottled hybrid zone.
+In this manuscript we tested Turelli's et al. 2014 prediction on the damselflies *I. elegans* and *I. graellsii* to evaluate the presence of reinforcement of reproductive isolation in their Spanish mottled hybrid zone.
 
 ### Repository contents:
 
